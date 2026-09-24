@@ -177,14 +177,15 @@ def index_pages(folder, records, name, lead, render, size=20, nav='资料'):
 
 
 begin('')
-body = '<div class="home-intro">' + intro('把没来得及看的讨论，补回来。', '这里汇集观澜群关于 AI、工作和学习的讨论。先看要点，再看不同意见和原话。', meta='当前收录 · 2026.07.12—09.15')
-body += f'<a class="home-art" href="{u("about/#theme")}"><img src="{u("assets/guanlan-theme.png")}" width="1122" height="1402" alt="观澜水墨主题图"><span>认识观澜</span></a></div>'
-body += '<div class="cards home-cards">' + ''.join(card(TOPICS[tid]) for tid in ED['featured']) + '</div>'
-body += f'<div class="home-end"><span>本期精选 · 从具体问题进入</span><a href="{u("topics/")}">全部话题 →</a></div><div class="section-bar"><h2>还有什么值得聊？</h2></div><div class="category-list">'
+body = '<section class="home-intro home-portal" aria-labelledby="community-name"><header class="intro"><h1 id="community-name">观澜 <span>· AI Sparks</span></h1><p class="community-slogan">AI 时代最好的学习方式，<br>就是跟人聊。</p><p class="community-purpose">借具体变化，看更大的时代走势。</p><p class="community-description">一群对技术好奇、愿意多想一层的人，围绕真实问题交换经验、彼此校正。</p><p class="community-values"><span>真实问题</span><span>深入讨论</span><span>彼此校正</span><span>共同建设</span></p>'
+body += f'<a class="text-link" href="{u("about/")}">认识这个群 →</a></header><a class="home-art" href="{u("about/#theme")}" aria-label="查看观澜主题大图"><img src="{u("assets/guanlan-theme.png")}" width="1122" height="1402" alt="观澜水墨主题图：河流与围桌交谈的人们"></a></section>'
+body += f'<section aria-labelledby="featured-heading"><div class="section-bar featured-heading"><div><h2 id="featured-heading">把没来得及看的讨论，补回来。</h2><p class="meta">本期精选 · 收录 2026.07.12—09.15 的讨论</p></div><a href="{u("topics/")}">全部话题 →</a></div>'
+body += '<div class="cards home-cards">' + ''.join(card(TOPICS[tid], level=3) for tid in ED['featured']) + '</div></section>'
+body += '<div class="section-bar"><h2>还有什么值得聊？</h2></div><div class="category-list">'
 for c in DATA['categories']:
     body += f'<a class="category-item" href="{u("categories/" + c["id"] + "/")}"><strong>{e(c["name"])}</strong><small>{e(c["desc"])}</small></a>'
 body += '</div>'
-page('精选补课', body, '精选补课', narrow=False)
+page('借具体变化，看更大的时代走势', body, '精选补课', description='观澜 · AI Sparks。AI 时代最好的学习方式，就是跟人聊。围绕真实问题交换经验、彼此校正；从群友的讨论里看见更大的时代走势。', narrow=False)
 
 begin('topics/')
 body = intro('从你关心的问题开始。', '38 个话题，按问题分类。每篇都有完整分析、相关分歧和原话入口。')
