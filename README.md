@@ -14,13 +14,14 @@
 
 **[打开观澜首页 →](https://zhong-ze-wei.github.io/ai-spark/)**
 
-初次来访可以先认识这个群，再读首页选出的三场讨论、三个开放问题。想深入阅读，可以直接进入：
+主要服务没时间刷群的朋友：先挑一个值得看的问题，再读不同意见与完整分析。首页保持简短，深入阅读时仍能找到完整内容。
 
-- [完整共读档案](https://zhong-ze-wei.github.io/ai-spark/#read)：沿七章主线阅读。
-- [继续讨论的问题](https://zhong-ze-wei.github.io/ai-spark/#questions)：查看未解决的问题与后续方向。
-- [从思考到工具](https://zhong-ze-wei.github.io/ai-spark/#skills)：阅读理念及 temper、aptum 的实践。
-- [原话与出处](https://zhong-ze-wei.github.io/ai-spark/#sources)：回到讨论发生时的语境。
-- [群公告与共享资源](https://zhong-ze-wei.github.io/ai-spark/#resources)：工具表、官方产品与 API 入口、求职与内推信息。
+- [话题追踪](https://zhong-ze-wei.github.io/ai-spark/topics/)：七个分类、38 个话题，每篇都有独立链接。
+- [人物发言](https://zhong-ze-wei.github.io/ai-spark/people/)：按昵称与日期找到相关观点。
+- [完整档案](https://zhong-ze-wei.github.io/ai-spark/archive/)：分歧、事件、原话、阅读路线与长文存档。
+- [继续讨论的问题](https://zhong-ze-wei.github.io/ai-spark/questions/)：查看未解决的问题与后续方向。
+- [从思考到工具](https://zhong-ze-wei.github.io/ai-spark/skills/)：阅读理念及 temper、aptum 的实践。
+- [群公告与共享资源](https://zhong-ze-wei.github.io/ai-spark/community/)：工具表、API 入口、求职与内推信息。
 
 网页整理了 2026 年 7 月 12 日至 9 月 15 日的讨论，包含 38 个主题、28 个事件、20 场分歧与 177 段原话，支持搜索、主题导航和深浅色切换。
 
@@ -34,11 +35,11 @@
 
 欢迎讨论，也欢迎邀请新的朋友加入。视角越多，碰撞越多。[阅读完整群公告与资源说明](docs/community.md)。
 
-首页的后续实验是建议，尚未代表群内已经完成的实践。带着真实任务、失败案例或不同意见来，可以让下一次讨论更具体。
+实践卡是基于讨论整理的建议，尚未代表群内已经完成的实验。带着真实任务、失败案例或不同意见来，可以让下一次讨论更具体。
 
 ## 从思考到工具
 
-**[阅读：从思考到工具 →](https://zhong-ze-wei.github.io/ai-spark/#skills)**
+**[阅读：从思考到工具 →](https://zhong-ze-wei.github.io/ai-spark/skills/)**
 
 《AI Sparks 蒸馏声明》把人的注意力放在目标、上下文、判断、验证和责任上；《当「会做事」不再稀缺》继续追问：执行成本下降后，什么仍然值得积累？
 
@@ -66,9 +67,26 @@
 
 ## 项目结构
 
-- `index.html`：可独立打开的交互网页，样式、脚本与内容均包含在文件内。
+- `index.html`：精选首页。
+- `topics/`、`categories/`、`people/`、`debates/`、`events/`、`sources/`：生成的独立阅读页面；完整正文不依赖 JavaScript。
+- `content/`：保留的结构化资料、既有正文与首页精选配置。
+- `scripts/build.py`：用 Python 标准库生成静态页面。
+- `scripts/check.py`：核对所有本地链接、内容数量及 177 段原话的一致性。
+- `assets/site/`：共用样式、搜索、收藏、字号及主题切换。
 - `assets/guanlan-theme.png`：群主题图，随网页一起保存可显示完整封面。
+- `assets/guanlan-invitation.png`：加群邀请卡；原始二维码另存，需按有效期更新。
+- `archive.html`：改版前的七章长文存档，保留原有完整措辞。
 - `docs/community.md`：群公告与共享资源，更新于 2026 年 9 月 17 日。
 - `materials/`：补充阅读材料。
 
 网页由 GitHub Pages 发布。仓库 `main` 分支更新后会自动重新部署；在线地址保持不变。
+
+维护时先更新 `content/` 中的内容，再运行：
+
+```sh
+python3 scripts/build.py
+python3 scripts/check.py
+python3 -m http.server 8768
+```
+
+旧的 `#topic/t19`、`#person/p01` 等定位会转到对应新页面；`#read` 转到话题入口。参见 [本轮改版说明](docs/reading-structure.md)。
