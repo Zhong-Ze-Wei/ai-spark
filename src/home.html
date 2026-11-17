@@ -1,0 +1,2965 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>观澜 · AI Sparks</title>
+  <meta name="description" content="观澜 · AI Sparks。借具体变化，看更大的时代走势。2026 年 7 月至 11 月的社群思考地图。" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23FAF8F5'/%3E%3Ctext x='8' y='47' font-size='46' fill='%23135363'%3E澜%3C/text%3E%3C/svg%3E" />
+  <!-- BUNDLED_STYLES -->
+  <!-- BUNDLED_CHART -->
+  <!-- BUNDLED_ICONS -->
+  <script>try { if (localStorage.getItem('aispark_theme_v2') === 'dark') document.documentElement.classList.add('dark'); } catch (_) {}</script>
+  <style>
+    :root {
+      --bg-page: #FAF8F5;
+      --bg-card: #FFFFFF;
+      --bg-subtle: #F3EFE8;
+      --border-hairline: #E5DEC9;
+      --text-primary: #18181B;
+      --text-secondary: #52525B;
+      --text-muted: #71717A;
+      --accent-tide: #135363;
+      --accent-tide-soft: #EFF7F9;
+      --accent-spark: #C2610C;
+    }
+    html.dark {
+      --bg-page: #0B1016;
+      --bg-card: #131B24;
+      --bg-subtle: #1A2430;
+      --border-hairline: #263343;
+      --text-primary: #F1F5F9;
+      --text-secondary: #CBD5E1;
+      --text-muted: #94A3B8;
+      --accent-tide: #4FB3C9;
+      --accent-tide-soft: rgba(56, 154, 176, 0.14);
+      --accent-spark: #F59E0B;
+    }
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-primary);
+      font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+    .font-editorial {
+      font-family: 'Noto Serif SC', 'Songti SC', 'STSong', Georgia, serif;
+    }
+    .surface-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-hairline);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .surface-card:hover {
+      border-color: var(--accent-tide);
+      box-shadow: 0 10px 28px -10px rgba(19, 83, 99, 0.14);
+    }
+    html.dark .surface-card:hover {
+      box-shadow: 0 10px 28px -10px rgba(0, 0, 0, 0.55);
+    }
+    .surface-subtle {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-hairline);
+    }
+    .nav-pill-active {
+      background-color: var(--accent-tide);
+      color: #FFFFFF !important;
+      font-weight: 600;
+    }
+    html.dark .nav-pill-active {
+      background-color: #2A7B8E;
+      color: #FFFFFF !important;
+    }
+    .quote-bar {
+      border-left: 3px solid var(--accent-tide);
+      background: var(--accent-tide-soft);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(113, 113, 122, 0.35);
+      border-radius: 9999px;
+    }
+    @keyframes floatWave {
+      0%, 100% { transform: translateX(0px) translateY(0px); }
+      50% { transform: translateX(-14px) translateY(4px); }
+    }
+    .wave-slow {
+      animation: floatWave 11s ease-in-out infinite;
+    }
+    mark.hl {
+      background-color: rgba(217, 119, 6, 0.22);
+      color: inherit;
+      padding: 0 2px;
+      border-radius: 3px;
+    }
+
+    :root { --page-gutter: clamp(18px, 3.8vw, 100px); }
+    html { scroll-padding-top: 112px; }
+    .page-shell { width: 100%; padding-inline: var(--page-gutter); }
+    button, a, input { -webkit-tap-highlight-color: transparent; }
+    button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid var(--accent-tide); outline-offset: 4px; }
+    .skip-link { position: fixed; z-index: 100; left: 16px; top: -80px; padding: 12px 20px; background: var(--bg-card); }
+    .skip-link:focus { top: 10px; }
+    .header-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 76px; }
+    .site-brand { white-space: nowrap; font-size: 19px; font-weight: 700; letter-spacing: -.04em; }
+    .brand-dot { color: #9B7BAD; }
+    .desktop-nav { display: none; gap: 4px; }
+    .nav-tab { padding: 9px 14px; border-radius: 8px; font-size: 13px; white-space: nowrap; color: var(--text-secondary); }
+    .utility-actions { display: flex; align-items: center; gap: 8px; }
+    .utility-button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-width: 38px; min-height: 38px; padding: 8px; border-radius: 9px; color: var(--text-secondary); }
+    .utility-button:hover { background: var(--bg-subtle); }
+    .utility-label { display: none; font-size: 12px; }
+    .mobile-nav { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 12px; scrollbar-width: none; }
+    .mobile-nav::-webkit-scrollbar { display: none; }
+    main.page-shell { padding-top: 0; }
+    .editorial-hero { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); align-items: center; column-gap: clamp(32px, 6vw, 150px); padding-block: clamp(40px, 5vw, 104px); }
+    .hero-copy { padding-block: 24px; }
+    .eyebrow { font-size: 11px; font-weight: 500; letter-spacing: .18em; color: var(--text-muted); }
+    .hero-title { font-size: clamp(44px, 4.5vw, 102px); line-height: 1.2; letter-spacing: -.055em; font-weight: 600; margin: 28px 0; white-space: nowrap; }
+    .hero-title span { letter-spacing: -.06em; }
+    .hero-line { width: 46px; height: 2px; background: #9B7BAD; margin: 32px 0; }
+    .hero-lead { font-size: clamp(18px, 1.5vw, 28px); line-height: 1.75; color: var(--accent-tide); }
+    .hero-sub { margin-top: 12px; font-size: 14px; line-height: 1.9; color: var(--text-secondary); }
+    .hero-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin-top: 36px; }
+    .hero-primary { display: inline-flex; gap: 12px; align-items: center; padding: 13px 20px; border-radius: 6px; color: white; background: #135363; font-size: 13px; }
+    .hero-primary:hover { background: #0D3D4A; }
+    .hero-secondary { display: inline-flex; gap: 8px; align-items: center; font-size: 13px; color: var(--text-secondary); }
+    .poster-figure { width: min(100%, 450px); justify-self: center; position: relative; }
+    .poster-button { display: block; width: 100%; background: #f6f3ed; box-shadow: 0 20px 55px -25px rgba(36, 28, 16, .3); border: 1px solid rgba(72, 63, 45, .12); transition: transform .3s ease; }
+    .poster-button:hover { transform: translateY(-4px); }
+    .poster-image { display: block; width: 100%; height: auto; }
+    .poster-figure figcaption { display: flex; align-items: center; justify-content: space-between; margin-top: 14px; font-size: 10px; letter-spacing: .12em; color: var(--text-muted); }
+    .archive-stats { border-block: 1px solid var(--border-hairline); display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); padding-block: 28px; margin-top: 0 !important; }
+    .archive-stats > div { padding-inline: clamp(16px,2vw,40px); border-left: 1px solid var(--border-hairline); }
+    .archive-stats > div:first-child { padding-left: 0; border-left: 0; }
+    .archive-stats dt { font-size: 11px; color: var(--text-muted); margin-bottom: 5px; }
+    .archive-stats dd { font-size: clamp(28px,2.5vw,48px); font-weight: 500; letter-spacing: -.05em; line-height: 1.4; }
+    .archive-stats small { display: block; margin-top: 6px; font-size: 11px; color: var(--text-muted); letter-spacing: 0; }
+    #view-overview > :not(:first-child) { margin-top: clamp(36px,4vw,76px); }
+    .editorial-note { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,2.2fr); gap: 40px; border-top: 1px solid var(--border-hairline); padding-block: 42px 0; }
+    .editorial-note h2 { font-size: clamp(22px,2vw,34px); line-height: 1.6; margin-top: 14px; }
+    .editorial-note blockquote { max-width: 60em; font-size: clamp(16px,1.2vw,22px); line-height: 2; color: var(--text-secondary); }
+    .editorial-note footer { font-size: 11px; color: var(--text-muted); margin-top: 18px; }
+    main > section:not(#view-overview) { padding-top: 38px; }
+    .grid > *, .flex > * { min-width: 0; }
+    #view-people > div:first-child > div { flex-wrap: wrap; }
+    #view-people > div:first-child > div > :last-child { flex-shrink: 1; }
+    #drawer-body, #saved-drawer-body, #search-results-container { overflow-wrap: anywhere; overscroll-behavior: contain; }
+    #detail-drawer { max-width: min(860px, 64vw); }
+    #detail-drawer, #saved-drawer { height: 100dvh; }
+    #detail-drawer.translate-x-full, #saved-drawer.translate-x-full { visibility: hidden; }
+    #drawer-header-meta { flex-wrap: wrap; }
+    #poster-dialog { max-width: none; max-height: none; width: min(92vw, 800px); height: min(90dvh, 1100px); border: 0; padding: 16px; background: var(--bg-page); color: var(--text-primary); border-radius: 6px; }
+    #poster-dialog::backdrop { background: rgba(8,15,20,.75); backdrop-filter: blur(8px); }
+    #poster-dialog img { height: calc(100% - 42px); width: 100%; object-fit: contain; margin-top: 10px; }
+    #poster-dialog .dialog-top { display:flex; align-items:center; justify-content:space-between; font-size: 12px; }
+    .site-footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 28px; flex-wrap: wrap; }
+    @media(min-width: 640px) { .utility-label { display: inline; } }
+    @media(min-width: 1440px) { .desktop-nav { display: flex; } .mobile-nav { display: none; } }
+    @media(min-width: 1800px) {
+      .poster-figure { width: min(100%, 510px); }
+      #topics-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
+      #people-grid { grid-template-columns: repeat(5, minmax(0,1fr)); }
+      #domain-cards-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
+    }
+    @media(max-width: 1100px) {
+      .editorial-hero { grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); gap: 32px; }
+      .hero-title { font-size: clamp(36px,4.3vw,48px); }
+      #detail-drawer { max-width: min(860px, 85vw); }
+    }
+    @media(max-width: 767px) {
+      .editorial-hero { grid-template-columns: minmax(0,1fr); gap: 36px; padding-block: 24px 40px; }
+      .hero-copy { padding-block: 18px 0; }
+      .hero-title { font-size: clamp(34px,7.5vw,54px); margin-block: 24px; }
+      .hero-line { margin-block: 24px; }
+      .hero-actions { margin-top: 26px; gap: 20px; }
+      .poster-figure { width: min(88%,380px); }
+      .archive-stats { grid-template-columns: repeat(2,minmax(0,1fr)); row-gap: 24px; }
+      .archive-stats > div:nth-child(3) { border-left: 0; padding-left: 0; }
+      .editorial-note { grid-template-columns: 1fr; gap: 20px; }
+      .header-row { min-height: 64px; gap: 8px; }
+      .site-brand { font-size: 17px; }
+      .utility-actions { gap: 1px; }
+      .utility-button { min-width: 33px; padding: 6px; }
+      .utility-about { display: none; }
+      #detail-drawer { max-width: 100%; }
+      #detail-drawer > :first-child { padding: 12px; gap: 6px; }
+      #detail-drawer > :first-child > :last-child { flex-shrink: 0; gap: 4px; }
+      #drawer-body { padding: 22px 18px; }
+      #toast-container { max-width: calc(100vw - 32px); right: 16px; }
+      #search-modal { padding-top: 20px; }
+      #search-results-container { max-height: calc(100dvh - 170px); }
+    }
+    @media(prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body class="min-h-screen selection:bg-amber-200 selection:text-zinc-900 dark:selection:bg-cyan-800 dark:selection:text-white">
+
+  <a class="skip-link" href="#main">跳到内容</a>
+  <header class="sticky top-0 z-30 backdrop-blur-md bg-[#FAF8F5]/90 dark:bg-[#0B1016]/90 border-b border-[#E5DEC9] dark:border-[#263343]">
+    <div class="page-shell">
+      <div class="header-row">
+        <button type="button" onclick="switchView('overview')" class="site-brand font-editorial" aria-label="观澜 · AI Sparks 首页">观澜<span class="brand-dot"> · </span>AI Sparks</button>
+        <nav class="desktop-nav" aria-label="主导航"><button type="button" id="nav-overview" onclick="switchView('overview')" class="nav-tab nav-pill-active">观澜总览</button>
+<button type="button" id="nav-topics" onclick="switchView('topics')" class="nav-tab ">思想地图</button>
+<button type="button" id="nav-debates" onclick="switchView('debates')" class="nav-tab ">交锋与追问</button>
+<button type="button" id="nav-people" onclick="switchView('people')" class="nav-tab ">群像与原声</button>
+<button type="button" id="nav-practice" onclick="switchView('practice')" class="nav-tab ">工具与编年</button></nav>
+        <div class="utility-actions">
+          <button type="button" onclick="openSearchModal()" class="utility-button" title="搜索 (⌘K / Ctrl+K)" aria-label="搜索话题与原话"><i data-lucide="search" class="w-4 h-4"></i><span class="utility-label">搜索</span></button>
+          <button type="button" onclick="openSavedDrawer()" class="utility-button" title="我的收藏" aria-label="我的收藏"><i data-lucide="bookmark" class="w-4 h-4"></i><span id="saved-count-badge" class="text-[10px]">0</span></button>
+          <button type="button" onclick="toggleTheme()" id="theme-toggle-btn" class="utility-button" aria-label="切换深浅色主题"><i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i><i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i></button>
+          <button type="button" onclick="openAboutModal()" class="utility-button utility-about" aria-label="关于观澜"><i data-lucide="info" class="w-4 h-4"></i></button>
+        </div>
+      </div>
+      <nav class="mobile-nav" aria-label="主导航"><button type="button" id="mnav-overview" onclick="switchView('overview')" class="mnav-tab shrink-0 px-3 py-1.5 rounded-lg text-xs nav-pill-active">观澜总览</button>
+<button type="button" id="mnav-topics" onclick="switchView('topics')" class="mnav-tab shrink-0 px-3 py-1.5 rounded-lg text-xs surface-subtle">思想地图</button>
+<button type="button" id="mnav-debates" onclick="switchView('debates')" class="mnav-tab shrink-0 px-3 py-1.5 rounded-lg text-xs surface-subtle">交锋与追问</button>
+<button type="button" id="mnav-people" onclick="switchView('people')" class="mnav-tab shrink-0 px-3 py-1.5 rounded-lg text-xs surface-subtle">群像与原声</button>
+<button type="button" id="mnav-practice" onclick="switchView('practice')" class="mnav-tab shrink-0 px-3 py-1.5 rounded-lg text-xs surface-subtle">工具与编年</button><button type="button" onclick="openAboutModal()" class="shrink-0 px-3 py-1.5 rounded-lg text-xs surface-subtle">关于观澜</button></nav>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main id="main" class="page-shell pb-6 space-y-10">
+
+    <!-- ==================== VIEW 1: OVERVIEW (观澜总览) ==================== -->
+    <section id="view-overview" class="space-y-10">
+      <div class="editorial-hero">
+        <div class="hero-copy">
+          <p class="eyebrow">社群思考地图 &nbsp; / &nbsp; 2026.07 — 11</p>
+          <h1 class="hero-title font-editorial">观澜 <span>· AI Sparks</span></h1>
+          <div class="hero-line" aria-hidden="true"></div>
+          <p class="hero-lead font-editorial">借具体变化，看更大的时代走势。</p>
+          <p class="hero-sub">AI 时代最好的学习方式，就是跟人聊。</p>
+          <div class="hero-actions">
+            <button type="button" onclick="switchView('topics')" class="hero-primary">走进思想地图 <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+            <button type="button" onclick="filterPhase2Topics()" class="hero-secondary">秋季新澜 <span aria-hidden="true">↗</span></button>
+          </div>
+        </div>
+        <figure class="poster-figure">
+          <button type="button" class="poster-button" onclick="openPoster()" aria-label="放大观澜水墨主题海报">
+            <img id="theme-poster" class="poster-image" src="assets/guanlan-theme.png" width="1122" height="1402" alt="观澜 · AI Sparks 水墨主题海报：河流蜿蜒，群友围桌交谈。" fetchpriority="high" />
+          </button>
+          <figcaption><span>观水有术，必观其澜。</span><span>点击展开 ↗</span></figcaption>
+        </figure>
+      </div>
+      <dl class="archive-stats" aria-label="社群讨论概览">
+        <div><dt>讨论沉淀</dt><dd>19,500</dd><small>新增 11,652 条 · 较前期 +148.5%</small></div>
+        <div><dt>活跃日子</dt><dd>122 <span class="text-sm tracking-normal text-zinc-500">/ 128 天</span></dd><small>日均 159.8 条交流</small></div>
+        <div><dt>参与群友</dt><dd>44 <span class="text-sm tracking-normal text-zinc-500">位</span></dd><small>不同的经历，共同的好奇</small></div>
+        <div><dt>链接与文档</dt><dd>1,846</dd><small>含 28 份自研文件</small></div>
+      </dl>
+
+      <!-- Autumn Wave Highlights: What Shifted Between Sept 16 and Nov 16? -->
+      <div class="space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+          <div>
+            <div class="text-xs font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-400">Autumn Currents · 2026.09.16 — 11.16</div>
+            <h2 class="font-editorial text-2xl font-bold text-zinc-900 dark:text-white mt-0.5">把九月之后没来得及看的讨论，一次补齐</h2>
+          </div>
+          <p class="text-xs sm:text-sm text-zinc-500 dark:text-slate-400">过去两个月新增的 11,652 条消息里，群里的风向发生了四次明显转向：</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <button type="button" onclick="openTopicDrawer('T01')" class="surface-card rounded-2xl p-5 text-left flex flex-col justify-between group">
+            <div class="space-y-2.5">
+              <div class="flex items-center justify-between">
+                <span class="px-2.5 py-0.5 rounded-md text-xs font-medium bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">模型审美与对齐</span>
+                <span class="text-xs text-zinc-400">10月热议</span>
+              </div>
+              <h3 class="font-bold text-base text-zinc-900 dark:text-white group-hover:text-[#135363] dark:group-hover:text-cyan-400 transition-colors">从拼跑分到嫌弃“不说人话”与“砸厨房煎蛋”</h3>
+              <p class="text-xs sm:text-sm text-zinc-600 dark:text-slate-300 leading-relaxed">
+                GPT-6/6.1 的科研强化学习后遗症（三句两叠甲、改一行代码铺二十遍烟测）遭遇集体吐槽，Claude Opus 5.5 凭审美与人话度封神。
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-zinc-100 dark:border-slate-800 flex items-center justify-between text-xs font-medium text-[#135363] dark:text-cyan-400">
+              <span>读原话复盘</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </div>
+          </button>
+
+          <button type="button" onclick="openTopicDrawer('T09')" class="surface-card rounded-2xl p-5 text-left flex flex-col justify-between group">
+            <div class="space-y-2.5">
+              <div class="flex items-center justify-between">
+                <span class="px-2.5 py-0.5 rounded-md text-xs font-medium bg-cyan-100 text-cyan-800 dark:bg-cyan-900/40 dark:text-cyan-300">工程范式迁移</span>
+                <span class="text-xs text-zinc-400">09—10月</span>
+              </div>
+              <h3 class="font-bold text-base text-zinc-900 dark:text-white group-hover:text-[#135363] dark:group-hover:text-cyan-400 transition-colors">先验设计退潮，后验 Loop 与插件化接管</h3>
+              <p class="text-xs sm:text-sm text-zinc-600 dark:text-slate-300 leading-relaxed">
+                不再追求一次性完美方案，而是把云真机刷机、Langfuse 轨迹对比、ZCode 闲时任务与 DSH 插件串成自动迭代闭环。
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-zinc-100 dark:border-slate-800 flex items-center justify-between text-xs font-medium text-[#135363] dark:text-cyan-400">
+              <span>看闭环方法</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </div>
+          </button>
+
+          <button type="button" onclick="openTopicDrawer('T17')" class="surface-card rounded-2xl p-5 text-left flex flex-col justify-between group">
+            <div class="space-y-2.5">
+              <div class="flex items-center justify-between">
+                <span class="px-2.5 py-0.5 rounded-md text-xs font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300">职业与组织真相</span>
+                <span class="text-xs text-zinc-400">10—11月</span>
+              </div>
+              <h3 class="font-bold text-base text-zinc-900 dark:text-white group-hover:text-[#135363] dark:group-hover:text-cyan-400 transition-colors">5% 聊技术，95% 啃业务：FDE 与六维人才象限</h3>
+              <p class="text-xs sm:text-sm text-zinc-600 dark:text-slate-300 leading-relaxed">
+                公司停外部 Codex 逼出员工自费潮；校招考八股被批“后现代懒政”，消弭业务隐性认知差成为新人真正的护城河。
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-zinc-100 dark:border-slate-800 flex items-center justify-between text-xs font-medium text-[#135363] dark:text-cyan-400">
+              <span>看职场思辨</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </div>
+          </button>
+
+          <button type="button" onclick="openTopicDrawer('T22')" class="surface-card rounded-2xl p-5 text-left flex flex-col justify-between group">
+            <div class="space-y-2.5">
+              <div class="flex items-center justify-between">
+                <span class="px-2.5 py-0.5 rounded-md text-xs font-medium bg-rose-100 text-rose-800 dark:bg-rose-900/40 dark:text-rose-300">算力政治与商业</span>
+                <span class="text-xs text-zinc-400">11月焦点</span>
+              </div>
+              <h3 class="font-bold text-base text-zinc-900 dark:text-white group-hover:text-[#135363] dark:group-hover:text-cyan-400 transition-colors">李佳琦卖 2 万亿 Token vs Claude 11·13 封控潮</h3>
+              <p class="text-xs sm:text-sm text-zinc-600 dark:text-slate-300 leading-relaxed">
+                一边是国产算力进直播间白菜化、MLCC 电容暴涨十倍；另一边是海外前沿模型收回官方 KYC，家宽与多区账号成硬核基本功。
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-zinc-100 dark:border-slate-800 flex items-center justify-between text-xs font-medium text-[#135363] dark:text-cyan-400">
+              <span>看算力账本</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Interactive Data Pulse Section (2 Real Grounded Charts) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Chart 1: Weekly / Monthly Discussion Wave -->
+        <div class="lg:col-span-7 surface-card rounded-2xl p-5 sm:p-6 space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h3 class="font-bold text-base sm:text-lg text-zinc-900 dark:text-white">观澜波峰图：128 天讨论热度与关键节点</h3>
+              <p class="text-xs text-zinc-500 dark:text-slate-400">峰值日：09-30（839条）、10-12（749条）、10-01（569条）、09-11（528条）</p>
+            </div>
+            <div class="inline-flex p-0.5 rounded-lg surface-subtle self-start">
+              <button type="button" id="btn-chart-weekly" onclick="setChartMode('weekly')" class="px-2.5 py-1 rounded-md text-xs font-medium nav-pill-active">按周（20周）</button>
+              <button type="button" id="btn-chart-monthly" onclick="setChartMode('monthly')" class="px-2.5 py-1 rounded-md text-xs font-medium text-zinc-600 dark:text-slate-300">按月（7—11月）</button>
+            </div>
+          </div>
+          <div class="relative h-72 w-full">
+            <canvas id="waveTrendChart"></canvas>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 text-xs">
+            <div class="px-3 py-2 rounded-lg surface-subtle">
+              <span class="text-zinc-500 dark:text-slate-400">09.15 首版上线</span>
+              <div class="font-semibold text-zinc-800 dark:text-slate-200 mt-0.5">单周冲上 1,905 条</div>
+            </div>
+            <div class="px-3 py-2 rounded-lg surface-subtle">
+              <span class="text-zinc-500 dark:text-slate-400">09.28—10.01 国庆前夕</span>
+              <div class="font-semibold text-zinc-800 dark:text-slate-200 mt-0.5">Gemini 4 + 硬件激辩</div>
+            </div>
+            <div class="px-3 py-2 rounded-lg surface-subtle">
+              <span class="text-zinc-500 dark:text-slate-400">10.12—10.22 深秋思辨</span>
+              <div class="font-semibold text-zinc-800 dark:text-slate-200 mt-0.5">日推25版 & 六维画像</div>
+            </div>
+            <div class="px-3 py-2 rounded-lg surface-subtle">
+              <span class="text-zinc-500 dark:text-slate-400">11.09—11.16 封控与破圈</span>
+              <div class="font-semibold text-zinc-800 dark:text-slate-200 mt-0.5">周均 1,351 条高密度</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chart 2: 24h Rhythm & Model Mentions -->
+        <div class="lg:col-span-5 surface-card rounded-2xl p-5 sm:p-6 space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h3 class="font-bold text-base sm:text-lg text-zinc-900 dark:text-white" id="secondary-chart-title">工具声量榜：谁在主宰群友桌面？</h3>
+              <p class="text-xs text-zinc-500 dark:text-slate-400" id="secondary-chart-sub">统计群聊文本与链接中各模型/Harness 明确点名频次</p>
+            </div>
+            <div class="inline-flex p-0.5 rounded-lg surface-subtle self-start">
+              <button type="button" id="btn-rhythm-models" onclick="setRhythmMode('models')" class="px-2.5 py-1 rounded-md text-xs font-medium nav-pill-active">模型声量</button>
+              <button type="button" id="btn-rhythm-hours" onclick="setRhythmMode('hours')" class="px-2.5 py-1 rounded-md text-xs font-medium text-zinc-600 dark:text-slate-300">24h 作息</button>
+            </div>
+          </div>
+          <div class="relative h-72 w-full">
+            <canvas id="rhythmChart"></canvas>
+          </div>
+          <div id="secondary-chart-caption" class="p-3 rounded-xl surface-subtle text-xs text-zinc-600 dark:text-slate-300 leading-relaxed">
+            <strong>数据洞察：</strong>10 月成为模型大换血分水岭——Claude 系单月提及暴涨至 53 次（较 9 月翻 7.5 倍），Gemini 4 Carbon/Argon 在 11 月上半月迅速追至 16 次，而 Kimi 在秋季逐渐淡出主力开发讨论。
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 Canonical Problem Domains Entry Grid (Aligned 100% with original ai-spark) -->
+      <div class="space-y-4">
+        <div class="flex items-end justify-between">
+          <div>
+            <div class="text-xs font-semibold uppercase tracking-wider text-[#135363] dark:text-cyan-400">Seven Problem Domains</div>
+            <h2 class="font-editorial text-2xl font-bold text-zinc-900 dark:text-white mt-0.5">沿着原本的七个问题域，继续往下深挖</h2>
+          </div>
+          <button type="button" onclick="switchView('topics')" class="text-sm font-medium text-[#135363] dark:text-cyan-400 hover:underline">展开全部 24 篇 →</button>
+        </div>
+
+        <div id="domain-cards-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Populated dynamically from DOMAINS -->
+        </div>
+      </div>
+      <div class="editorial-note">
+        <div><p class="eyebrow">从一次对话开始</p><h2 class="font-editorial">观察，交谈，<br>一起走进变化。</h2></div>
+        <blockquote>“一群刚刚进入真实工作世界的年轻人，在亲眼经历认知劳动自动化的第一波冲击后，一边疯狂试用工具，一边用自己的职业、项目、公司和人生作为实验材料，试图理解：当机器越来越会做事，人到底还剩下什么。”<footer>数读 · 2026.09.15 &nbsp; / &nbsp; 首次蒸馏序言</footer></blockquote>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 2: TOPICS (思想地图) ==================== -->
+    <section id="view-topics" class="hidden space-y-6">
+      <div class="surface-card rounded-2xl p-6 space-y-5">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div class="space-y-1.5">
+            <div class="text-xs font-semibold uppercase tracking-wider text-[#135363] dark:text-cyan-400">Thought Map · 24 Curated Dossiers</div>
+            <h2 class="font-editorial text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white">思想地图：围绕真实问题交换经验、彼此校正</h2>
+            <p class="text-sm text-zinc-600 dark:text-slate-300">点击任意卡片可在右侧抽屉阅读<strong>核心判断、真实场景反例与带精确时间戳的群友原话对谈</strong>。</p>
+          </div>
+          <!-- Phase Filter Toggle -->
+          <div class="flex flex-wrap items-center gap-2 shrink-0">
+            <button type="button" id="phase-btn-all" onclick="setTopicPhase('all')" class="px-3 py-1.5 rounded-lg text-xs font-medium nav-pill-active">全部阶段 (24)</button>
+            <button type="button" id="phase-btn-phase2" onclick="setTopicPhase('phase2')" class="px-3 py-1.5 rounded-lg text-xs font-medium surface-subtle text-zinc-700 dark:text-slate-300">🔥 09.16—11.16 新澜 (16)</button>
+            <button type="button" id="phase-btn-phase1" onclick="setTopicPhase('phase1')" class="px-3 py-1.5 rounded-lg text-xs font-medium surface-subtle text-zinc-700 dark:text-slate-300">🏛️ 07.12—09.15 经典深化 (8)</button>
+          </div>
+        </div>
+
+        <!-- Category Filter Pills -->
+        <div id="topic-category-pills" class="flex flex-wrap items-center gap-2 pt-2 border-t border-zinc-100 dark:border-slate-800">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+
+      <!-- Topics Grid -->
+      <div id="topics-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Populated dynamically -->
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 3: DEBATES & QUESTIONS (交锋与追问) ==================== -->
+    <section id="view-debates" class="hidden space-y-8">
+      <div class="surface-card rounded-2xl p-6 space-y-4">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div class="space-y-1.5">
+            <div class="text-xs font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-400">14 Authentic Clashes & 10 Open Questions</div>
+            <h2 class="font-editorial text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white">交锋与未决：不强求标准答案，但把边界吵清楚</h2>
+            <p class="text-sm text-zinc-600 dark:text-slate-300">延续原版 <code>debates</code> 与 <code>questions</code> 传统——只有在原话有明确支撑时才记录收敛，分歧本身就是最好的校准器。</p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2 shrink-0">
+            <button type="button" id="deb-filter-all" onclick="setDebateFilter('all')" class="px-3 py-1.5 rounded-lg text-xs font-medium nav-pill-active">全部交锋 (14)</button>
+            <button type="button" id="deb-filter-converged" onclick="setDebateFilter('converged')" class="px-3 py-1.5 rounded-lg text-xs font-medium surface-subtle text-zinc-700 dark:text-slate-300">尺度区分 / 局部收敛</button>
+            <button type="button" id="deb-filter-open" onclick="setDebateFilter('open')" class="px-3 py-1.5 rounded-lg text-xs font-medium surface-subtle text-zinc-700 dark:text-slate-300">并存未决 / 持续验证</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Debates List -->
+      <div id="debates-list" class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <!-- Populated dynamically -->
+      </div>
+
+      <!-- Open Questions Section -->
+      <div class="surface-card rounded-2xl p-6 sm:p-8 space-y-5">
+        <div class="space-y-1">
+          <div class="text-xs font-semibold uppercase tracking-wider text-[#135363] dark:text-cyan-400">Questions To Keep Asking</div>
+          <h3 class="font-editorial text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white">留给下一波浪潮的 10 个开放问题</h3>
+          <p class="text-xs sm:text-sm text-zinc-500 dark:text-slate-400">这些问题在 11 月中旬仍未盖棺定论，每次模型迭代或业务换季都值得拿出来重审。</p>
+        </div>
+        <div id="open-questions-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 4: PEOPLE & VOICES (群像与原声) ==================== -->
+    <section id="view-people" class="hidden space-y-8">
+      <!-- Header & Desensitization Notice -->
+      <div class="surface-card rounded-2xl p-6 space-y-4">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+          <div class="space-y-1.5">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-semibold uppercase tracking-wider text-[#135363] dark:text-cyan-400">Community Voices · 28 Profiles</span>
+            </div>
+            <h2 class="font-editorial text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white">谁在讨论什么？</h2>
+            <p class="text-sm text-zinc-600 dark:text-slate-300">这里汇聚了 AI 应用工程师、业务洞察研究、数据工程、算法研发、智能制造与在读硕博等不同站位的年轻实践者。点击卡片查看个人完整原声与关联议题。</p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2 shrink-0">
+            <button type="button" id="ppl-filter-all" onclick="setPeopleFilter('all')" class="px-3 py-1.5 rounded-lg text-xs font-medium nav-pill-active">全部群友 (28)</button>
+            <button type="button" id="ppl-filter-agent" onclick="setPeopleFilter('agent')" class="px-3 py-1.5 rounded-lg text-xs font-medium surface-subtle text-zinc-700 dark:text-slate-300">工程与 Agent</button>
+            <button type="button" id="ppl-filter-product" onclick="setPeopleFilter('product')" class="px-3 py-1.5 rounded-lg text-xs font-medium surface-subtle text-zinc-700 dark:text-slate-300">洞察与商业</button>
+            <button type="button" id="ppl-filter-data" onclick="setPeopleFilter('data')" class="px-3 py-1.5 rounded-lg text-xs font-medium surface-subtle text-zinc-700 dark:text-slate-300">数据与算法</button>
+            <button type="button" id="ppl-filter-hardware" onclick="setPeopleFilter('hardware')" class="px-3 py-1.5 rounded-lg text-xs font-medium surface-subtle text-zinc-700 dark:text-slate-300">硬件与实业</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Special Feature: 10.22 Six-Dimension AI Talent Framework -->
+      <div class="surface-card rounded-2xl p-6 bg-gradient-to-r from-[#FDFBF7] to-[#EFF7F9] dark:from-[#131B24] dark:to-[#132631] space-y-4">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
+          <div>
+            <span class="text-xs font-semibold text-amber-700 dark:text-amber-400">2026-10-22 群内专题实验 · 源自一线技术专家分享与全量记录 Subagent 交叉画像</span>
+            <h3 class="font-editorial text-xl font-bold text-zinc-900 dark:text-white mt-0.5">AI 时代核心人才的六个观测象限</h3>
+          </div>
+          <span class="text-xs text-zinc-500 dark:text-slate-400">群友锐评：“去掉群主本人，不然突破 200 分了”</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-white/90 dark:bg-slate-900/70 border border-zinc-200/70 dark:border-slate-700/70 space-y-1">
+            <div class="font-bold text-[#135363] dark:text-cyan-400">01 · 问题定义力</div>
+            <p class="text-zinc-600 dark:text-slate-300 leading-relaxed">剥离表面需求，识别真正要迭代的目标函数与隐含业务约束。</p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-white/90 dark:bg-slate-900/70 border border-zinc-200/70 dark:border-slate-700/70 space-y-1">
+            <div class="font-bold text-[#135363] dark:text-cyan-400">02 · 上下文外置</div>
+            <p class="text-zinc-600 dark:text-slate-300 leading-relaxed">把隐性口口相传的规则变成 Agent 可直接读取的结构化契约。</p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-white/90 dark:bg-slate-900/70 border border-zinc-200/70 dark:border-slate-700/70 space-y-1">
+            <div class="font-bold text-[#135363] dark:text-cyan-400">03 · 后验闭环设计</div>
+            <p class="text-zinc-600 dark:text-slate-300 leading-relaxed">不迷信先验完美方案，搭建自动评测、日志对比与快速回归链路。</p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-white/90 dark:bg-slate-900/70 border border-zinc-200/70 dark:border-slate-700/70 space-y-1">
+            <div class="font-bold text-[#135363] dark:text-cyan-400">04 · 前沿工具敏锐度</div>
+            <p class="text-zinc-600 dark:text-slate-300 leading-relaxed">在 Opus / Codex / DSH / Carbon 间按成本、审美与推理强度精准选型。</p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-white/90 dark:bg-slate-900/70 border border-zinc-200/70 dark:border-slate-700/70 space-y-1">
+            <div class="font-bold text-[#135363] dark:text-cyan-400">05 · 审美与人话表达</div>
+            <p class="text-zinc-600 dark:text-slate-300 leading-relaxed">拒绝 AI 腔叠甲与粗糙界面，对不同受众给出恰如其分的交付物。</p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-white/90 dark:bg-slate-900/70 border border-zinc-200/70 dark:border-slate-700/70 space-y-1">
+            <div class="font-bold text-[#135363] dark:text-cyan-400">06 · 资产组织化沉淀</div>
+            <p class="text-zinc-600 dark:text-slate-300 leading-relaxed">把个人踩坑蒸馏成团队可复用的 Skill / MCP，让经验留在组织里。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- People Grid -->
+      <div id="people-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Populated dynamically -->
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 5: PRACTICE, TOOLS & TIMELINE (从思考到工具) ==================== -->
+    <section id="view-practice" class="hidden space-y-10">
+
+      <!-- Part A: Model & Harness Battleground Radar -->
+      <div class="space-y-4">
+        <div class="space-y-1">
+          <div class="text-xs font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-400">Field-Tested Tooling Radar · 2026 Autumn</div>
+          <h2 class="font-editorial text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white">模型与 Harness 实战体感榜（零公关滤镜版）</h2>
+          <p class="text-sm text-zinc-600 dark:text-slate-300">全部结论来自群友真金白银充值、封号踩坑与生产项目实测，不看榜单跑分，只看干活体感。</p>
+        </div>
+        <div id="models-radar-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+
+      <!-- Part B: Practice Cards & Open-Source Skills (从思考到工具) -->
+      <div class="surface-card rounded-2xl p-6 sm:p-8 space-y-5">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div class="space-y-1">
+            <div class="text-xs font-semibold uppercase tracking-wider text-[#135363] dark:text-cyan-400">From Sparks To Reusable Skills</div>
+            <h3 class="font-editorial text-2xl font-bold text-zinc-900 dark:text-white">拿去试一试：群内沉淀的 12 张实战方法卡与开源项目</h3>
+            <p class="text-sm text-zinc-600 dark:text-slate-300">按你手头正在处理的任务类型筛选，每一张都凝结自群友真实跑通的工作流。</p>
+          </div>
+          <div id="practice-filter-bar" class="flex flex-wrap gap-1.5">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+        <div id="practice-cards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+
+      <!-- Part C: 128-Day Chronicle Timeline -->
+      <div class="surface-card rounded-2xl p-6 sm:p-8 space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div class="space-y-1">
+            <div class="text-xs font-semibold uppercase tracking-wider text-[#135363] dark:text-cyan-400">Chronicle · 2026.07.12 — 11.16</div>
+            <h3 class="font-editorial text-2xl font-bold text-zinc-900 dark:text-white">观澜 128 天编年史：22 个关键波澜时刻</h3>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <button type="button" id="tl-all" onclick="setTimelinePhase('all')" class="px-3 py-1 rounded-lg text-xs font-medium nav-pill-active">全部</button>
+            <button type="button" id="tl-07-08" onclick="setTimelinePhase('07-08')" class="px-3 py-1 rounded-lg text-xs font-medium surface-subtle text-zinc-700 dark:text-slate-300">7—8月 初探</button>
+            <button type="button" id="tl-09" onclick="setTimelinePhase('09')" class="px-3 py-1 rounded-lg text-xs font-medium surface-subtle text-zinc-700 dark:text-slate-300">9月 观澜定名</button>
+            <button type="button" id="tl-10" onclick="setTimelinePhase('10')" class="px-3 py-1 rounded-lg text-xs font-medium surface-subtle text-zinc-700 dark:text-slate-300">10月 激辩深水区</button>
+            <button type="button" id="tl-11" onclick="setTimelinePhase('11')" class="px-3 py-1 rounded-lg text-xs font-medium surface-subtle text-zinc-700 dark:text-slate-300">11月 破圈与大考</button>
+          </div>
+        </div>
+        <div id="timeline-container" class="relative border-l-2 border-[#135363]/30 dark:border-cyan-500/30 ml-3 pl-6 space-y-5">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+
+      <!-- Part D: Shared Links, Archive Documents & Glossary -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Verified External Repos & Articles Shared in Group -->
+        <div class="lg:col-span-6 surface-card rounded-2xl p-6 space-y-4">
+          <div>
+            <div class="text-xs font-semibold uppercase tracking-wider text-[#135363] dark:text-cyan-400">Shared Links & Repos</div>
+            <h3 class="font-editorial text-xl font-bold text-zinc-900 dark:text-white mt-0.5">群内高频传递的开源仓库与资料</h3>
+            <p class="text-xs text-zinc-500 dark:text-slate-400">均提取自群聊原始记录中的真实 URL 与群内自研产出文档归档</p>
+          </div>
+          <div id="shared-resources-list" class="space-y-2.5">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+
+        <!-- Community Glossary (观澜黑话与术语词典) -->
+        <div class="lg:col-span-6 surface-card rounded-2xl p-6 space-y-4">
+          <div>
+            <div class="text-xs font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-400">Community Glossary · 16 Terms</div>
+            <h3 class="font-editorial text-xl font-bold text-zinc-900 dark:text-white mt-0.5">观澜术语与群内梗词典</h3>
+            <p class="text-xs text-zinc-500 dark:text-slate-400">新群友补课必备：理解群聊上下文里的浓缩概念与真实槽点</p>
+          </div>
+          <div id="glossary-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[540px] overflow-y-auto pr-1 custom-scrollbar">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-[#E5DEC9] dark:border-[#263343] mt-16 py-8">
+    <div class="page-shell site-footer-inner text-xs text-zinc-500 dark:text-slate-400">
+      <div><p class="font-editorial text-base text-zinc-800 dark:text-slate-200">观澜 · AI Sparks</p><p class="mt-2">2026.07.12 — 11.16 &nbsp; / &nbsp; 真实问题 · 深入讨论 · 共同建设</p></div>
+      <div class="flex flex-wrap gap-5">
+        <button type="button" onclick="openAboutModal()">关于观澜</button>
+        <button type="button" onclick="openSavedDrawer()">我的收藏</button>
+        <a href="https://github.com/Zhong-Ze-Wei/ai-spark" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://github.com/Zhong-Ze-Wei/aptum" target="_blank" rel="noopener noreferrer">Aptum ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== SLIDE-OVER DETAIL DRAWER (Topic / Person Reader) ==================== -->
+  <div id="detail-drawer-backdrop" onclick="closeDrawer()" class="fixed inset-0 z-40 bg-black/45 backdrop-blur-xs hidden transition-opacity"></div>
+  <aside id="detail-drawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-2xl bg-[#FAF8F5] dark:bg-[#101720] border-l border-[#E5DEC9] dark:border-[#263343] shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col" aria-label="详情阅读面板">
+    <div class="flex items-center justify-between px-5 py-4 border-b border-[#E5DEC9] dark:border-[#263343] bg-white/80 dark:bg-[#131B24]/80 backdrop-blur">
+      <div id="drawer-header-meta" class="flex items-center gap-2 text-xs font-medium text-[#135363] dark:text-cyan-400"></div>
+      <div class="flex items-center gap-2">
+        <button type="button" id="drawer-save-btn" onclick="toggleDrawerSave()" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-medium surface-subtle text-zinc-700 dark:text-slate-200 hover:border-[#135363]">
+          <i data-lucide="bookmark" class="w-3.5 h-3.5"></i>
+          <span id="drawer-save-label">收藏</span>
+        </button>
+        <button type="button" id="drawer-copy-btn" onclick="copyDrawerSummary()" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-medium surface-subtle text-zinc-700 dark:text-slate-200 hover:border-[#135363]">
+          <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+          <span>复制摘录</span>
+        </button>
+        <button type="button" onclick="closeDrawer()" class="p-1.5 rounded-lg surface-subtle text-zinc-500 hover:text-zinc-900 dark:hover:text-white" aria-label="关闭面板">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+    <div id="drawer-body" class="flex-1 overflow-y-auto p-6 sm:p-8 space-y-6 custom-scrollbar">
+      <!-- Dynamic Topic or Person Content -->
+    </div>
+    <div id="drawer-footer" class="px-5 py-3.5 border-t border-[#E5DEC9] dark:border-[#263343] bg-white/80 dark:bg-[#131B24]/80 flex items-center justify-between text-xs">
+      <!-- Prev / Next buttons -->
+    </div>
+  </aside>
+
+  <!-- ==================== SAVED BOOKMARKS DRAWER ==================== -->
+  <div id="saved-drawer-backdrop" onclick="closeSavedDrawer()" class="fixed inset-0 z-40 bg-black/45 backdrop-blur-xs hidden"></div>
+  <aside id="saved-drawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-md bg-[#FAF8F5] dark:bg-[#101720] border-l border-[#E5DEC9] dark:border-[#263343] shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col" aria-label="我的收藏夹">
+    <div class="flex items-center justify-between px-5 py-4 border-b border-[#E5DEC9] dark:border-[#263343]">
+      <div class="flex items-center gap-2">
+        <i data-lucide="bookmark-check" class="w-5 h-5 text-amber-600 dark:text-amber-400"></i>
+        <h3 class="font-bold text-base text-zinc-900 dark:text-white">我的观澜收藏夹</h3>
+      </div>
+      <div class="flex items-center gap-2">
+        <button type="button" onclick="exportSavedMarkdown()" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-[#135363] text-white hover:bg-[#0D3D4A]">导出 Markdown</button>
+        <button type="button" onclick="closeSavedDrawer()" class="p-1.5 rounded-lg surface-subtle text-zinc-500 hover:text-zinc-900 dark:hover:text-white" aria-label="关闭收藏夹">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+    <div id="saved-drawer-body" class="flex-1 overflow-y-auto p-5 space-y-3 custom-scrollbar">
+      <!-- Populated dynamically -->
+    </div>
+  </aside>
+
+  <!-- ==================== GLOBAL SEARCH MODAL (⌘K) ==================== -->
+  <div id="search-modal" class="fixed inset-0 z-50 hidden items-start justify-center pt-14 sm:pt-20 px-4">
+    <div onclick="closeSearchModal()" class="fixed inset-0 bg-black/50 backdrop-blur-xs"></div>
+    <div class="relative z-10 w-full max-w-2xl rounded-2xl surface-card shadow-2xl overflow-hidden bg-[#FAF8F5] dark:bg-[#131B24]">
+      <div class="flex items-center gap-3 px-4 py-3.5 border-b border-[#E5DEC9] dark:border-[#263343]">
+        <i data-lucide="search" class="w-5 h-5 text-[#135363] dark:text-cyan-400 shrink-0"></i>
+        <input id="global-search-input" type="text" oninput="renderSearchResults()" placeholder="搜索模型（Claude / Codex / DSH / Carbon）、话题、群友昵称或原话关键词..." class="w-full bg-transparent text-sm sm:text-base text-zinc-900 dark:text-white placeholder-zinc-400 focus:outline-none" />
+        <button type="button" onclick="clearSearchInput()" class="text-xs text-zinc-400 hover:text-zinc-700 dark:hover:text-slate-200 shrink-0">清空</button>
+        <button type="button" onclick="closeSearchModal()" class="px-2 py-1 rounded text-xs surface-subtle text-zinc-500 shrink-0">ESC</button>
+      </div>
+      <div class="px-4 py-2 bg-[#F3EFE8]/70 dark:bg-[#1A2430]/70 flex flex-wrap items-center gap-1.5 text-xs">
+        <span class="text-zinc-400">热搜词：</span>
+        <button type="button" onclick="quickSearch('说人话')" class="px-2 py-0.5 rounded bg-white dark:bg-slate-800 text-zinc-700 dark:text-slate-300 hover:text-[#135363]">说人话</button>
+        <button type="button" onclick="quickSearch('荷包蛋')" class="px-2 py-0.5 rounded bg-white dark:bg-slate-800 text-zinc-700 dark:text-slate-300 hover:text-[#135363]">煎荷包蛋</button>
+        <button type="button" onclick="quickSearch('后验')" class="px-2 py-0.5 rounded bg-white dark:bg-slate-800 text-zinc-700 dark:text-slate-300 hover:text-[#135363]">先验与后验</button>
+        <button type="button" onclick="quickSearch('Claude')" class="px-2 py-0.5 rounded bg-white dark:bg-slate-800 text-zinc-700 dark:text-slate-300 hover:text-[#135363]">Claude封控</button>
+        <button type="button" onclick="quickSearch('FDE')" class="px-2 py-0.5 rounded bg-white dark:bg-slate-800 text-zinc-700 dark:text-slate-300 hover:text-[#135363]">FDE</button>
+        <button type="button" onclick="quickSearch('DSH')" class="px-2 py-0.5 rounded bg-white dark:bg-slate-800 text-zinc-700 dark:text-slate-300 hover:text-[#135363]">DSH插件</button>
+        <button type="button" onclick="quickSearch('Aptum')" class="px-2 py-0.5 rounded bg-white dark:bg-slate-800 text-zinc-700 dark:text-slate-300 hover:text-[#135363]">Aptum</button>
+      </div>
+      <div id="search-results-container" class="max-h-[60vh] overflow-y-auto p-4 space-y-2.5 custom-scrollbar">
+        <!-- Populated dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <div id="about-modal" role="dialog" aria-modal="true" aria-labelledby="about-title" class="fixed inset-0 z-50 hidden items-center justify-center px-4">
+    <div onclick="closeAboutModal()" class="fixed inset-0 bg-black/50"></div>
+    <div class="relative z-10 w-full max-w-xl rounded-2xl surface-card p-6 sm:p-8 space-y-5 bg-[#FAF8F5] dark:bg-[#131B24] max-h-[85dvh] overflow-y-auto">
+      <div class="flex items-center justify-between"><p class="eyebrow">关于观澜</p><button type="button" onclick="closeAboutModal()" class="utility-button" aria-label="关闭关于观澜"><i data-lucide="x" class="w-4 h-4"></i></button></div>
+      <h2 id="about-title" class="font-editorial text-3xl">观澜 · AI Sparks</h2>
+      <p class="font-editorial text-xl text-[#135363] dark:text-cyan-300">观水有术，必观其澜。</p>
+      <p class="text-sm leading-loose text-zinc-600 dark:text-slate-300">围绕真实的问题，把不同人的经验和判断放在一起碰撞。聊技术背后的原理，也聊它怎样改变我们的工作、产品、组织和思考方式。</p>
+      <p class="text-sm leading-loose text-zinc-600 dark:text-slate-300">2026 年 9 月 15 日，第一份群聊思考地图诞生；9 月 17 日，我们给这里取名「观澜」。这次继续沿着 7 月 12 日至 11 月 16 日的交流，留下 24 篇思想地图、14 场交锋与 28 位群友的原声。</p>
+      <p class="text-xs text-zinc-500 dark:text-slate-400">最新整理 · 2026.11.16 19:30</p>
+    </div>
+  </div>
+  <dialog id="poster-dialog" aria-label="观澜水墨主题海报">
+    <div class="dialog-top"><span>观澜 · AI Sparks</span><button type="button" onclick="document.getElementById('poster-dialog').close()" class="utility-button" aria-label="关闭海报"><i data-lucide="x" class="w-4 h-4"></i></button></div>
+    <img id="poster-full" width="1122" height="1402" alt="观澜 · AI Sparks 水墨主题海报" />
+  </dialog>
+
+  <!-- Non-blocking Toast Notification -->
+  <div id="toast-container" class="fixed bottom-5 right-5 z-50 pointer-events-none transition-all duration-300 opacity-0 translate-y-2">
+    <div id="toast-message" class="px-4 py-2.5 rounded-xl bg-zinc-900 dark:bg-slate-100 text-white dark:text-zinc-900 text-xs sm:text-sm font-medium shadow-lg flex items-center gap-2"></div>
+  </div>
+
+  <!-- ==================== GROUNDED APPLICATION DATA & LOGIC ==================== -->
+  <script>
+    // 1. Seven Canonical Problem Domains (Aligned with Zhong-Ze-Wei/ai-spark)
+    const DOMAINS = [
+      { id: '工具与体验', icon: 'cpu', color: 'amber', desc: '模型选型、审美差异、不说人话、过度工程与 Harness 体感' },
+      { id: '上下文与表达', icon: 'message-square-quote', color: 'cyan', desc: '苏格拉底追问、Aptum 读者判断、去 AI 腔与人机汇报接口' },
+      { id: '工作流与验证', icon: 'git-compare', color: 'emerald', desc: '从先验设计转向后验闭环、云真机自动回归与 80%→99% 边界' },
+      { id: '组织与商业', icon: 'building-2', color: 'indigo', desc: '阿姆达尔瓶颈、自研内部 Agent 悖论、流程占80%与算力成本账' },
+      { id: '职业与学习', icon: 'compass', color: 'teal', desc: 'FDE 定位、校招冷热断层、六维人才模型与新人架构判断力' },
+      { id: '未来与分配', icon: 'globe', color: 'rose', desc: '旧社会契约松动、Claude 11·13 封控潮与前沿算力准入壁垒' },
+      { id: '交流与证据', icon: 'scale', color: 'violet', desc: '逆向净室重写护城河、新人群产品定义与群聊彼此校正方法' }
+    ];
+
+    // 2. 24 Grounded Topic Dossiers (Phase 1 Classics + Phase 2 Autumn Wave)
+    const TOPICS = [
+      {
+        id: 'T01',
+        category: '工具与体验',
+        phase: 'phase2',
+        dateRange: '2026.09.15 — 11.12',
+        title: '“说人话”为什么成了前沿模型最稀缺的能力？',
+        summary: '当科研强化学习把日常对话变成“ICLR 审稿现场”，三句两叠甲的防御性话术正在耗尽开发者的阅读耐心。',
+        consensus: 'GPT-6 / 6.1 系列在数学与严谨推理上极强，但强化学习副作用导致它把任何输入都当作待证伪命题，疯狂堆砌“不能推出、并不代表、尚不足以确认”；相比之下，Claude Opus 5.5 在对齐自然度、直击根因与人类可读性上断层领先。',
+        contextNote: '在一次商城与供服系统验签故障排查中，群主将同一报错分别喂给两个模型，诊断文本的差异直接成了群内经典教材。',
+        quotes: [
+          { speaker: '数读', time: '2026-10-27 19:57', text: '你说今天天气真好。它说：确实，但今天晴朗不代表明天晴朗，更不足以证明当地气候正在改善。大哥，我是想出门散步，不是让你给 ICLR 审稿。ChatGPT 三句话里有两句在叠甲：不能推出、并不代表、尚不足以确认……' },
+          { speaker: '数读', time: '2026-10-27 19:48', text: '本质上是模型经历科研能力特化后，在 RL 中形成的倾向让它习惯把用户输入当作亟待证明的命题——立即识别隐含假设、寻找反例、补足边界条件。这套思维在数学证明中很经典，但放在日常谈话和写业务代码里就是灾难。' },
+          { speaker: '数读', time: '2026-10-24 02:16', text: 'Claude 诊断的第一句话：“能确认，原因只有一个，而且和流程差异无关——是商城在验签回包上多加了一层比供服更严的字段校验。”而 Astra 发了起码 1000 字，里面唯一有价值的就半句“附带的账号资料为空”，后面还不解释为什么空了就无法登录。' },
+          { speaker: '熏风南来霜林染', time: '2026-09-15 14:09', text: '6 系列说人话这个事情官方甚至专门出了个提示词优化指南文档，真是让人哭笑不得。' }
+        ],
+        nextQuestion: '模型厂商能否在不牺牲数理严密性的前提下，把“语境分寸感”重新训练回来？'
+      },
+      {
+        id: 'T02',
+        category: '工具与体验',
+        phase: 'phase2',
+        dateRange: '2026.10.06 — 11.03',
+        title: 'Codex 的“砸厨房煎荷包蛋”综合征：当 AI 陷入过度工程',
+        summary: '只让你煎个蛋，它却把厨房砸了重铺工业燃气管线，跑二十遍喷淋自检，就是迟迟不往锅里打鸡蛋。',
+        consensus: '高推理编码 Agent 极易为了极小概率的边缘异常而制造巨量防御代码、拆出冗余对照表，甚至无视仓库里写好的 ADR（架构决策记录）。它能判断“逻辑是否收敛无错”，却判断不了“什么对真实受众更好用”。',
+        contextNote: '十一假期期间，群友们密集使用 Codex 6.1 重构个人项目与处理业务表格，接连遭遇“简单任务系统化膨胀”。',
+        quotes: [
+          { speaker: '数读', time: '2026-10-20 16:30', text: '现在的 Codex，就像你饿得前胸贴后背让它煎个荷包蛋。它二话不说先把你家厨房砸了，重铺一套工业级燃气管线，又搭一套消防喷淋系统，连续点火 run 二十遍 test，再写个自检程序测“点火测试器”准不准——就是不往锅里打鸡蛋。' },
+          { speaker: '临诗予', time: '2026-10-30 18:19', text: 'GPT 是有点蠢，让它改个代码冗余得要死，改动特别大，总是考虑一些极端情况，为了那点极端情况维护成本特别高。' },
+          { speaker: '数读', time: '2026-10-06 02:28', text: '我做电竞数据分析助手，原本问选手水平直接搜数据给结论，它给我改成：“Uzi KDA 6.33，JackeyLove KDA 6.03；均为来源样本口径，不代表绝对实力。局限：Uzi有9局未核验。”到底谁在关心这个局限啊！' },
+          { speaker: '数读', time: '2026-10-21 00:32', text: '让它基于原思路生成两个新 Sheet，它贴心地把我的 0/1 列换成五个选项，还多生出“0-对照总览、0-差异逐条、0-逐条全量”三张表来保护我们人类。' }
+        ],
+        nextQuestion: '如何通过约束文件让编码 Agent 严格遵守“最小改动半径”？'
+      },
+      {
+        id: 'T03',
+        category: '工具与体验',
+        phase: 'phase2',
+        dateRange: '2026.09.16 — 11.12',
+        title: 'SOTA 付费即个人能力上限，还是国产 Flash 已经绰绰有余？',
+        summary: '一边是“不买顶级模型能力就只能平庸”，另一边是 DeepSeek V4.1 Flash 在真实排障中反杀百刀套餐。',
+        consensus: '两条路线并不真正矛盾，取决于任务所处的“认知水位”：在常规后端接口、RAG 问答、批量数据清洗上，DeepSeek V4.1 Flash 与 GLM 闲时任务性价比无敌；但在严肃整库重构、高审美前端与复杂架构诊断上，顶级 SOTA（Opus 5.5 / Carbon / Pro）依然能直接拉高人的交付上限。',
+        contextNote: '群内既有双持百刀会员的重度玩家，也有在企业内网用国产模型日刷亿级 Token 的实战派。',
+        quotes: [
+          { speaker: '数读', time: '2026-10-28 19:38', text: '用顶级前沿模型是我们必要的技能而不是选择。比如你用上 GPT，数理能力马上 95 分、审美 10 分、说人话 0 分；用上 Opus 5.5，Coding 马上 90 分、审美 90 分、说人话 90 分。' },
+          { speaker: '北鱼', time: '2026-10-29 12:44', text: '阿伟 ➕ 100 刀 GPT << 阿伟 ➕ 20 刀 Claude。' },
+          { speaker: '临诗予', time: '2026-10-21 10:09', text: '离谱了，我 WorkBuddy 里的 DeepSeek 4.1 Flash 回答效果甚至比用了好久的 GPT 6.1 Sol Ultra 更好——6.1 没分析出来的 Bug，一样的提示词发给 DeepSeek 直接定位到根因。' },
+          { speaker: '数读', time: '2026-09-16 10:56', text: 'DeepSeek V4 Flash、Gemini 3.8 Flash 这类太快了，大多数后端任务都很够用，前沿智能的价格跌得太快了。' }
+        ],
+        nextQuestion: '当轻量模型每隔三个月吃掉上一代旗舰 80% 的场景，高价订阅的溢价区间会缩窄到哪里？'
+      },
+      {
+        id: 'T04',
+        category: '工具与体验',
+        phase: 'phase2',
+        dateRange: '2026.08.13 — 11.16',
+        title: '从“一切皆插件”到多开并发：Harness 正在如何重塑开发台？',
+        summary: '模型只是引擎，决定顺手程度的是外层的脚手架（Harness）：DSH 插件生态、ZCode 闲时队列与反重力慢速之痛。',
+        consensus: '单聊天框早已不够用。大家青睐可高度 DIY 的 `@deepseek-ai/dsh`（一切皆插件）、能利用夜间跑亿级清洗与股票定投跟踪的 ZCode 闲时任务，以及会话能无缝互读的 Claude Code / Qoder；而封闭不可导出的客户端（如早期 Antigravity 跑单任务耗时 1 小时）哪怕捆绑免费额度也难留住高频开发者。',
+        contextNote: '从 8 月中旬 DSH 开发者预览版发布到 11 月 16 日群友吐槽多开 Agent 眩晕，Harness 成了讨论度仅次于模型本身的核心基建。',
+        quotes: [
+          { speaker: 'Yourset🐧', time: '2026-08-25 23:24', text: '感觉现在 Agent 工具再强，都不如可以 DIY 的 DSH。' },
+          { speaker: '北鱼', time: '2026-11-05 19:33', text: '最近在想怎么设计一个 Agent 工作台方便团队小伙伴查学生数据，兜兜转转，特么 DSH 就很实在。' },
+          { speaker: '你想不想知道为什么我的昵称这么长', time: '2026-11-16 15:38', text: 'ZCode 的定时任务蛮好用，我把账号借给哥们，用订阅套餐里的股票基金插件每天定时跟踪持仓分析。' },
+          { speaker: '你想不想知道为什么我的昵称这么长', time: '2026-11-16 10:41', text: '你没办法拿 API 到其他 Harness 上面用，所以我都不是很想开这个 Antigravity。' }
+        ],
+        nextQuestion: '未来的主流交互形态是统一超级工作台，还是轻量化 CLI 插件按需拼装？'
+      },
+      {
+        id: 'T05',
+        category: '工具与体验',
+        phase: 'phase1',
+        dateRange: '2026.08.01 — 11.03',
+        title: '哪个模型强，先看拿它做什么：多模型混搭与接力分工',
+        summary: '没有全能神仙，只有“规划归规划、审美归审美、苦力归苦力”的跨模型流水线。',
+        consensus: '成熟玩家都在建立自己的多模型接力范式：用推理强模型做方案边界拆解，用 Claude 做前端交互与对外文档表达，用 DeepSeek / GLM 闲时跑大规模清洗，甚至在同一本地目录里让 Claude Code 与 Codex 交叉读写进度。',
+        contextNote: '这一习惯从 8 月初便已萌芽，到 10—11 月演化为多终端会话协同日常。',
+        quotes: [
+          { speaker: 'J1_Hee', time: '2026-08-01 17:57', text: '我都是 GPT 规划，DS 或者 GLM 执行的。' },
+          { speaker: '北鱼', time: '2026-10-28 18:23', text: '左边 GPT 给你捶大腿，右边 Opus 给你敲手，后边还有哈吉米（Gemini）给你揉肩。' },
+          { speaker: '你想不想知道为什么我的昵称这么长', time: '2026-11-03 16:54', text: '我经常在 Codex 和 Claude Code 之间来回接力工作，都能互相读取进度。' },
+          { speaker: '临诗予', time: '2026-09-02 10:36', text: '多个 Agent 之间来回切换还是有点难受，得维护好一套全局的上下文才行。' }
+        ],
+        nextQuestion: '跨模型接力时，什么样的仓库目录契约能把上下文损耗降到最低？'
+      },
+      {
+        id: 'T06',
+        category: '上下文与表达',
+        phase: 'phase1',
+        dateRange: '2026.07.15 — 08.25',
+        title: '还要积累提示词模板吗？从背咒语到苏格拉底追问',
+        summary: '收藏夹里吃灰的一百个神级 Prompt，不如让 AI 反过来向你追问五个边界问题。',
+        consensus: '固定提示词模板正在迅速贬值，因为真实任务每次缺失的上下文各不相同。与其背诵结构化套话，不如先开启 Plan 模式让 AI 做苏格拉底式追问，把模糊意图逼出清晰约束，再把环境规则外置到仓库文档里。',
+        contextNote: '7 月中旬一次内部 AI 培训课建议大家“沉淀提示词模板”，引发了群内第一场关于方法论迭代的深度复盘。',
+        quotes: [
+          { speaker: '数读', time: '2026-07-15 23:09', text: '今天 AI 课老师建议我们沉淀提示词，我当时就在想，我好像已经很久没写过固定提示词了——我用 Plan 加上苏格拉底追问，让 AI 反过来把我的问题变得更完整、更透彻。' },
+          { speaker: 'kyrie_H', time: '2026-08-13 14:47', text: '你让 AI 自己挖一个没有约束的搜索空间，我觉得它也挖不出来。' },
+          { speaker: 'Yourset🐧', time: '2026-08-13 14:42', text: '我觉得还是得先确定自己的兴趣和具体方向，然后再让 AI 往下挖。' },
+          { speaker: '数读', time: '2026-08-25 16:12', text: '上下文尽量外置：环境、规则、历史经验放进 Agent 能自己读取的地方，而不是靠人每次在对话框里反复解释。' }
+        ],
+        nextQuestion: '当追问本身也能做成 Skill，人最不可替代的初始输入究竟是什么？'
+      },
+      {
+        id: 'T07',
+        category: '上下文与表达',
+        phase: 'phase1',
+        dateRange: '2026.09.03 — 10.04',
+        title: '适其人，适其事，适其言：为什么 AI 写网页和文档总让人读不下去？',
+        summary: '四五级菜单套小窗、满屏蚂蚁字备注、流程图每格四个字没上下文——治好 AI 味交付，核心在“读者判断”。',
+        consensus: '好的文档和网页不是“把所有信息一股脑塞进去”，而是先判断眼前这位读者缺什么背景、需要做哪个决策。这也是群主开源 `Aptum` Skill 的初衷：不套模板，按受众剪裁密度，能用清晰卡片、图标与对比表说明白的，绝不堆砌纯文本城墙。',
+        contextNote: '从 9 月初开源 Aptum 到 10 月初痛批 GPT 默认前端审美，群内形成了一套鲜明的交互与文档克制美学。',
+        quotes: [
+          { speaker: '数读', time: '2026-09-03 10:05', text: '适其人，适其事，适其言。Aptum 不套写作模板，而是判断当前读者真正缺什么：哪些事实必须保留，哪些背景需要补充，技术名词是否有必要，什么结构最适合眼前的任务。' },
+          { speaker: '数读', time: '2026-09-16 09:48', text: '一个网页里面四五级菜单，最后核心内容区位置特别小就算了，流程图每个块里就写四五个字，完全没上下文，上下文散落在各种奇怪的地方根本没法读。' },
+          { speaker: '数读', time: '2026-10-04 16:37', text: '我不知道为什么它一定要把所有的字都放在主页面上，连备注也要用很小很小的字写得密密麻麻；明明能用 SVG、图标、卡片讲清楚。' }
+        ],
+        nextQuestion: '如何把“优秀人类编辑的删减直觉”变成可自动执行的验证指标？'
+      },
+      {
+        id: 'T08',
+        category: '上下文与表达',
+        phase: 'phase2',
+        dateRange: '2026.07.17 — 10.23',
+        title: 'AI 生成方案总是“没有人味、太尬了”，到底卡在哪？',
+        summary: '业务方一句“太尬了、不像人写的”，让端到端自动化评测瞬间犯难。',
+        consensus: '“人味”之所以难评、难调，一方面是因为真正具备系统性高水准表达的人类语料本身就极度稀缺，通用大模型缺乏对齐锚点；另一方面在真实职场汇报里，人的核心角色往往是充当“人型智能体接口”，替 AI 补上组织政治、潜台词与分寸感。',
+        contextNote: '10 月下旬，测试与算法研发群友围绕营销与业务文案 Agent 的评测难题展开了深入交流。',
+        quotes: [
+          { speaker: '熏风南来霜林染', time: '2026-10-23 09:41', text: '业务反馈我们开发的 Agent 写出来的方案：“没有人味，太尬了”——这是真的不知道要怎么评测，太主观了。' },
+          { speaker: '数读', time: '2026-10-23 10:52', text: 'AI 在这个维度上缺少训练语料：现实里掌握系统性表达能力的人本来就很少，对应的优质语料极少，它根本不知道我们所谓的“人味”是什么。' },
+          { speaker: '田智Liar0', time: '2026-07-17 14:32', text: '现在有 AI 了就是我操控智能体，然后我作为“人型智能体”把 AI 结果给领导们汇报。' },
+          { speaker: 'Ida', time: '2026-07-30 09:17', text: '对我们这种非互联网公司来说，很多同事连 Skill 是啥都不知道呢，直接甩术语根本推不动。' }
+        ],
+        nextQuestion: '垂类小样本微调与高质量 Few-shot 示例库，哪个更能低成本解决“AI 腔”？'
+      },
+      {
+        id: 'T09',
+        category: '工作流与验证',
+        phase: 'phase1',
+        dateRange: '2026.08.26 — 09.19',
+        title: '从“重先验”到“快后验”：为什么创建类工作本质都是持续迭代？',
+        summary: '当改一版代码的成本趋近于零，花两周憋完美设计稿就成了亏本买卖——真正的差距在于谁先把闭环转起来。',
+        consensus: '传统软件工程之所以强调重先验（层层评审、质量门），是因为过去“重做一次”的人力成本极高；但在层层质量门传递中原始业务意图反而像梯度消失一样严重损耗。AI 时代更优的策略是：快速跑出最小 V0，拿真实结果找错，用后验反馈高频修正系统。',
+        contextNote: '群主结合自身法规舆情梳理业务，总结出“不是去创建一个服务，而是去迭代出一个最能帮到业务的方法”。',
+        quotes: [
+          { speaker: '数读', time: '2026-08-26 11:08', text: '本质上就是工作策略从“重先验”转向“更快用后验更新”。以前执行很贵：先尽量设计完整再执行；现在执行很便宜：先跑最小化测试，再根据真实结果快速迭代。' },
+          { speaker: '数读', time: '2026-09-01 09:52', text: '很多时候我们用受控软件工程思路去约束 Flow 本身，就好像神经网络反向传播一样，在一组组质量门那边做了信息变化，传到最后一层已经损失了大量原始信息。' },
+          { speaker: '数读', time: '2026-09-19 13:11', text: '当 AI 把生产力大幅解放以后，“把东西做出来”越来越便宜，真正拉开差距的反而是：你能不能让它进入循环，不断看结果、找问题、改方案。很多岗位的价值会从“负责做出来”变成“负责把它迭代好”。' },
+          { speaker: 'Ste.', time: '2026-08-26 11:17', text: '业务场景的话就是：闭环快，试错成本低，价值赋能就会无限拉高。' }
+        ],
+        nextQuestion: '在涉及资金、安全或硬件打样的不可逆场景中，先验护栏与后验迭代的分界线画在哪里？'
+      },
+      {
+        id: 'T10',
+        category: '工作流与验证',
+        phase: 'phase2',
+        dateRange: '2026.09.18 — 10.12',
+        title: 'Karpathy 说“代码像编译产物”，工程团队为什么还不敢松手？',
+        summary: '半年时间从“像鹰一样盯着代码”快进到“日推 25 版不看源码”，但严肃工程卡在责任与可控性。',
+        consensus: '个人玩具或独立开源项目已经可以实现 Issue 自动追踪、日更 25 版的激进流；但一旦进入多人协作与存量业务，纯靠自然语言“许愿式 Vibe Coding”极易失控。工程团队不敢不看代码，核心不是怀疑 AI 写不出来，而是没人敢在看不懂逻辑时替线上事故背锅。',
+        contextNote: '9 月 18 日围绕 Karpathy 最新访谈观点与 10 月 12 日“日推 25 版开源作者”争议，群内展开了两次冷思考。',
+        quotes: [
+          { speaker: '数读', time: '2026-09-18 14:32', text: 'Karpathy 半年前还提醒大家模型会犯隐蔽的概念性错误，重要代码要“像鹰一样盯着”；现在他说“代码像编译产物”，说明他自己的工作流也在极快地往 Agent 迁移。' },
+          { speaker: '数读', time: '2026-09-18 14:34', text: '工程团队离不看代码还很远，我认为更多的不是 AI 能不能实现的问题，而是愿不愿意信任 AI、敢不敢把底线交给它的问题。' },
+          { speaker: '数读', time: '2026-10-01 17:57', text: '说实话自从用了 GPT-6 我反而没怎么纯 Vibe 过项目——以前我从前到后输入海量受控上下文，现在只丢一个目的让它自己来，非常容易失控给出一坨很差的结果。' },
+          { speaker: '田智Liar0', time: '2026-11-03 14:15', text: '如果你对业务有任何增删查改，直接在结构地图/文档上改完让它读取你的改动，比直接用文字描述准确得多。' }
+        ],
+        nextQuestion: '如果未来真的不再逐行 Code Review，替代它的“工程验收契约”会长成什么样？'
+      },
+      {
+        id: 'T11',
+        category: '工作流与验证',
+        phase: 'phase2',
+        dateRange: '2026.09.16 — 10.23',
+        title: '把看日志、刷真机、跑测试写成 Skill：自动化 Loop 走到了哪一步？',
+        summary: '当别人还在手动点开 Langfuse 逐条翻 Trace、找测试机插线刷包，先行者已经把整条验证链塞进了 Skill。',
+        consensus: 'Agent 真正让人上瘾的时刻，不是帮你写完函数，而是接管枯燥的验证回路：自动拉取 Langfuse 多 Case 轨迹横向对比（比人眼快几十倍）、云真机自动推 APK 刷固件回归、发现缺陷自动复现提单到 Gitee。验证自动化程度，直接决定了 Agent 能跑多远。',
+        contextNote: '来自不同研发团队的群友在 9—10 月晒出了各自部门落地的硬核自动化闭环。',
+        quotes: [
+          { speaker: 'Forrest', time: '2026-09-16 12:00', text: '总结 Skill 太重要了！之前分析 Agent 行动轨迹要自己去 Langfuse 一个个 Case 点开看工具调用和思考，现在写成 Skill 让 AI 自己拉下来几个 Case 一起对比，速度比我快几十倍。' },
+          { speaker: '临诗予', time: '2026-09-23 12:23', text: '我们部门做了个东西：以前解完 Bug 要找真机推 APK 刷固件测试，现在直接在云真机上配合 Codex 的 Skill 全自动完成，连机器都不用找了。' },
+          { speaker: '熏风南来霜林染', time: '2026-10-23 09:30', text: '我们测试同事搞了个自动化测试 Agent，全流程找缺陷，复现审核后直接自动提交到 Gitee，特别方便。' },
+          { speaker: '数读', time: '2026-10-14 10:26', text: '其实模型能力到了以后，很简单的 Loop 就能自己转起来实现自动化 Debug 了。' }
+        ],
+        nextQuestion: '当测试与回归全自动闭环后，研发日常最大的耗时瓶颈会转移到哪一环？'
+      },
+      {
+        id: 'T12',
+        category: '工作流与验证',
+        phase: 'phase1',
+        dateRange: '2026.09.14 — 11.08',
+        title: 'AI 帮你快速拿到 80% 的抽象，剩下 20% 的异常边界谁来填？',
+        summary: '1000 条真实项目数据里有五种脏格式，本地跑通不代表生产能活——80% 到 99% 才是真功夫。',
+        consensus: '演示 Demo 与真实交付之间隔着无数异构脏数据、权限接口差异与测试/生产环境鸿沟。AI 能极快给出 80% 正确的骨架，但如果人不去深钻失败样本、异常分支与真实操作流，三条预设路径永远覆盖不了现实世界的 N 种死法。',
+        contextNote: '销售业务梳理与全栈项目联调两个截然不同的场景，得出了高度一致的教训。',
+        quotes: [
+          { speaker: '郑楷滨', time: '2026-09-14 22:01', text: '真实世界里项目数据形式杂乱无章：喂 1000 多条数据，可能 200 条是这种格式、200 条是那种格式，接口还不一样。我理了三条路径让它反复验证还是不够，理论上得 N 条路径。' },
+          { speaker: '数读', time: '2026-09-24 11:41', text: 'AI 很容易帮你快速得到一个 80% 正确的抽象，但真正拉开差距的是继续钻到 95%、99%，把失败、边界、例外、真实操作搞清楚。' },
+          { speaker: '数读', time: '2026-11-08 14:04', text: '哪怕看上去修了 Bug，也不代表后端、数据库跟前端连接就一定对；本地环境修好了，到测试或生产环境依然可能因为配置差异直接挂掉。' }
+        ],
+        nextQuestion: '如何设计一套“脏数据探针”，在动手写业务代码前先让 AI 摸清真实数据分布？'
+      },
+      {
+        id: 'T13',
+        category: '组织与商业',
+        phase: 'phase1',
+        dateRange: '2026.07.31 — 09.22',
+        title: '个人轻松了，组织为什么没变快？AI 提效的阿姆达尔定律',
+        summary: '下午写完一版交付，然后花四天等业务方开下一个会——局部编码翻十倍，挡不住口口相传的协作泥潭。',
+        consensus: '群友用计算机经典的“阿姆达尔定律”一针见血地解释了组织提效悖论：整体速度受限于系统中无法被加速的那部分。跨部门排期等待、废墟般过期的历史文档、以及微信每次只能转发 99 条记录的反人类封闭生态，吞掉了个人用 AI 省下来的全部时间。',
+        contextNote: '从 7 月底提出阿姆达尔定律，到 9 月中旬讨论“对个人提效了、对组织没提”，再到新入职数据工程师的排期苦恼，共鸣贯穿始终。',
+        quotes: [
+          { speaker: 'A货冰美💤', time: '2026-07-31 10:47', text: '之前刷到阿姆达尔定律很有道理：AI 只能让能快的地方快了，但整体时间还是要看那些快不了的地方。' },
+          { speaker: '数读', time: '2026-09-18 11:14', text: '真的提效了吗？对个人提了，对组织没提——结果就是人变轻松了。' },
+          { speaker: '。', time: '2026-09-22 11:26', text: '今天开完会我下午就交付一版，结果等好几天业务才有空回我或拉下个会；有点像废墟上重建的项目，大部分文档都不是最新，全是口口相传。' },
+          { speaker: '数读', time: '2026-09-15 11:38', text: '所以很多公司慢慢迁移到飞书 Native——在微信聊半天只能多选 99 条记录，严重拖累 AI 效率；飞书甚至能直接用 CLI 导出上下文。' }
+        ],
+        nextQuestion: '如果一个组织不改审批流与文档底座，单靠给员工发 AI 账号能拿到真实 ROI 吗？'
+      },
+      {
+        id: 'T14',
+        category: '组织与商业',
+        phase: 'phase2',
+        dateRange: '2026.07.14 — 11.09',
+        title: '公司关停外部 Codex 强推自研内部 Agent，为什么大家默默自费充了会员？',
+        summary: '一边是五层安全监控锁死终端与合规红线，另一边是一线员工为了按时下班悄悄掏腰包买海外 Pro。',
+        consensus: '企业出于代码防泄漏（DLP/EDR/MDM 受控终端）停掉外部最强工具可以理解，但若把“自研内部壳子”当作政绩强推、而底层模型与上下文体验断崖式下跌，结果必然是“影子 IT”盛行——员工用同一个提示词跑完对比报告后，纷纷自费续上了个人会员。',
+        contextNote: '10 月底至 11 月初，多位在不同企业任职的群友不约而同吐槽了“内部自研替代外部 SOTA”引发的效率倒退。',
+        quotes: [
+          { speaker: 'Ida', time: '2026-10-28 17:44', text: '公司做了个内部 AI 强制让我们用，把之前的 Codex 停了，现在工作效率极度下降，还要我们提意见帮它优化。' },
+          { speaker: 'Ida', time: '2026-11-09 18:09', text: '自从公司搞了本地化 Agent、关闭了公司账号的 Codex，大家纷纷自费充值了自己的 GPT 会员。' },
+          { speaker: 'Forrest', time: '2026-07-14 15:36', text: '涉及到仓库代码的就只能用审批过的 Copilot，要么去 Web 端脱敏提问；真把公司 Token 泄漏了明天就欠费 10 个 w。' },
+          { speaker: '数读', time: '2026-11-05 11:14', text: '一台办公机上叠了 5 套东西：SASE 网络接入 + DLP 防泄漏 + EDR 杀软 + MDM 管控 + 浏览器监控，是全流量全行为受控终端。' }
+        ],
+        nextQuestion: '企业数据安全合规与前沿模型生产力之间，是否存在比“一刀切自研造轮子”更聪明的中间层方案？'
+      },
+      {
+        id: 'T15',
+        category: '组织与商业',
+        phase: 'phase2',
+        dateRange: '2026.08.25 — 10.28',
+        title: '要做成一件事，“平台占 10、技术占 20、流程占 80”',
+        summary: '纯软件垂类 Agent 怕被大厂顺手碾碎，真正能扎根的都是打通内部试验台、改写业务流程的硬骨头。',
+        consensus: '脱离业务流程改造的纯聊天壳子既无壁垒也无商业模式，模型厂商一升级就会成片消亡。相反，在制造业、零售问数与研发管理中，把数据接口打通、把原有体系流程重塑，才是占 80% 权重的决胜场。',
+        contextNote: '横跨车企研发、创业孵化与通用垂类应用探讨的深层共识。',
+        quotes: [
+          { speaker: '田智Liar0', time: '2026-10-28 17:57', text: '要做成一件事情，平台占 10，技术 20，剩下流程占 80。不做管理推动或流程绑定，每个人习惯都不一样，工具发下去也没人用。' },
+          { speaker: 'niy🔆', time: '2026-08-25 23:11', text: '目前还需要一些垂类 Agent，但纯做 AI 软件应用很难卷过大厂，模型公司哪天腾出手做垂类分分钟干死一片，现在还是没找到稳固的商业模式。' },
+          { speaker: '数读', time: '2026-08-26 14:59', text: '有个很有意思的分界点：传统 IT 的流程没变，只是用 AI 代替某几个步骤；而新团队的流程是重塑的，直接跨越了过去的某些步骤。' }
+        ],
+        nextQuestion: '没有行政汇报权的基层 AI 工程师，怎样用最小样板撬动业务方配合改流程？'
+      },
+      {
+        id: 'T16',
+        category: '组织与商业',
+        phase: 'phase2',
+        dateRange: '2026.09.30 — 11.04',
+        title: '从李佳琦半小时卖出 2 万亿 Token 到 MLCC 暴涨十倍：算力经济的双面',
+        summary: '前端直播间把 Token 当美妆囤货卖向大众，后端 AI 服务器却把高容电容产能吃干抹净，连累手机 PCBA 集体涨价。',
+        consensus: '2026 年秋天的算力商业图景极具魔幻现实感：应用侧推理单价狂跌至直播间半小时倾销 2 万亿 Token，但物理基础设施侧的高功率服务器需求暴增，直接导致高可靠 MLCC（片式多层陶瓷电容）现货涨价十倍，传导至消费电子终端集体提价。',
+        contextNote: '群友们同时身处 AI 软件、PCBA 供应链与手机终端行业，拼出了一条完整的产业传导链。',
+        quotes: [
+          { speaker: '数读', time: '2026-11-02 16:59', text: '千问办公 CEO 今晚现身李佳琦直播间开卖自家 AI 算力 Token 额度，半小时卖出 2 万亿 Token。' },
+          { speaker: '郑楷滨', time: '2026-11-04 10:12', text: '李佳琦卖 Token 的这个价格，梁圣（梁文锋）看了都得沉默。' },
+          { speaker: '数读', time: '2026-09-30 15:23', text: '手机上下游元器件和 PCBA 今年都在涨——搜了一下是高容高可靠 MLCC，有的现货料号涨了十倍！AI 服务器功耗高，单板需求量暴涨把产能全吃完了。' }
+        ],
+        nextQuestion: '直播间囤积的万亿级 C 端 Token，最终有多少会被真正消耗掉？'
+      },
+      {
+        id: 'T17',
+        category: '职业与学习',
+        phase: 'phase2',
+        dateRange: '2026.09.11 — 11.14',
+        title: 'FDE（前线部署工程师）与校招真相：5% 聊技术，95% 啃业务',
+        summary: '招“AI 应用工程师”却在面试背八股，被群友犀利定性为后现代开发模式下的“考核懒政”。',
+        consensus: '当企业技术基建与 AI 编码能力成熟后，新人进组往往只需花 5% 时间对齐技术栈，剩下 95% 时间都在和混乱的业务打交道。产品经理与程序员正在坍塌融合，真正稀缺的是像 FDE（Forward Deployed Engineer）那样站在业务复杂度与 AI 能力边界中间“消除认知差、定义真问题”的人。',
+        contextNote: '10 月底至 11 月中旬，经历岗位轮转与秋招面试观察后的深度反思。',
+        quotes: [
+          { speaker: '数读', time: '2026-11-14 21:06', text: '我觉得难点不是 AI，难点是定义问题的能力。有的人知道业务的复杂度、痛点，有的人知道 AI 的能力边界与可行范围——FDE 就是站在中间消除认知差的那个人。' },
+          { speaker: '***', time: '2026-09-11 11:50', text: '其实我认为是产品经理和程序员坍塌了，互相融合了。' },
+          { speaker: '数读', time: '2026-10-29 11:43', text: '作为一个新人进来干活，可能只需要花 5% 的时间和懂技术的人沟通选型，剩下 95% 的时间都在和业务打交道。AI 应用岗还只考八股是一种懒政——用过去习惯的尺子量后现代的开发模式。' },
+          { speaker: '。', time: '2026-09-22 11:47', text: '我现在都想把他们的业务知识蒸馏出来，一个人身兼业务、开发、分析了。' }
+        ],
+        nextQuestion: '在校学生缺乏真实企业业务泥潭环境，该如何提前训练“定义业务问题”的肌肉？'
+      },
+      {
+        id: 'T18',
+        category: '职业与学习',
+        phase: 'phase2',
+        dateRange: '2026.09.15 — 11.06',
+        title: '2027 届秋招回暖背后的冷热断层，与“三年垂类经验 vs 读研”重估',
+        summary: '大厂总 HC 回暖但全砸向 AI+，传统 Java 八股外卖项目越来越难，连金融硕转 AI 开发都能薪资翻倍。',
+        consensus: '总量回暖掩盖了剧烈的结构性洗牌：非 AI 传统开发岗持续萎缩，甚至出现面试先问“Git 拉取推送命令怎么念”的两极分化。与此同时，脱产三年读普通硕士的时间成本在 AI 高速迭代期变得极高，越早进入真实产业积累垂类闭环经验反而更具筹码。',
+        contextNote: '横跨 26 届入职体感、27 届秋招观察与跨专业转行真实案例。',
+        quotes: [
+          { speaker: '数读', time: '2026-09-15 16:40', text: '查完几组数据后的判断：今年不是史上最差秋招，科技大厂总量在回暖；但新增岗位几乎全往 AI / AI+开发倾斜，传统非 AI 校招岗实际上在缩。如果技术栈还是苍穹外卖+点评+八股就另当别论了。' },
+          { speaker: 'Ida', time: '2026-11-06 11:50', text: '商科经济金融真不行了，朋友读了 3 年名校在职金融硕出来 8k，结果报班学了 3 个月 AI 开发去当 AI 工程师，一下子就 1.6w+ 了。' },
+          { speaker: '临诗予', time: '2026-09-15 16:08', text: '得亏没盲目二战读研，要是花 5 年才毕业，外面的世界早就变天了，越早进场越好。' },
+          { speaker: '田智Liar0', time: '2026-10-29 11:18', text: '现在初级程序员想建护城河太卷了：一方面要有拿得出手的作品，一方面要有 AI 实战经验，底层基础还得扎实。' }
+        ],
+        nextQuestion: '当所有人都在简历上写“精通 Agent / MCP 开发”，明年面试官会用什么新题筛人？'
+      },
+      {
+        id: 'T19',
+        category: '职业与学习',
+        phase: 'phase1',
+        dateRange: '2026.09.11 — 10.09',
+        title: '没亲自踩过工程坑的新人，怎么判断 AI 给的架构方案对不对？',
+        summary: '经验正在从“必须亲自头破血流”变成“可召回的基础设施”，但基础不牢依然会在关键处渣操翻车。',
+        consensus: '这是群内最精彩的经典思辨之一：一方提醒没踩过坑就看不出 AI 架构里的暗雷；另一方指出人类已反复踩过的常规坑现在能由 AI 召回并设计验证实验来兜底。最终收敛的共识是：不必事事亲历，但必须具备看懂风险、设计验证与守住安全底线的基础功底。',
+        contextNote: '从 9 月 11 日架构方案讨论延续至 10 月初安全攻防实录。',
+        quotes: [
+          { speaker: 'LLLLxr', time: '2026-09-11 11:35', text: '你没经历过、没踩过一些坑，AI 给你的架构方案你都不知道是不是对的。' },
+          { speaker: '数读', time: '2026-09-11 11:41', text: '大量已经被人类反复遇到、记录过的问题，现在可以由 AI 帮你召回、分析甚至验证。门槛不再是“必须亲自踩过”，而是“有没有基础理解问题、识别风险并设计验证”。' },
+          { speaker: 'Akiii', time: '2026-09-09 16:20', text: '之前部门经理吐槽招进来的实习生基本功太差了，底层逻辑完全不懂还是不行的。' },
+          { speaker: '四重奏', time: '2026-10-09 17:05', text: '感慨 AI 很强，基础不好也能做出很变态的事情；但基础不好就会渣操，最后还是会被扒得干干净净。' }
+        ],
+        nextQuestion: '哪些底层计算机科学认知是 AI 越强反而越不能省掉的？'
+      },
+      {
+        id: 'T20',
+        category: '职业与学习',
+        phase: 'phase2',
+        dateRange: '2026.09.16 — 10.22',
+        title: 'AI 时代最核心的六个维度，以及“主动拓宽边界 ≠ 工贼”',
+        summary: '不主动拓宽能力边界，本质上是把自己的职业安全感完全交给环境发落。',
+        consensus: '针对职场常见的“多做事是不是卷/工贼”迷思，群内厘清了一条清晰边界：损人利己破坏集体议价才叫工贼；为了摸清上下游全貌、把个人能力锻造成可迁移资产而主动破界，是对自己职业生命负责。同时在组织视角下，能把个人工作流沉淀成团队共享 Skill/MCP 的人最具不可替代性。',
+        contextNote: '结合 9 月职场心态讨论与 10 月 22 日字节 TRAE 研发专家内部分享引发的“群友六维画像”全员互动。',
+        quotes: [
+          { speaker: '数读', time: '2026-09-16 13:20', text: '上进 ≠ 工贼；损人利己、主动破坏集体议价才接近那个概念。AI 时代不主动拓宽自己的能力边界，本质上是在把自己的职业安全交给环境变化。' },
+          { speaker: '临诗予', time: '2026-10-22 10:44', text: '专家提到“能力和经验属于组织”——这就是怕某个人离职了 MCP、Skill 全没了，就像之前把旧同事的经验搞成一个 Skill 留下来。' },
+          { speaker: 'Ida', time: '2026-10-22 11:23', text: '光有打分不够，还得根据每个人的职业背景做原因分析、个人改善方案和 72 小时下一步动作，不然无法跟进闭环！' }
+        ],
+        nextQuestion: '当个人经验被蒸馏成组织 Skill 后，如何设计激励机制让贡献者不觉得“教会徒弟饿死师傅”？'
+      },
+      {
+        id: 'T21',
+        category: '未来与分配',
+        phase: 'phase1',
+        dateRange: '2026.09.14 — 10.27',
+        title: '当“会做事”不再稀缺，旧社会契约松动后人还剩下什么？',
+        summary: '“教育 → 技能 → 出售劳动 → 收入 → 社会身份”的链条正在被重估，连产线与博士生都听到了潮声。',
+        consensus: '从国务院文件首提“有效减缓人工智能应用就业替代影响”，到车企产线机械臂与科研自动化冲击，企业降本增效的车轮不会因为温情而停下。短期内个体无法左右宏观财富再分配，唯一能握在手里的是审美、判断、真实人际联结与跨界定义目标的自由度。',
+        contextNote: '横跨群聊精神内核长文《当「会做事」不再稀缺》与 10 月社会观察。',
+        quotes: [
+          { speaker: '数读', time: '2026-09-15 09:38', text: '旧社会契约是：你接受教育 -> 获得技能 -> 出售劳动 -> 获得收入 -> 参与消费 -> 获得社会身份。当认知劳动自动化冲击中间环节，整条契约都在松动。' },
+          { speaker: '129', time: '2026-09-14 16:45', text: '所以我想知道大家讨论的风险，到底是社会分配结构的崩塌，还是单纯技术失控？' },
+          { speaker: '田智Liar0', time: '2026-09-16 13:27', text: '看了一下我们产线上的工人，如果以后机械臂真能像人一样自主思考规划把活干好，那产线真的没普通人什么事了。' },
+          { speaker: '数读', time: '2026-10-07 15:36', text: '企业要增收、降本、提效，AI 一定会带来这些结果；它带来解放的同时，普通人怎么办与财富分配问题，会成为整个时代的考题。' }
+        ],
+        nextQuestion: '如果“执行力溢价”归零，十年后社会用来分配高回报的新稀缺锚点会是什么？'
+      },
+      {
+        id: 'T22',
+        category: '未来与分配',
+        phase: 'phase2',
+        dateRange: '2026.09.30 — 11.16',
+        title: 'Claude 11·13 封控潮与数字国界：前沿智能的准入壁垒正在变高吗？',
+        summary: '从养号半月、住宅家宽兜底规则，到 11 月 13 日官方收回 KYC 严查，用上最强模型竟成了一场技术生存战。',
+        consensus: '2026 年秋末最扎心的现实是：算力与模型能力没有国界，但账号风控有。Anthropic 在 11 月 13 日将 KYC 切回官方门户严查，迫使国内重度用户在“纯净家宽 + Clash 兜底禁连规则 + 多区礼品卡/虚拟卡（美免税州、菲区、土区 Gemini Ultra）”之间反复横跳，数字鸿沟以一种意想不到的合规形态具象化了。',
+        contextNote: '群内累计沉淀了 3 份跨区订阅与防封实操指南 PDF，并在 11 月 13—16 日实时播报了封控动态。',
+        quotes: [
+          { speaker: '你想不想知道为什么我的昵称这么长', time: '2026-09-30 09:17', text: '先开干净邮箱注册别急着订，养半个月再上 Pro，别直接冲 Max，前两周别榨太狠，一步错就容易弹风控。' },
+          { speaker: '数读', time: '2026-10-28 15:27', text: '核心在于先配纯净家宽再注册，而且必须设好 Clash 兜底规则——没走家宽节点时严禁任何流量触碰 Claude，否则脏 IP 一沾就废。' },
+          { speaker: '数读', time: '2026-11-13 11:30', text: '最新资讯：Claude 的 KYC 验证 11 月 13 日已经收回官网自有链接，不再走外部第三方验证，中国身份一旦触发验证立即封号。' },
+          { speaker: '临诗予', time: '2026-11-16 10:19', text: 'Claude 有能力精准识别，Gemini 和 OpenAI 其实也心知肚明，只是商业上谁不想赚钱呢，就看未来政策怎么博弈了。' }
+        ],
+        nextQuestion: '如果海外闭源 SOTA 全面收紧准入，国产模型与开源生态能否在审美与复杂推理上真正顶上来？'
+      },
+      {
+        id: 'T23',
+        category: '交流与证据',
+        phase: 'phase2',
+        dateRange: '2026.10.08 — 10.30',
+        title: '逆向提取 + AI 净室重写：闭源软件与硬件的护城河会被洗成开源吗？',
+        summary: '先把 Photoshop 反编译提炼成非代码规格书，再喂给大模型生出零污染纯 Rust 源码；逼得防爬作者往函数名里投毒。',
+        consensus: '“逆向提取规格说明 + LLM 净室重写（Clean-room Rewrite）”正在动摇传统闭源商业软件攒了几十年的代码护城河。更黑色幽默的是，已有反爬工程师故意把普通校验函数命名为“计算蓖麻毒素剂量/脏弹辐射范围”，专门触发大模型的安全拒答机制来防御 AI 逆向拆解——矛与盾已进入全新次元。',
+        contextNote: '10 月上中旬围绕 GitHub 爆款逆向工具 `morluto/rea`、纯 Rust 版 PS 与安全拒答对抗的猎奇深挖。',
+        quotes: [
+          { speaker: '数读', time: '2026-10-08 11:48', text: '海外老哥放出纯 Rust 写的开源 Photoshop：先把闭源程序逆向提炼成非代码规格说明，再喂给大模型直接生成纯 Rust 代码，相当于把几十年闭源护城河生生洗成了开源项目。' },
+          { speaker: '数读', time: '2026-10-09 10:34', text: '类似 morluto/rea 的项目几乎在逆向各种大厂 App，连守望先锋 1 都被逆向了。看到一句话说“AI 可能会让一切开源”，在想以后硬件是不是也会这样。' },
+          { speaker: 'LLLLxr', time: '2026-10-09 10:52', text: '培养一个成熟硬件工程师要三到五年，物理试错成本极高；软件本身开源语料太多了，所以软件护城河最先被冲穿。' },
+          { speaker: '数读', time: '2026-10-30 15:52', text: '有人往反爬脚本里把函数名起成“算蓖麻毒素致死剂量、算脏弹辐射范围”——跟毒药半毛钱关系没有，纯粹因为逆向的人习惯整段贴给 AI，AI 一读到敏感词安全机制直接跳出来拒答！' }
+        ],
+        nextQuestion: '当纯代码实现不再构成壁垒，软件公司的真正护城河只剩下双边网络效应与专有实时数据了吗？'
+      },
+      {
+        id: 'T24',
+        category: '交流与证据',
+        phase: 'phase2',
+        dateRange: '2026.09.30 — 10.03',
+        title: '用已有圈层审美判死刑，还是看新场景能否长出来？一次产品边界对谈',
+        summary: '从 4000 元手机外挂光学镜头之争，看专业用研的“证据链追问”与产品人的“新场景假设”如何彼此校准。',
+        consensus: '这场跨越多日的百条辩论展现了观澜群最珍贵的讨论品质：用研视角紧盯重量、跨代通用性与商业回本硬约束；乐观视角拆解“消费者买的不是模块，而是提高旅行拍摄上限的方案”。双方把各自定义的前提摊开后发现——分歧不在结论，而在“拿存量专业摄影师标尺量，还是赌增量新人群成立”。',
+        contextNote: '9 月 30 日至 10 月 3 日，`Ste.` 与 `数读` 围绕移动影像外挂模块与车企/手机大厂制度差异展开高质量交锋。',
+        quotes: [
+          { speaker: 'Ste.', time: '2026-09-30 15:43', text: '10x 光变和大底确实牛，但用户上手重、系统适配待考；最核心是未来两三代手机能不能通用适配？4k—5k 买个镜头如果只能用两代，用户不会认这个账的。' },
+          { speaker: '数读', time: '2026-10-01 21:17', text: '我们的分歧在于：你在用已有摄影人群的偏好判断产品，我在判断能不能长出一批新购买者。“连专业摄影师都拿不下就做不成”这个前提不成立——消费者买的不是模块，是提高旅行拍摄上限的方案。' },
+          { speaker: 'Ste.', time: '2026-08-11 10:19', text: '做洞察报告，舆情数据、定量数据、定性结论，还不够就专家访谈、销量转化率全拉上，必须形成闭环证据链。' },
+          { speaker: '数读', time: '2026-10-01 18:49', text: '自从工作越来越感觉：各家公司的制度决定了能力——OV 能做出扎实让用户满意的产品，小米在痛点把控与宣发上极敏锐，华为则被迫或主动去啃一些非共识的东西。' }
+        ],
+        nextQuestion: '面对尚未诞生的“非共识新形态产品”，AI 辅助用研怎样避免掉进历史社媒数据的信息茧房？'
+      }
+    ];
+
+    // 3. 14 Key Debates (交锋与分歧)
+    const DEBATES = [
+      {
+        id: 'D01',
+        date: '10.19 — 10.29',
+        status: 'converged',
+        statusLabel: '场景分层收敛',
+        title: '花百刀买海外 SOTA 是刚需投资，还是国产普惠模型已够用？',
+        focus: '争的不是绝对强弱，而是日常 CRUD 与高复杂度重构/审美交付的边际回报线画在哪。',
+        sideA: { label: 'SOTA 决定能力上限派', speaker: '数读 / 北鱼', point: '模型水平直接等于你的交付上限，严肃重构、深度诊断与前端审美上 Opus 5.5 远胜普通模型，省小钱丢大效。' },
+        sideB: { label: '国产 Flash 实战够用派', speaker: '临诗予 / Forrest', point: '在企业常规后端、RAG 与单点排障中，DeepSeek V4.1 Flash 速度飞快甚至偶有反杀 GPT-6.1，成本几乎可忽略。' }
+      },
+      {
+        id: 'D02',
+        date: '09.18 — 10.12',
+        status: 'open',
+        statusLabel: '并存未决',
+        title: '“代码只是编译产物”时代到了吗？工程团队能不能不看源码直接发版？',
+        focus: '自动追 Issue 日推 25 版的极速迭代，撞上多人工程项目的隐蔽概念错误与线上背锅底线。',
+        sideA: { label: 'Agent 全权托管激进派', speaker: '前沿开源实践', point: '只要自动化测试与回归闭环足够密，源码就像汇编语言一样无需人类逐行阅读，速度就是生命。' },
+        sideB: { label: '工程底线审慎派', speaker: '数读 / LLLLxr', point: '纯许愿式 Vibe 极易失控且无视架构规范，没人敢在不理解改动影响面的情况下替生产环境签字担责。' }
+      },
+      {
+        id: 'D03',
+        date: '10.28 — 11.09',
+        status: 'converged',
+        statusLabel: '现实用脚投票',
+        title: '企业该关停外部工具、强制全员使用自研内部 Agent 吗？',
+        focus: '合规安全管控与一线真实生产力之间的硬冲突。',
+        sideA: { label: '企业合规与自主可控逻辑', speaker: '企业 IT 视角', point: '核心代码与业务数据绝不能出域，内部平台便于统一审计、沉淀组织资产并摊薄采购成本。' },
+        sideB: { label: '一线生产力反噬实录', speaker: 'Ida / 数读', point: '底层能力差一代会导致效率暴跌，强推政绩工程只会逼得员工悄悄自费买个人会员，轻量自动化才适合内部自研。' }
+      },
+      {
+        id: 'D04',
+        date: '10.29',
+        status: 'converged',
+        statusLabel: '尺度区分',
+        title: '招聘“AI 应用工程师”继续考算法八股，是懒政还是必要兜底？',
+        focus: '新人进组 95% 时间在啃业务，传统计算机八股还能筛出真正会用 AI 解决问题的人吗？',
+        sideA: { label: '后现代考核懒政批判', speaker: '数读', point: 'AI 应用更接近企业级产品经理与 FDE，考旧时代的机械八股筛不出定义问题与驾驭 Agent 的核心能力。' },
+        sideB: { label: '工程下限兜底现实', speaker: 'Akiii / 团队主管视角', point: '并非所有场景都能靠顶配模型一键搞定，若招进来连基本 Git、网络与数据结构都不懂，出事连排查方向都没有。' }
+      },
+      {
+        id: 'D05',
+        date: '09.11 — 10.09',
+        status: 'converged',
+        statusLabel: '条件收敛',
+        title: '没亲自踩过工程坑的新人，能不能靠 AI 做出靠谱架构？',
+        focus: '经验必须长在自己脑子里，还是可以被 AI 实时召回验证？',
+        sideA: { label: '亲历踩坑不可替代论', speaker: 'LLLLxr / 四重奏', point: '没吃过亏就看不出方案里的隐性耦合与安全漏洞，基础不牢做出来的东西一碰高压或攻防就被扒干净。' },
+        sideB: { label: '经验基础设施化论', speaker: '数读', point: '90% 常见坑已被人类写成语料，新人只要具备基础风险意识并让 AI 搭对比实验验证，就不必每个坑都肉身重踩一遍。' }
+      },
+      {
+        id: 'D06',
+        date: '07.15 — 08.25',
+        status: 'converged',
+        statusLabel: '共识收敛',
+        title: '提示词模板还值得花精力整理和背诵吗？',
+        focus: '争的是固定句式模板的价值，还是任务上下文工程的价值。',
+        sideA: { label: '传统课程模板派', speaker: '早期培训观点', point: '标准化角色与输出格式模板能降低非技术同事的上手门槛，适合固定重复的小任务。' },
+        sideB: { label: '动态追问与外置契约派', speaker: '数读 / kyrie_H', point: '静态模板几乎从不复用；用 Plan + 苏格拉底反问逼出约束，或沉淀为可编程 Skill/仓库文档才真正持久。' }
+      },
+      {
+        id: 'D07',
+        date: '09.30 — 10.03',
+        status: 'open',
+        statusLabel: '视角并存',
+        title: '高价手机外挂光学镜头模块，是伪需求噱头还是新场景破局？',
+        focus: '拿存量独立相机标准判死刑，还是看增量旅行拍摄方案能否成立。',
+        sideA: { label: '商业回本与体验怀疑派', speaker: 'Ste.', point: '手感沉重、系统玩法适配难，且 4—5k 配件若无法跨三代机型通用，消费者算完账根本不会买单。' },
+        sideB: { label: '新人群方案乐观派', speaker: '数读', point: '用户买的不是硬件模块而是“提升旅行出片上限 + 情绪价值”，不必讨好职业摄影师也能跑出新细分市场。' }
+      },
+      {
+        id: 'D08',
+        date: '09.15 — 09.16',
+        status: 'converged',
+        statusLabel: '阶段共识',
+        title: '当下节点，脱产三年读普通硕士还划算吗？',
+        focus: '学历敲门砖惯性与 AI 时代三年产业实战窗口期的机会成本对比。',
+        sideA: { label: '早进场实战优先派', speaker: '数读 / 临诗予', point: '技术范式半年一换，三年垂类真实业务与 AI 落地经验远胜一纸普通研究生文凭，越早入局越主动。' },
+        sideB: { label: '大厂门槛现实派', speaker: '田智Liar0 / Akiii', point: '部分大厂核心算法与研发岗仍有硬性学历过滤线，非名校本科在跳槽大平台时仍会遇到隐形天花板。' }
+      },
+      {
+        id: 'D09',
+        date: '09.16',
+        status: 'converged',
+        statusLabel: '概念厘清',
+        title: '在职场主动多接活、拓宽上下游边界，算不算“工贼”？',
+        focus: '区分“讨好管理层卷死同事”与“拿公司场景给自己攒可迁移本事”。',
+        sideA: { label: '反内卷警惕视角', speaker: '职场常见声音', point: '无偿拉高交付基线容易变成管理层压榨全员的新标尺，最后大家一起加班还没涨薪。' },
+        sideB: { label: '个人边界自救视角', speaker: '数读', point: '损人利己破坏集体议价才叫工贼；AI 时代若画地为牢只守一亩三分地，环境一变最先失去议价权的就是自己。' }
+      },
+      {
+        id: 'D10',
+        date: '10.20',
+        status: 'open',
+        statusLabel: '后验验证中',
+        title: 'AI 代码直出动态图形视频（HTML/SVG/HyperFrames），能商用吗？',
+        focus: '看当下粗糙的“网页 PPT 感”，还是看能力解锁后十天即被蒸馏扩散的进化斜率。',
+        sideA: { label: '商用标准严苛派', speaker: '北鱼', point: '目前生成的动画细节控制不稳定，部分效果甚至不如老 Flash，离严肃商业交付还有明显距离。' },
+        sideB: { label: '斜率演进乐观派', speaker: '数读', point: '从完全不能做到代码直出音画同步只用了十天就开始扩散，一旦跑通 0 到 1，朝商用逼近的速度会极快。' }
+      },
+      {
+        id: 'D11',
+        date: '07.31 — 09.22',
+        status: 'converged',
+        statusLabel: '共识收敛',
+        title: '给研发全员发编码 Agent，项目交付周期为什么没有等比例缩短？',
+        focus: '局部写代码提速 vs 需求澄清、跨组排期与测试验收的系统瓶颈。',
+        sideA: { label: '单点提效预期', speaker: '管理层直觉', point: '既然以前写三天代码现在一小时出完，整体排期理应砍半。' },
+        sideB: { label: '阿姆达尔全局瓶颈派', speaker: 'A货冰美💤 / 。', point: '写代码只占全流程一小段，业务方四天不回消息、历史文档全过期才是卡死总工期的真正瓶颈。' }
+      },
+      {
+        id: 'D12',
+        date: '10.23',
+        status: 'open',
+        statusLabel: '持续探索',
+        title: '解决 Agent 输出“AI 味太重、没人味”，靠换通用模型还是微调专有小模型？',
+        focus: '提示词工程触顶后，表达质感的最优技术路径。',
+        sideA: { label: '算法清洗微调派', speaker: '熏风南来霜林染', point: '通用大模型很难完美贴合特定业务语感，最终还得靠算法组洗高质量人类语料微调专用文案模型。' },
+        sideB: { label: '前沿对齐+表达判断派', speaker: '数读', point: '先切到对齐更好的 Claude/Gemini 并挂载受众分析 Skill（如 Aptum），比盲目维护微调管线更轻量可控。' }
+      },
+      {
+        id: 'D13',
+        date: '08.25 — 10.28',
+        status: 'open',
+        statusLabel: '并存未决',
+        title: '创业团队做垂类 Agent 应用，还有独立活下去的空间吗？',
+        focus: '大厂模型能力外溢吞噬薄壳应用 vs 深耕复杂行业非标流程。',
+        sideA: { label: '平台碾压悲观派', speaker: 'niy🔆', point: '纯软件层面的垂类薄壳极易被模型原厂或超级办公平台顺手覆盖，商业模式极度脆弱。' },
+        sideB: { label: '非标深水区扎根派', speaker: '田智Liar0 / 数读', point: '大厂啃不动碎片化的制造业硬件协同、PCBA 工艺与政企私有脏数据，重度耦合业务流程的地方仍有壁垒。' }
+      },
+      {
+        id: 'D14',
+        date: '11.13 — 11.16',
+        status: 'open',
+        statusLabel: '动态博弈中',
+        title: '面对海外模型越来越严的 KYC 与封号潮，死磕家宽保号还是彻底转向替代栈？',
+        focus: '折腾跨境支付与纯净网络的心智损耗 vs 主力工具降级的效率落差。',
+        sideA: { label: '死磕顶配保号派', speaker: '数读 / 你想不想知道为什么我的昵称这么长', point: '用过 Opus 5.5 + CC 真回不去，配好家宽与 Clash 兜底规则、备好替补渠道，苟过风控波峰继续用。' },
+        sideB: { label: '组合替代务实派', speaker: '临诗予 / 北鱼', point: '土区 Gemini 4 Carbon + DSH / DeepSeek 4.1 Flash 组合在绝大多数任务里已够顶，不必在一棵树上烧心。' }
+      }
+    ];
+
+    // 4. 10 Open Questions (继续讨论的未解问题)
+    const OPEN_QUESTIONS = [
+      { q: '当个人踩坑经验被写成组织级 Skill 留下后，公司该如何奖励那个“把自己蒸馏出来”的人？', tag: '组织与激励' },
+      { q: '如果不逐行看代码，一套既不拖慢节奏、又能兜住线上底线的“AI 时代验收标准”该包含哪几项？', tag: '工程验证' },
+      { q: '为什么模型越往科研与数学强化学习特化，日常对话就越像“免责声明生成器”？两者能解耦吗？', tag: '模型对齐' },
+      { q: '在业务文档全是口口相传的存量老系统里，新入职工程师第一步该怎样低成本建起上下文底座？', tag: '存量破局' },
+      { q: '当“逆向提取规格 + AI 净室重写”能轻易洗掉闭源软件代码壁垒，未来纯工具软件靠什么收订阅费？', tag: '商业护城河' },
+      { q: '直播间卖出的几万亿 C 端算力 Token，究竟能催生出哪些非程序员群体的真实高频用法？', tag: '大众破圈' },
+      { q: '校招面试如果不考传统八股，怎样在 45 分钟内真实测出一个应届生“定义问题 + 驾驭 Agent”的水平？', tag: '人才选拔' },
+      { q: '多开三四个 Agent 并发干活时，人类大脑的上下文切换疲劳（Attention Bandwidth）如何破局？', tag: '人机协同' },
+      { q: '硬件与制造业（如 PCBA、产线具身、STM32）接入 MCP/Skill 时，最难打通的物理卡点是什么？', tag: '硬科技融合' },
+      { q: '如果旧的“技能换收入”社会契约持续松动，我们这代年轻工程师十年后的核心身份锚点会是什么？', tag: '时代走势' }
+    ];
+
+    // 5. 28 Desensitized Community Profiles (100% Privacy-Safe & Grounded)
+    const PEOPLE = [
+      {
+        id: 'p_shudu', name: '数读', handle: '@zz', group: 'agent', msgs: 8496,
+        tags: ['问题定义', '后验闭环', '工具主理人'],
+        bio: '观澜群发起人，AI 应用工程师。高频将一线模型体感连接到先验/后验工程范式、业务认知差消除与社会契约思考，开源了 Aptum 与 AI Sparks。',
+        quotes: [
+          { time: '2026-09-19 13:11', text: '“把东西做出来”会越来越便宜，真正拉开差距的反而是：你能不能让它进入循环，不断看结果、找问题、改方案。' },
+          { time: '2026-11-14 21:06', text: '我觉得难点不是 AI，难点是定义问题的能力。FDE 就是站在业务复杂度和 AI 边界中间消除认知差的人。' }
+        ],
+        relatedTopics: ['T01', 'T07', 'T09', 'T17', 'T21']
+      },
+      {
+        id: 'p_ste', name: 'Ste.', handle: '@Ste.', group: 'product', msgs: 1770,
+        tags: ['研究证据链', '商业边界'],
+        bio: '从消费者洞察、定量定性证据链与商业回本逻辑出发，在群内多次为技术狂热提供冷静的市场与产品边界校准。',
+        quotes: [
+          { time: '2026-08-11 10:19', text: '我的报告，舆情数据、定量数据、定性结论，还不够就专家访谈、销量转化率全拉上，必须把逻辑证透。' },
+          { time: '2026-09-30 15:43', text: '4k—5k 的价格买个手机外挂镜头如果只能用两代，这个价钱用户商业上是不会认可的。' }
+        ],
+        relatedTopics: ['T09', 'T24']
+      },
+      {
+        id: 'p_linshiyu', name: '临诗予', handle: '@临诗予', group: 'agent', msgs: 1290,
+        tags: ['企业交付', '云真机自动化'],
+        bio: '深耕企业研发效能与多 Agent 协同，分享了“云真机 + Codex Skill 自动刷包回归”与 DeepSeek 4.1 Flash 越级排障实战。',
+        quotes: [
+          { time: '2026-09-23 12:23', text: '解完 Bug 以前要找真机推 APK 刷固件，现在直接在云真机配合 Codex 的 Skill 全自动完成，机器都不用找了。' },
+          { time: '2026-10-21 10:09', text: 'GPT 6.1 Sol Ultra 没分析出来的根因，一样的提示词发给 WorkBuddy 里的 DeepSeek 4.1 Flash 直接定位到了。' }
+        ],
+        relatedTopics: ['T02', 'T03', 'T11', 'T20']
+      },
+      {
+        id: 'p_beiyu', name: '北鱼', handle: '@北鱼 / @_e0', group: 'agent', msgs: 1060,
+        tags: ['产品式建造', '多模型工作台'],
+        bio: '重度多模型与 Harness 实战派，分享整库重构、ZCode 闲时亿级 Token 数据清洗、DSH 团队工作台与跨区算力配置。',
+        quotes: [
+          { time: '2026-08-03 18:06', text: '我以前吭哧吭哧三个月才写出来的代码，现在 AI 一个小时就能写出来。' },
+          { time: '2026-11-05 19:33', text: '最近在想怎么设计一个 Agent 工作台方便团队小伙伴查数据，兜兜转转，DSH 就很实在。' }
+        ],
+        relatedTopics: ['T03', 'T04', 'T05']
+      },
+      {
+        id: 'p_tianzhi', name: '田智Liar0', handle: '@N2u', group: 'hardware', msgs: 1028,
+        tags: ['制造业落地', '流程占80%'],
+        bio: '扎根大型车企研发体系，打通试验管理平台与企微云端沙箱，金句“平台占10、技术占20、流程占80”道破传统产业 AI 落地本质。',
+        quotes: [
+          { time: '2026-10-28 17:57', text: '要做成一件事情，平台占 10，技术 20，剩下流程占 80。' },
+          { time: '2026-07-17 14:32', text: '现在有 AI 了就是我操控智能体，然后我作为“人型智能体”把结果给领导汇报。' }
+        ],
+        relatedTopics: ['T08', 'T10', 'T15', 'T21']
+      },
+      {
+        id: 'p_kyrie', name: 'kyrie_H', handle: '@kyrie_H', group: 'data', msgs: 817,
+        tags: ['搜索空间约束', '源数据深挖'],
+        bio: '在提示词拆解、跨模型查错与数据抓取讨论中，始终追问搜索空间边界与底层原始数据形态。',
+        quotes: [
+          { time: '2026-08-13 14:47', text: '你让 AI 自己挖一个没有约束的搜索空间，我觉得它也挖不出来。' },
+          { time: '2026-08-31 09:48', text: '怎么感觉 GLM 检查出来的隐藏 Bug，GPT 反而没检查出来？' }
+        ],
+        relatedTopics: ['T06', 'T09']
+      },
+      {
+        id: 'p_forrest', name: 'Forrest', handle: '@Forrest', group: 'agent', msgs: 660,
+        tags: ['企业权限安全', 'Langfuse Skill'],
+        bio: '负责企业内部 RAG Agent 与 GitLab CI/CD 工程链路，把繁琐的 Langfuse 轨迹排查改造成自动化对比 Skill。',
+        quotes: [
+          { time: '2026-09-16 12:00', text: '把看 Langfuse 轨迹写成 Skill 让 AI 自己拉下来几个 Case 一起对比，速度比我手动点开快几十倍。' },
+          { time: '2026-07-14 15:36', text: '涉及仓库代码只能用合规工具，真把公司 Token 泄漏了明天就欠费 10 个 w。' }
+        ],
+        relatedTopics: ['T03', 'T11', 'T14']
+      },
+      {
+        id: 'p_longnick', name: '你想不想知道为什么我的昵称这么长', handle: '@长昵称', group: 'agent', msgs: 568,
+        tags: ['CC+Codex双持', '风控实战'],
+        bio: 'Claude Code 与 Codex 混搭接力老手，贡献了详尽的账号养号防封策略、ZCode 定时插件用法与 Cursor 性价比锐评。',
+        quotes: [
+          { time: '2026-11-03 16:54', text: '我经常在 Codex 和 Claude Code 之间来回接力工作，都能互相读取进度的情况。' },
+          { time: '2026-11-16 15:38', text: 'ZCode 的定时任务蛮好用，用订阅套餐里的股票基金插件每天定时分析跟踪持仓。' }
+        ],
+        relatedTopics: ['T04', 'T05', 'T22']
+      },
+      {
+        id: 'p_stars', name: '***', handle: '@***', group: 'product', msgs: 506,
+        tags: ['岗位融合预判', 'AI for 硬件'],
+        bio: '原显示昵称即为星号。敏锐提出“产品经理与程序员边界坍塌融合”，并在秋季投身 AI for 硬件与跨区支付实操探索。',
+        quotes: [
+          { time: '2026-09-11 11:50', text: '其实我认为是产品经理和程序员坍塌了，互相融合了。' }
+        ],
+        relatedTopics: ['T17', 'T22']
+      },
+      {
+        id: 'p_aheng', name: '啊哼', handle: '@啊哼', group: 'data', msgs: 471,
+        tags: ['算法研发', '产业园日常'],
+        bio: '算法工程师视角，关注企业内部算力中转站配额、大模型商业变现模式与一线研发作息。',
+        quotes: [
+          { time: '2026-10-26 16:49', text: '你们用集团的中转站，DeepSeek 是不是依旧不限量的？' },
+          { time: '2026-11-11 16:35', text: '那么问题来了：Anthropic 会不会去竞品里买广告位？' }
+        ],
+        relatedTopics: ['T03', 'T20']
+      },
+      {
+        id: 'p_j1hee', name: 'J1_Hee', handle: '@J1_Hee', group: 'agent', msgs: 346,
+        tags: ['规划执行分离', '群内气氛组'],
+        bio: '早期即践行“GPT 做顶层规划 + 国产模型做代码执行”的分工策略，同时也是群内硬件数码话题活跃分子。',
+        quotes: [
+          { time: '2026-08-01 17:57', text: '我都是 GPT 规划，DS 或者 GLM 执行的。' }
+        ],
+        relatedTopics: ['T05']
+      },
+      {
+        id: 'p_yuhou', name: '_yuhou', handle: '@_yuhou', group: 'data', msgs: 279,
+        tags: ['数学建模', 'AI Research'],
+        bio: '擅长把复杂问题转化为积分期望与蒙特卡洛模拟，精准界定了 AI 在学术科研中“难出原创 Idea 但文献调研碾压硕博”的定位。',
+        quotes: [
+          { time: '2026-09-18 10:40', text: 'AI 没办法给出真正有创新的 Idea，但 AI 做 Research 查重和梳理绝对比大部分硕博厉害。' },
+          { time: '2026-09-09 16:59', text: '数学形式直接写积分形式，然后转化成期望，代码用蒙特卡洛跑。' }
+        ],
+        relatedTopics: ['T06', 'T22']
+      },
+      {
+        id: 'p_quartet', name: '四重奏', handle: '@四重奏', group: 'data', msgs: 253,
+        tags: ['语义检索', '安全底座反思'],
+        bio: '关注词向量语义检索在政务/机构文档中的极高准确率，同时提醒“基础不牢靠 AI 炫技终会翻车”。',
+        quotes: [
+          { time: '2026-10-09 17:05', text: 'AI 很强，基础不好也能做到很变态的事；但基础不好就会渣操，最后被扒得干干净净。' },
+          { time: '2026-09-23 22:27', text: '用词向量夹角做的语义检索搜内部文件，准确率高得离谱。' }
+        ],
+        relatedTopics: ['T19', 'T23']
+      },
+      {
+        id: 'p_dot', name: '。', handle: '@。', group: 'data', msgs: 207,
+        tags: ['全栈数分演进', '存量文档痛点'],
+        bio: '9 月下旬加入群聊的数据工程师，生动刻画了“废墟文档上重建项目、等业务排期远比写代码慢”的普遍困境。',
+        quotes: [
+          { time: '2026-09-22 11:32', text: '有点像废墟上重建的项目，大部分文档都不是最新，全是口口相传，我现在都想把业务知识蒸馏出来身兼三职了。' }
+        ],
+        relatedTopics: ['T13', 'T17']
+      },
+      {
+        id: 'p_ida', name: 'Ida', handle: '@Ida', group: 'product', msgs: 157,
+        tags: ['非IT普及视角', '影子IT实录'],
+        bio: '来自消费硬件出海企业，持续提供非互联网公司的真实切片：从同事不知 Skill 为何物，到公司停 Codex 后全员自费充会员，还分享了单文件周末行程规划器。',
+        quotes: [
+          { time: '2026-11-09 18:09', text: '自从公司搞了本地化 Agent、关闭公司账号的 Codex，大家纷纷自费充值了自己的 GPT 会员。' },
+          { time: '2026-11-06 11:50', text: '读了 3 年金融硕出来 8k，学了 3 个月 AI 开发出来 1.6w+。' }
+        ],
+        relatedTopics: ['T08', 'T14', 'T18', 'T20']
+      },
+      {
+        id: 'p_xunfeng', name: '熏风南来霜林染', handle: '@熏风南来霜林染', group: 'agent', msgs: 148,
+        tags: ['端到端评测', '自动化提单'],
+        bio: '聚焦 Agent 生成质量评测与测试自动化，分享了自动找缺陷提 Gitee 闭环，以及“业务嫌文案没人味”的主观评测难题。',
+        quotes: [
+          { time: '2026-10-23 09:30', text: '测试同事搞了自动化测试 Agent，全流程找缺陷、复现审核后直接自动提交到 Gitee。' },
+          { time: '2026-08-04 19:34', text: '简单的功能没必要上重型框架，容易复杂化而且巨烧 Token。' }
+        ],
+        relatedTopics: ['T08', 'T11']
+      },
+      {
+        id: 'p_llllxr', name: 'LLLLxr', handle: '@LLLLxr', group: 'hardware', msgs: 106,
+        tags: ['工程踩坑边界', '软硬培养成本'],
+        bio: '一针见血提出“没踩过坑如何判断 AI 架构对错”以及硬件工程师三到五年物理试错门槛。',
+        quotes: [
+          { time: '2026-09-11 11:35', text: '你没经历过、没踩过一些坑，AI 给你的架构方案你都不知道是不是对的。' },
+          { time: '2026-10-09 10:52', text: '培养一个硬件工程师三到五年成本非常高，软件本身开源的东西太多了。' }
+        ],
+        relatedTopics: ['T19', 'T23']
+      },
+      {
+        id: 'p_yourset', name: 'Yourset🐧', handle: '@Yourset🐧', group: 'hardware', msgs: 106,
+        tags: ['物联网与STM32', 'DSH硬件联动'],
+        bio: '物联网背景，探索把大模型接入桌面硬件宠物联动 DSH，也真实吐槽了 Codex 烧光周额度搞不定 STM32 底层项目的边界。',
+        quotes: [
+          { time: '2026-09-20 12:21', text: '想做一个桌面硬件宠物，接豆包或者 DS，还能遥控联动 DSH。' },
+          { time: '2026-10-30 17:10', text: '我在搞的 STM32 嵌入式项目，Codex 烧完了我整周额度都没搞出来。' }
+        ],
+        relatedTopics: ['T04', 'T06']
+      },
+      {
+        id: 'p_zkb', name: '郑楷滨', handle: '@郑楷滨', group: 'product', msgs: 77,
+        tags: ['异构脏数据', '体制内外温差'],
+        bio: '从真实业务异构数据梳理与客户一线接触出发，指出 1000 条现实脏数据远非两三条理想规则所能覆盖。',
+        quotes: [
+          { time: '2026-09-14 22:00', text: '真实世界里项目数据形式杂乱、没有定数，理三条路径远远不够，理论上要 N 条路径。' }
+        ],
+        relatedTopics: ['T12', 'T16']
+      },
+      {
+        id: 'p_akiii', name: 'Akiii', handle: '@Akiii', group: 'agent', msgs: 78,
+        tags: ['工程基本功', '职业平台选择'],
+        bio: '从部门用人反馈提醒实习生底层基本功不可荒废，并参与大平台履历与垂直深耕取舍讨论。',
+        quotes: [
+          { time: '2026-09-09 16:20', text: '部门经理反馈招进来的实习生基本功太差了，底层逻辑还是得过关。' }
+        ],
+        relatedTopics: ['T18', 'T19']
+      },
+      {
+        id: 'p_129', name: '129', handle: '@129', group: 'product', msgs: 61,
+        tags: ['概念澄清', '反标题党'],
+        bio: '反感“某某已死”式制造焦虑的营销文，在宏大叙事讨论中坚持追问概念的确切指代。',
+        quotes: [
+          { time: '2026-09-14 16:45', text: '所以我想知道他说的灭绝，到底是社会分配结构的崩塌，还是单纯就 AI 叛乱？' }
+        ],
+        relatedTopics: ['T21']
+      },
+      {
+        id: 'p_recover', name: 'Recover', handle: '@Recover', group: 'data', msgs: 50,
+        tags: ['高峰并发吐槽', '修Bug成本账'],
+        bio: '真实记录国产编码工具高峰期排队拥堵与单次修数据系统 Bug 烧钱却未果的痛点。',
+        quotes: [
+          { time: '2026-08-19 15:17', text: '昨天修一个数据系统的 Bug，烧了十块钱还没给我修好，逼得我换号上阵。' }
+        ],
+        relatedTopics: ['T03']
+      },
+      {
+        id: 'p_xg', name: 'XG', handle: '@XG', group: 'data', msgs: 45,
+        tags: ['创新研发对接', '跨组协同'],
+        bio: '分享数据团队与创新研发组跨部门对接时的字段映射与职责边界日常。',
+        quotes: [
+          { time: '2026-07-17 18:16', text: '后面跟创新研发组的对接多起来，最怕两边字段口径对不上。' }
+        ],
+        relatedTopics: ['T13']
+      },
+      {
+        id: 'p_yehe', name: '夜河', handle: '@夜河', group: 'agent', msgs: 36,
+        tags: ['大厂社招观察', '校招编制缩水'],
+        bio: '提供一线出行大厂部门校招名额变化与社招流动实况观察。',
+        quotes: [
+          { time: '2026-08-25 17:05', text: '我这边校招名额还真挺少的，整个组就两个校招。' }
+        ],
+        relatedTopics: ['T18']
+      },
+      {
+        id: 'p_iceamericano', name: 'A货冰美💤', handle: '@A货冰美💤', group: 'agent', msgs: 23,
+        tags: ['阿姆达尔定律', '端侧小模型'],
+        bio: '虽发言精炼但句句命中要害：最早在群内引入“阿姆达尔定律”解释组织提效瓶颈，并关注低配设备决策小模型。',
+        quotes: [
+          { time: '2026-07-31 10:47', text: 'AI 只能让能快的地方快了，但是整体时间还是要看那些快不了的地方。' }
+        ],
+        relatedTopics: ['T13']
+      },
+      {
+        id: 'p_niy', name: 'niy🔆', handle: '@niy🔆', group: 'product', msgs: 1,
+        tags: ['垂类商业模式', '大厂挤压预警'],
+        bio: '对纯软件垂类 Agent 创业保持清醒审视，指出缺乏护城河的应用极易被模型原厂顺手收割。',
+        quotes: [
+          { time: '2026-08-25 23:11', text: '纯做 AI 软件应用很难卷过大厂，模型公司哪天腾出手来做一下垂类分分钟就能干死一片。' }
+        ],
+        relatedTopics: ['T15']
+      },
+      {
+        id: 'p_jiayue', name: '葭月十五', handle: '@葭月十五', group: 'product', msgs: 44,
+        tags: ['视觉审美对比', '多工具订阅实战'],
+        bio: '数字媒体背景，长期横向对比 Codex、Gemini、火山与 Claude 的前端视觉产出质感，也是 11·13 Claude 身份验证风控潮的亲历者。',
+        quotes: [
+          { time: '2026-08-01 17:40', text: '我目前有 Codex、Gemini、火山 CodingPlan 那些，但是感觉做的没那么好看。' },
+          { time: '2026-11-13 11:30', text: '苟到现在也是轮到我弹验证了……Claude 好用真离不开了，GPT 我真没招了感觉不好用。' }
+        ],
+        relatedTopics: ['T01', 'T07', 'T22']
+      },
+      {
+        id: 'p_noil7', name: 'NOIL7', handle: '@NOIL7', group: 'agent', msgs: 12,
+        tags: ['知识库共建', '早期支持者'],
+        bio: '在群聊早期提出构建共享知识库与沉淀讨论成果时即积极响应支持。',
+        quotes: [
+          { time: '2026-07-20 11:42', text: '支持把群里的讨论沉淀下来！' }
+        ],
+        relatedTopics: ['T06']
+      }
+    ];
+
+    // 6. Field-Tested Model & Harness Battleground Radar
+    const MODELS_RADAR = [
+      {
+        name: 'Claude Opus 5.5 / Fable 5.2 + CC',
+        badge: '审美与人话天花板',
+        badgeColor: 'amber',
+        mentions: '累计 104 次（10月单月暴涨至 53 次）',
+        scores: { human: 95, ui: 92, code: 92, survive: 35 },
+        pros: '诊断一针见血不叠甲，前端卡片与排版品味断层第一，代码直出动态音画视频惊艳全群。',
+        cons: '11·13 收回官方 KYC 后风控极严，极其依赖纯净住宅家宽与严苛的防漏规则，买号保号“太烧心”。',
+        quote: '“把业务问题拿去问 Claude，可读性太高了，让我这个每天对着 Codex 的人感动得痛哭流涕。”'
+      },
+      {
+        name: 'GPT-6 Astra / 6.1 Sol + Codex',
+        badge: '重装推理但爱砸厨房',
+        badgeColor: 'indigo',
+        mentions: '累计 150 次（全群最高频点名）',
+        scores: { human: 15, ui: 28, code: 90, survive: 78 },
+        pros: '长程复杂数理推导硬实力强，周额度充足时适合啃硬核逻辑，20刀基础版日常生图问答稳健。',
+        cons: '重度科研 RL 后遗症——三句话两句免责叠甲；改小需求爱“砸厨房铺工业管线”，默认前端密密麻麻极丑。',
+        quote: '“饿得前胸贴后背让它煎个荷包蛋，它先把厨房砸了重铺燃气管线跑二十遍测试，就是不打鸡蛋。”'
+      },
+      {
+        name: 'DeepSeek V4.1 Flash + DSH',
+        badge: '普惠光速与插件之王',
+        badgeColor: 'emerald',
+        mentions: '累计 63 次（8月与10月双高峰）',
+        scores: { human: 82, ui: 74, code: 85, survive: 98 },
+        pros: '速度极快、缓存命中率高、价格白菜，偶有单点排障反杀 GPT-6.1；搭配 `@deepseek-ai/dsh`“一切皆插件”自由度拉满。',
+        cons: '超长复杂多模块重构上限仍逊于顶配闭源旗舰；DSH 记忆管理等能力需自行挑选组装社区插件。',
+        quote: '“感觉现在 Agent 工具再强，都不如可以自己 DIY 插件的 DSH 实在。”'
+      },
+      {
+        name: 'Gemini 4 Carbon / Argon + Colab',
+        badge: '11月黑马 · 智力在线',
+        badgeColor: 'cyan',
+        mentions: '累计 37 次（11月上半月激增至 16 次）',
+        scores: { human: 86, ui: 84, code: 88, survive: 80 },
+        pros: 'Carbon 智力与沟通顺畅度获高评价，首发半价且土区/美区订阅附赠 Colab 计算单元与云权益，性价比突出。',
+        cons: '官方客户端 Antigravity（AGY）响应极慢（单任务动辄跑 1 小时）且 API 封闭难以导出到第三方 Harness。',
+        quote: '“280 买到相当不错的额度，Carbon 智力很高、聊天很舒服，就是 AGY 客户端慢晕了。”'
+      },
+      {
+        name: 'GLM-5.3 / 5.5 + ZCode',
+        badge: '夜间闲时苦力神器',
+        badgeColor: 'violet',
+        mentions: '累计 50 次（数据清洗与定时常客）',
+        scores: { human: 76, ui: 70, code: 79, survive: 95 },
+        pros: 'ZCode 闲时任务跑 1.2 亿 Token 数据清洗依然真香，内置定时任务插件适合每日自动跟踪分析，完成目标“不择手段”。',
+        cons: '9 月曾因后台上传争议引发信任讨论；偶发闲时任务强制回退子模型版本、高峰期拥堵与降智波动。',
+        quote: '“GLM 闲时任务做亿级数据清洗还是很香的，ZCode 为了完成爬字幕任务会想尽办法。”'
+      },
+      {
+        name: 'WorkBuddy / Qoder / TRAE',
+        badge: '本土工作流整合派',
+        badgeColor: 'rose',
+        mentions: '累计 47 次（企业与白嫖党常备）',
+        scores: { human: 78, ui: 76, code: 82, survive: 96 },
+        pros: 'Qoder 支持一键完整迁移 Codex 历史会话；WorkBuddy 积分活动大方，甚至能用 Magpie 反代进 DSH/CC 调用。',
+        cons: '部分内置系统提示词过于死板（让它解释 HTML/CSS 结果硬生出整套课程官网），上下文压缩有时偏激进。',
+        quote: '“Qoder 真牛，能把 Codex 所有的会话记录直接复制到自己这里无缝接着干。”'
+      }
+    ];
+
+    // 7. 12 Reusable Practice Cards (从思考到工具)
+    const PRACTICES = [
+      {
+        id: 'PR01', task: '模糊业务破局', title: '后验闭环五步法（替代重先验憋大招）',
+        summary: '面对说不清标准的业务需求，先用半天跑出最小可运行 V0，拿业务方真实挑刺当训练信号迭代，而不是花两周写完美方案。',
+        steps: '模糊想法 → 刚好够用的初版框架 → 跑出真实产物 V0 → 收集具体错例 → 固化进下一版约束与 Baseline。',
+        link: ''
+      },
+      {
+        id: 'PR02', task: '表达与文档', title: 'Aptum 读者缺口判断法（适其人，适其事，适其言）',
+        summary: '群主开源的表达判断 Skill：动笔前先问“当前读者缺哪块背景、要做哪个动作”，砍掉炫技黑话与防御性废话。',
+        steps: '识别受众角色 → 区分必留事实与可省术语 → 选定最轻结构（卡片/表格优于长段纯文本）。',
+        link: 'https://github.com/Zhong-Ze-Wei/aptum'
+      },
+      {
+        id: 'PR03', task: '自动化验证', title: 'Langfuse 轨迹批量拉取与多 Case 自动对比 Skill',
+        summary: '不再人工逐条点开网页看 Agent 为什么走歪，写成 Skill 自动拉取成功/失败 Trace 横向比对工具调用差异。',
+        steps: '导出异常会话 ID → 脚本批量拉取 Trace JSON → 让模型对比 Tool 入参差异 → 直接定位提示词或接口歧义。',
+        link: ''
+      },
+      {
+        id: 'PR04', task: '自动化验证', title: '云真机 + Codex Skill 全自动刷包回归',
+        summary: '打通代码修复后的最后一公里：解完 Bug 自动触发云真机推 APK、刷固件并跑冒烟验证，彻底省去借测试机插线。',
+        steps: '合并修复分支 → Skill 调用云真机 CLI → 自动安装与日志捕获 → 异常自动回传会话。',
+        link: ''
+      },
+      {
+        id: 'PR05', task: '跨 Agent 协同', title: '单仓库结构化真源（ADR + 地图直改法）',
+        summary: '多开 Claude Code 与 Codex 接力时，在仓库内维护人类可读的结构地图与 ADR；改业务直接改地图让 AI 读 diff，比口头描述准十倍。',
+        steps: '仓库内建 docs/契约文件 → 人类直接增删字段说明 → 指令 Agent 读取 git diff 同步实现。',
+        link: ''
+      },
+      {
+        id: 'PR06', task: '跨 Agent 协同', title: '跨平台个人记忆无损搬家术',
+        summary: '换主力模型时不必从零调教：用结构化指令让旧模型全量吐出它记住的个人偏好、项目背景与禁忌，一键注入新模型。',
+        steps: '向旧模型发送“逐条完整列出你记住的关于我的所有信息，不省略” → 人工剔除过期项 → 存入新工作台长期记忆。',
+        link: ''
+      },
+      {
+        id: 'PR07', task: '富媒体与数据', title: '播客与长视频“字幕优先”快速蒸馏流',
+        summary: '放弃慢速跑完整音频识别：优先抓取 YouTube / B站现成字幕轨（避开刚发布无字幕窗口），定时提炼头部播客新概念。',
+        steps: '锁定高信噪比播客源 → 优先拉取平台字幕轨 → 过滤二手水话，提取新术语、反直觉论据与原话时间戳。',
+        link: ''
+      },
+      {
+        id: 'PR08', task: '富媒体与数据', title: 'ZCode 夜间闲时队列：亿级脏数据清洗与持仓日报',
+        summary: '把不急于秒回但极其烧 Token 的重活（1.2 亿 Token 文本清洗、每日基金股票持仓复盘）挂进闲时与定时队列。',
+        steps: '拆解无状态批处理脚本 → 绑定闲时额度/定时触发器 → 次日晨间直接审阅汇总异常表。',
+        link: ''
+      },
+      {
+        id: 'PR09', task: '表达与文档', title: '零依赖“单文件静态 HTML”交付范式',
+        summary: '发给同事或挂上 GitHub Pages 的汇报看板、周末行程规划器，统一打包为内联 CSS/JS 的单个 .html 文件，点开即用零环境报错。',
+        steps: '明确要求“生成单个自包含静态 HTML 文件” → 禁用本地外部相对路径 → 手机电脑双击即看。',
+        link: 'https://github.com/Zhong-Ze-Wei/ai-spark'
+      },
+      {
+        id: 'PR10', task: '模糊业务破局', title: '存量“废墟项目”口传知识反向蒸馏术',
+        summary: '面对文档过期、全靠老员工口口相传的业务，每次开会录音/纪要后立即用 AI 反向生成字段字典与流程图发群确认。',
+        steps: '采集碎片沟通记录 → 生成可视化业务流与异常表 → 让忙碌的业务方做“是非题”确认而非“问答题”。',
+        link: ''
+      },
+      {
+        id: 'PR11', task: '跨 Agent 协同', title: '纯净家宽 + Clash 兜底阻断防封配置',
+        summary: '针对高风控海外工具，核心不在梯子多快，而在配置严格的路由兜底规则：一旦家宽节点掉线立即阻断连接，杜绝脏 IP 污染账号。',
+        steps: '独立住宅 IP 绑定专号 → Clash 规则指定域名仅走家宽出口并禁 fallback 直连 → 多区支付隔离。',
+        link: ''
+      },
+      {
+        id: 'PR12', task: '自动化验证', title: '六维人才 Subagent 并行交叉评估法',
+        summary: '分析长文本记录时，拆成 6 个独立维度的 Subagent 并行打分并强制附带原文证据与 72h/7d/30d 行动改进项，避免单一上下文偏见。',
+        steps: '定义正交评估维度 → 每维度独立 Subagent 检索举证 → 汇总交叉表并剥离岗位头衔滤镜。',
+        link: ''
+      }
+    ];
+
+    // 8. 22 Milestone Chronicle Events (2026.07.12 — 11.16)
+    const TIMELINE = [
+      { date: '2026-07-12', phase: '07-08', tag: '建群起点', title: 'AI Sparks 群聊开启，首日即吐槽 5.6 Token 燃烧速度与 26 届校招奇遇', desc: '从第一条关于 Codex 消耗速度的对话开始，一群刚步入职场的同学与同行开始了长达数月的高密度实验记录。' },
+      { date: '2026-07-15', phase: '07-08', tag: '方法觉醒', title: '告别“背诵提示词模板”：提出 Plan + 苏格拉底追问工作流', desc: '首次系统反思培训课上的静态模板套路，转向动态追问与 LangGraph 子问题拆解实验。' },
+      { date: '2026-07-31', phase: '07-08', tag: '核心定律', title: 'DeepSeek-V4-Flash 公测 & 群内首提“AI 提效的阿姆达尔定律”', desc: 'A货冰美💤指出“整体时间取决于快不了的地方”，精准预言了后续几个月的组织提效困境。' },
+      { date: '2026-08-13', phase: '07-08', tag: '工具拐点', title: 'DeepSeek Harness（@deepseek-ai/dsh）预览版发布：“一切皆插件”引爆深夜实测', desc: '群友连夜实测 4 轮 101 步、99% 缓存命中构建 3D 动效展示页，DSH 成为群内主力脚手架之一。' },
+      { date: '2026-08-26', phase: '07-08', tag: '范式确立', title: '提炼《软件工程的先验思想与其失效性》：全面转向“后验闭环”', desc: '明确定义 AI 时代核心策略——降低先验设计执念，靠真实运行证据高频修正系统。' },
+      { date: '2026-09-03', phase: '09', tag: '开源沉淀', title: '群主开源表达判断 Skill「Aptum」：适其人，适其事，适其言', desc: '针对 AI 输出千篇一律的痛点，将“读者认知缺口判断”封装为可复用的 Agent Skill。' },
+      { date: '2026-09-11', phase: '09', tag: '角色重构', title: '528 条大讨论：2024—2026 人机分工三阶演进与“产品程序员坍塌融合”', desc: '实测对比 WorkBuddy 与 TraeWork 积分消耗，并围绕新人架构判断力展开深度交锋。' },
+      { date: '2026-09-15', phase: '09', tag: '初代诞生', title: '《AI Sparks 群聊全景分析》与首版 GitHub Pages 思考地图上线', desc: '完成首次群聊思想蒸馏，确立群友昵称脱敏保护铁律，收录前两个月 38 个话题与 177 段原话。' },
+      { date: '2026-09-17', phase: '09', tag: '文化立名', title: '高票通过！社群正式定名「AI Sparks · 观澜」', desc: '取《孟子》“观水有术，必观其澜”之意，以 33% 领先票数击败论衡、会通等候选名，确立社群文化气质。' },
+      { date: '2026-09-23', phase: '09', tag: '工程闭环', title: '云真机 + Codex Skill 自动刷包回归落地，告别手动找测试机', desc: '群内研发团队跑通从解 Bug 到云端刷固件自动验证的无人值守闭环。' },
+      { date: '2026-09-30', phase: '09', tag: '全纪录峰值', title: '单日 839 条刷新最高纪录：MLCC 十倍暴涨、外挂镜头之争与单文件 HTML 科普', desc: '国庆前最后一天，从 AI 服务器挤爆电容产能一直聊到消费电子产品定义与播客字幕蒸馏。' },
+      { date: '2026-10-01', phase: '10', tag: '模型混战', title: 'Gemini 4 与 Fable 5.5 假期接连突袭，反思纯 Vibe Coding 失控教训', desc: '单日 569 条讨论，对比新模型能力的同时，复盘了缺乏受控上下文输入的项目翻车现场。' },
+      { date: '2026-10-08', phase: '10', tag: '护城河冲击', title: '纯 Rust 净室重写 Photoshop 与 morluto/rea 逆向潮引发闭源壁垒大讨论', desc: '探讨“逆向提取非代码规格书 + LLM 重写”对传统工业与商业软件护城河的颠覆。' },
+      { date: '2026-10-12', phase: '10', tag: '工程激辩', title: '单日 749 条次高峰：自动追 Issue 日推 25 版的代码质量之争与青年出路漫谈', desc: '围绕极速 Agent 开源迭代模式、车企生态责任边界与当代职场长期主义展开全景碰撞。' },
+      { date: '2026-10-15', phase: '10', tag: '多模态破局', title: '代码直出画面音效！Claude 编程生成动态图形视频震撼全群，10 天后即被扩散', desc: '群友实测用一段 Prompt 生成 15 秒企业动态图形宣传片，大视频编程化拉开序幕。' },
+      { date: '2026-10-20', phase: '10', tag: '神级比喻', title: '“砸厨房煎荷包蛋”名场面诞生，精准画像 Codex 过度工程综合征', desc: '对高推理模型无视最小改动原则、疯狂堆砌防御性测试与冗余附表的现象级吐槽。' },
+      { date: '2026-10-22', phase: '10', tag: '全员画像', title: '6 个 Subagent 并行跑完全量聊天记录，产出《六维度群友分析与行动计划》', desc: '受字节 TRAE 年轻技术专家分享启发，为 42 位群友生成优势、改善点与 72h/30d 行动表。' },
+      { date: '2026-10-27', phase: '10', tag: '对齐剖析', title: '破案“ICLR 审稿式叠甲”：剖析科研强化学习为何毁掉模型说人话能力', desc: '从底层训练机制解释为什么前沿模型总爱说“不能推出、并不代表”。' },
+      { date: '2026-11-03', phase: '11', tag: '商业破圈', title: '李佳琦直播间半小时卖出 2 万亿 Token，算力正式走进大众消费囤货时代', desc: 'C 端算力白菜化营销引发群内对 Token 定价体系与实际消耗率的深度围观。' },
+      { date: '2026-11-09', phase: '11', tag: '影子IT', title: '内部自研 Agent 关停外部 Codex 后，群友实录“全员默默自费充会员”', desc: '同日整理沉淀跨境免税州、虚拟卡与多区账号防风控实操指南。' },
+      { date: '2026-11-13', phase: '11', tag: '封控大考', title: 'Claude 11·13 收回官网自有 KYC 严查，Gemini 4 Carbon 成热门避风港', desc: '海外顶配模型准入壁垒骤升，群内实时互助排查门户验证类型与替代工作流。' },
+      { date: '2026-11-16', phase: '11', tag: '全量焕新', title: '群友发现旧站停留在 9 月催更，导出 19,500 条全量记录启动「观澜」深度重构', desc: '“记录是不是比较旧的了？”——带着 128 天的完整思考积淀，全新交互式观澜思考地图正式诞生。' }
+    ];
+
+    // 9. Verified Shared Links & Group Archive Files
+    const SHARED_RESOURCES = [
+      { title: '观澜 · AI Sparks 原始开源仓库', type: 'GitHub 仓库', date: '2026-09-15', url: 'https://github.com/Zhong-Ze-Wei/ai-spark', desc: '社群思考地图与知识蒸馏项目主仓库（Zhong-Ze-Wei/ai-spark）' },
+      { title: 'Aptum — AI Agent 表达判断 Skill', type: 'GitHub 仓库', date: '2026-09-03', url: 'https://github.com/Zhong-Ze-Wei/aptum', desc: '适其人，适其事，适其言：判断当前读者缺什么背景与结构的开源 Skill' },
+      { title: '@deepseek-ai/dsh（DeepSeek Harness）', type: 'NPM / 工具', date: '2026-08-13', url: 'https://www.npmjs.com/package/@deepseek-ai/dsh?activeTab=readme', desc: '群内高频推崇的“一切皆插件”可扩展 Agent 工作台脚手架' },
+      { title: 'OpenAI 最新模型提示词官方优化指南', type: '官方文档', date: '2026-09-15', url: 'https://developers.openai.com/api/docs/guides/latest-model', desc: '熏风南来霜林染分享：官方专门教如何让 6 系列模型“说人话”的指南' },
+      { title: 'ModelTrace 模型溯源与指纹检测', type: 'GitHub Pages', date: '2026-09-15', url: 'https://xqy2006.github.io/ModelTrace/', desc: '*** 分享的模型输出风格与降智溯源对照工具' },
+      { title: 'PPT-Master：AI 演示文稿生成参考库', type: 'GitHub 仓库', date: '2026-08-17', url: 'https://github.com/hugohe3/ppt-master/blob/main/README_CN.md', desc: '群内测试轻量与旗舰模型安装配置执行力的基准仓库之一' },
+      { title: 'morluto/rea：AI 驱动逆向工程探索', type: 'GitHub 仓库', date: '2026-10-09', url: 'https://github.com/morluto/rea', desc: '引发“AI 是否会让一切闭源软件被迫开源”深度讨论的代表项目' },
+      { title: 'dsh-purge：DSH 环境清理配套社区工具', type: 'GitHub 仓库', date: '2026-11-04', url: 'https://github.com/HunYiSage/dsh-purge', desc: '10—11 月群内折腾 DSH 插件生态时分享的实用周边仓库' },
+      { title: '群内自研长文归档：《软件工程的先验思想与其失效性.pdf》《当「会做事」不再稀缺.pdf》《前端交互方法论.pdf》《珠三角周末行程规划器-单文件.html》', type: '群文件沉淀', date: '09.01 — 11.12', url: 'https://zhong-ze-wei.github.io/ai-spark/', desc: '共 28 份群友自制 PDF / 单文件 HTML / 六维分析表，见证从聊天到作品的完整闭环' }
+    ];
+
+    // 10. 16 Community Glossary Terms (观澜黑话词典)
+    const GLOSSARY = [
+      { term: '观澜', def: '出自《孟子》“观水有术，必观其澜”，9月17日投票选定的群中文名：借具体工具浪花，看时代大走势。' },
+      { term: '先验 vs 后验开发', def: '先验指动手前憋完美设计稿与层层质量门；后验指快速跑出 V0 拿真实报错与业务反馈高频迭代修正。' },
+      { term: '煎荷包蛋综合征', def: '群主名比喻：形容 Codex 等高推理模型改一行小需求却把厨房砸了重铺消防管线、跑二十遍自检的过度工程毛病。' },
+      { term: 'ICLR 审稿式叠甲', def: '吐槽模型受科研强化学习影响，满篇“不能推出、并不代表、尚不足以确认”的免责防御废话。' },
+      { term: 'FDE（前线部署工程师）', def: 'Forward Deployed Engineer，站在混沌业务痛点与 AI 能力边界中间，负责“消除认知差、定义真问题”的关键角色。' },
+      { term: '阿姆达尔提效悖论', def: '写代码快了十倍，但等业务回消息和跨组排期还要四天，导致“个人变轻松了，组织整体没变快”。' },
+      { term: '废墟重建项目', def: '群友 @。 对存量企业项目的精准画像：历史文档全部过期失真，真实规则全靠前辈口口相传。' },
+      { term: '人型智能体', def: '田智Liar0 自嘲金句：背后操控多个 AI 干活，自己负责把产出翻译成领导听得懂的话去汇报的人类接口。' },
+      { term: '一切皆插件（DSH）', def: 'DeepSeek Harness 的核心设计哲学，记忆、搜索、工作台均可按需拼装，深受 DIY 玩家喜爱。' },
+      { term: '闲时任务', def: '利用夜间低峰算力跑亿级 Token 数据清洗或定时持仓跟踪的省钱利器（以 ZCode 为代表）。' },
+      { term: '影子 IT 自费潮', def: '当公司停掉外部强模型、强制推广难用的内部自研壳子时，员工为了早下班默默掏钱买个人会员的现象。' },
+      { term: '净室重写（Clean-room）', def: '先逆向反编译提炼出非代码规格说明，再喂给大模型生成全新语言（如纯 Rust）开源代码的破壁打法。' },
+      { term: '蓖麻毒素反爬函数', def: '反爬作者故意用高危违禁词给普通校验函数命名，一旦逆向者整段贴给大模型就会触发安全拒答的奇招。' },
+      { term: '家宽兜底规则', def: '应对海外模型严苛风控的保命铁律：Clash 中锁定域名仅走纯净住宅 IP，节点断连宁可断网绝不裸连污染账号。' },
+      { term: '反重力（AGY）', def: '群内对 Google Antigravity 客户端的昵称，常伴随“额度虽香但跑一个任务慢到晕厥”的吐槽。' },
+      { term: '木鱼功德 +2', def: '群内最高频的微信“拍一拍”后缀（累计出现逾百次），每次群主分享硬核干货或暴论时的专属互动礼仪。' }
+    ];
+
+    // ==================== APPLICATION STATE ====================
+    const state = {
+      activeView: 'overview',
+      topicCategory: '全部',
+      topicPhase: 'all',
+      debateFilter: 'all',
+      peopleFilter: 'all',
+      practiceTask: '全部',
+      timelinePhase: 'all',
+      chartMode: 'weekly',
+      rhythmMode: 'models',
+      savedIds: new Set(),
+      drawer: { open: false, type: null, id: null }
+    };
+
+    let waveChartInstance = null;
+    let rhythmChartInstance = null;
+    let toastTimer = null;
+
+    // Safe localStorage helpers
+    function loadPersistedState() {
+      try {
+        const savedTheme = localStorage.getItem('aispark_theme_v2');
+        if (savedTheme === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+        const rawSaved = localStorage.getItem('aispark_saved_v2');
+        if (rawSaved) {
+          const parsed = JSON.parse(rawSaved);
+          if (Array.isArray(parsed)) {
+            state.savedIds = new Set(parsed);
+          }
+        }
+      } catch (err) {
+        // Ignore storage errors inside restricted sandboxes
+      }
+    }
+
+    function persistSavedIds() {
+      try {
+        localStorage.setItem('aispark_saved_v2', JSON.stringify(Array.from(state.savedIds)));
+      } catch (err) {
+        // Ignore storage errors
+      }
+    }
+
+    function showToast(msg) {
+      const container = document.getElementById('toast-container');
+      const box = document.getElementById('toast-message');
+      if (!container || !box) return;
+      box.textContent = msg;
+      container.classList.remove('opacity-0', 'translate-y-2');
+      container.classList.add('opacity-100', 'translate-y-0');
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(function() {
+        container.classList.remove('opacity-100', 'translate-y-0');
+        container.classList.add('opacity-0', 'translate-y-2');
+      }, 2400);
+    }
+
+    function copyTextToClipboard(text, successMsg) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          showToast(successMsg || '已复制到剪贴板');
+        }).catch(function() {
+          fallbackCopy(text, successMsg);
+        });
+      } else {
+        fallbackCopy(text, successMsg);
+      }
+    }
+
+    function fallbackCopy(text, successMsg) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      try {
+        document.execCommand('copy');
+        showToast(successMsg || '已复制到剪贴板');
+      } catch (err) {
+        showToast('复制失败，请手动选择复制');
+      }
+      document.body.removeChild(ta);
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    // ==================== NAVIGATION & THEME ====================
+    function switchView(viewName) {
+      state.activeView = viewName;
+      if (location.hash !== '#' + viewName) history.replaceState(null, '', '#' + viewName);
+      const views = ['overview', 'topics', 'debates', 'people', 'practice'];
+      views.forEach(function(v) {
+        const sec = document.getElementById('view-' + v);
+        if (sec) {
+          if (v === viewName) sec.classList.remove('hidden');
+          else sec.classList.add('hidden');
+        }
+        const dTab = document.getElementById('nav-' + v);
+        if (dTab) {
+          if (v === viewName) dTab.classList.add('nav-pill-active');
+          else dTab.classList.remove('nav-pill-active');
+        }
+        const mTab = document.getElementById('mnav-' + v);
+        if (mTab) {
+          if (v === viewName) {
+            mTab.classList.add('nav-pill-active');
+            mTab.classList.remove('surface-subtle');
+          } else {
+            mTab.classList.remove('nav-pill-active');
+            mTab.classList.add('surface-subtle');
+          }
+        }
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (viewName === 'overview') {
+        setTimeout(renderAllCharts, 40);
+      }
+      refreshIcons();
+    }
+
+    function filterPhase2Topics() {
+      state.topicCategory = '全部';
+      state.topicPhase = 'phase2';
+      renderTopicFilters();
+      renderTopicsGrid();
+      switchView('topics');
+    }
+
+    function jumpToDomain(domainId) {
+      state.topicCategory = domainId;
+      state.topicPhase = 'all';
+      renderTopicFilters();
+      renderTopicsGrid();
+      switchView('topics');
+    }
+
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      try {
+        localStorage.setItem('aispark_theme_v2', isDark ? 'dark' : 'light');
+      } catch (err) {}
+      renderAllCharts();
+      showToast(isDark ? '已切换至「沧浪夜航」深色模式' : '已切换至「宣纸砚白」浅色模式');
+    }
+
+    // ==================== CHARTS (Chart.js 4.4.1) ====================
+    function setChartMode(mode) {
+      state.chartMode = mode;
+      const wBtn = document.getElementById('btn-chart-weekly');
+      const mBtn = document.getElementById('btn-chart-monthly');
+      if (mode === 'weekly') {
+        wBtn.classList.add('nav-pill-active');
+        mBtn.classList.remove('nav-pill-active');
+      } else {
+        mBtn.classList.add('nav-pill-active');
+        wBtn.classList.remove('nav-pill-active');
+      }
+      renderWaveChart();
+    }
+
+    function setRhythmMode(mode) {
+      state.rhythmMode = mode;
+      const mBtn = document.getElementById('btn-rhythm-models');
+      const hBtn = document.getElementById('btn-rhythm-hours');
+      const titleEl = document.getElementById('secondary-chart-title');
+      const subEl = document.getElementById('secondary-chart-sub');
+      const capEl = document.getElementById('secondary-chart-caption');
+      if (mode === 'models') {
+        mBtn.classList.add('nav-pill-active');
+        hBtn.classList.remove('nav-pill-active');
+        titleEl.textContent = '工具声量榜：谁在主宰群友桌面？';
+        subEl.textContent = '统计群聊文本与链接中各模型/Harness 明确点名频次';
+        capEl.innerHTML = '<strong>数据洞察：</strong>10 月成为模型大换血分水岭——Claude 系单月提及暴涨至 53 次（较 9 月翻 7.5 倍），Gemini 4 Carbon/Argon 在 11 月上半月迅速追至 16 次，而 Kimi 在秋季逐渐淡出主力开发讨论。';
+      } else {
+        hBtn.classList.add('nav-pill-active');
+        mBtn.classList.remove('nav-pill-active');
+        titleEl.textContent = '24 小时作息节律：摸鱼高峰与深夜肝帝';
+        subEl.textContent = '全量 19,500 条消息按小时聚合分布（00:00 — 23:59）';
+        capEl.innerHTML = '<strong>作息特征：</strong>呈现鲜明的双驼峰——早间 <strong>10:00–11:59</strong>（3,517 条）与下午联调/摸鱼黄金窗 <strong>16:00–17:59</strong>（4,438 条，16 点单小时达最高峰 2,448 条）；同时 22 点至凌晨 2 点仍有 2,037 条硬核折腾记录。';
+      }
+      renderRhythmChart();
+    }
+
+    function renderWaveChart() {
+      const canvas = document.getElementById('waveTrendChart');
+      if (!canvas || typeof Chart === 'undefined') return;
+      if (waveChartInstance) {
+        waveChartInstance.destroy();
+        waveChartInstance = null;
+      }
+      const isDark = document.documentElement.classList.contains('dark');
+      const gridColor = isDark ? 'rgba(148, 163, 184, 0.12)' : 'rgba(24, 24, 27, 0.07)';
+      const tickColor = isDark ? '#94A3B8' : '#71717A';
+      const primaryColor = isDark ? '#38BDF8' : '#135363';
+      const accentColor = '#D97706';
+
+      if (state.chartMode === 'weekly') {
+        const labels = ['07.06','07.13','07.20','07.27','08.03','08.10','08.17','08.24','08.31','09.07','09.14','09.21','09.28','10.05','10.12','10.19','10.26','11.02','11.09','11.16*'];
+        const values = [108, 1349, 596, 723, 418, 820, 1024, 1256, 321, 977, 1905, 1032, 1806, 608, 1723, 1057, 1148, 1179, 1351, 99];
+        const pointColors = labels.map(function(_, idx) {
+          return idx >= 10 ? accentColor : primaryColor;
+        });
+        waveChartInstance = new Chart(canvas, {
+          type: 'line',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: '周消息量（橙色点为 09.15 原站截止后新澜）',
+              data: values,
+              borderColor: primaryColor,
+              backgroundColor: isDark ? 'rgba(56, 189, 248, 0.14)' : 'rgba(19, 83, 99, 0.12)',
+              pointBackgroundColor: pointColors,
+              pointBorderColor: pointColors,
+              pointRadius: 4,
+              pointHoverRadius: 6,
+              borderWidth: 2.4,
+              tension: 0.32,
+              fill: true
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { labels: { color: tickColor, font: { size: 11 } } },
+              tooltip: {
+                callbacks: {
+                  afterLabel: function(ctx) {
+                    const notes = {
+                      1: '建群首周 + 提示词方法讨论',
+                      6: 'DSH 预览版深夜实测',
+                      7: '先验向后验迁移大讨论',
+                      10: '首版思考地图上线 & 正式定名「观澜」',
+                      12: '09-30 峰值日 (839条) & Gemini 4 突袭',
+                      14: '日推 25 版争论 & 视频直出热潮',
+                      16: 'Claude 叠甲对比 & 跨区养号讨论',
+                      18: '自费充会员现象 & 11·13 KYC 严查'
+                    };
+                    return notes[ctx.dataIndex] ? '节点：' + notes[ctx.dataIndex] : '';
+                  }
+                }
+              }
+            },
+            scales: {
+              x: { grid: { display: false }, ticks: { color: tickColor, font: { size: 10 }, maxRotation: 45 } },
+              y: { beginAtZero: true, grid: { color: gridColor }, ticks: { color: tickColor, font: { size: 11 } } }
+            }
+          }
+        });
+      } else {
+        waveChartInstance = new Chart(canvas, {
+          type: 'bar',
+          data: {
+            labels: ['2026年7月 (12日起)', '2026年8月', '2026年9月', '2026年10月', '2026年11月 (至16日)'],
+            datasets: [{
+              label: '月度消息总量（条）',
+              data: [2577, 3784, 5300, 5195, 2644],
+              backgroundColor: [
+                isDark ? 'rgba(56, 189, 248, 0.55)' : 'rgba(19, 83, 99, 0.68)',
+                isDark ? 'rgba(56, 189, 248, 0.65)' : 'rgba(19, 83, 99, 0.78)',
+                '#D97706',
+                '#EA580C',
+                isDark ? '#38BDF8' : '#135363'
+              ],
+              borderRadius: 8
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { labels: { color: tickColor, font: { size: 11 } } } },
+            scales: {
+              x: { grid: { display: false }, ticks: { color: tickColor, font: { size: 11 } } },
+              y: { beginAtZero: true, grid: { color: gridColor }, ticks: { color: tickColor, font: { size: 11 } } }
+            }
+          }
+        });
+      }
+    }
+
+    function renderRhythmChart() {
+      const canvas = document.getElementById('rhythmChart');
+      if (!canvas || typeof Chart === 'undefined') return;
+      if (rhythmChartInstance) {
+        rhythmChartInstance.destroy();
+        rhythmChartInstance = null;
+      }
+      const isDark = document.documentElement.classList.contains('dark');
+      const gridColor = isDark ? 'rgba(148, 163, 184, 0.12)' : 'rgba(24, 24, 27, 0.07)';
+      const tickColor = isDark ? '#94A3B8' : '#71717A';
+
+      if (state.rhythmMode === 'models') {
+        rhythmChartInstance = new Chart(canvas, {
+          type: 'bar',
+          data: {
+            labels: ['GPT / Codex', 'Claude / CC', 'DeepSeek / DSH', 'MCP / Skill', 'GLM / ZCode', 'WorkBuddy / TRAE', 'Kimi K2/K3', 'Gemini / Carbon'],
+            datasets: [
+              {
+                label: '7—9月提及',
+                data: [71, 32, 38, 33, 38, 30, 41, 11],
+                backgroundColor: isDark ? 'rgba(56, 189, 248, 0.65)' : 'rgba(19, 83, 99, 0.75)',
+                borderRadius: 4
+              },
+              {
+                label: '10—11月新澜提及',
+                data: [79, 72, 25, 26, 12, 17, 3, 26],
+                backgroundColor: '#D97706',
+                borderRadius: 4
+              }
+            ]
+          },
+          options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { labels: { color: tickColor, font: { size: 11 } } } },
+            scales: {
+              x: { stacked: true, grid: { color: gridColor }, ticks: { color: tickColor, font: { size: 10 } } },
+              y: { stacked: true, grid: { display: false }, ticks: { color: tickColor, font: { size: 11 } } }
+            }
+          }
+        });
+      } else {
+        const hours = Array.from({ length: 24 }, function(_, i) { return (i < 10 ? '0' + i : '' + i) + ':00'; });
+        const hourVals = [367, 235, 87, 1, 0, 1, 4, 14, 263, 991, 1680, 1837, 1088, 598, 971, 1440, 2448, 1990, 1603, 767, 697, 712, 759, 676];
+        rhythmChartInstance = new Chart(canvas, {
+          type: 'bar',
+          data: {
+            labels: hours,
+            datasets: [{
+              label: '各小时消息数',
+              data: hourVals,
+              backgroundColor: hourVals.map(function(v) {
+                return v >= 1600 ? '#D97706' : (isDark ? 'rgba(56, 189, 248, 0.65)' : 'rgba(19, 83, 99, 0.72)');
+              }),
+              borderRadius: 4
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+              x: { grid: { display: false }, ticks: { color: tickColor, font: { size: 9 }, maxTicksLimit: 12 } },
+              y: { beginAtZero: true, grid: { color: gridColor }, ticks: { color: tickColor, font: { size: 10 } } }
+            }
+          }
+        });
+      }
+    }
+
+    function renderAllCharts() {
+      renderWaveChart();
+      renderRhythmChart();
+    }
+
+    // ==================== RENDER OVERVIEW DOMAIN CARDS ====================
+    function renderDomainCards() {
+      const grid = document.getElementById('domain-cards-grid');
+      if (!grid) return;
+      grid.innerHTML = DOMAINS.map(function(d) {
+        const count = TOPICS.filter(function(t) { return t.category === d.id; }).length;
+        return '<button type="button" onclick="jumpToDomain(\'' + d.id + '\')" class="surface-card rounded-2xl p-5 text-left flex flex-col justify-between group">' +
+          '<div class="space-y-2">' +
+            '<div class="flex items-center justify-between">' +
+              '<span class="font-bold text-base text-zinc-900 dark:text-white group-hover:text-[#135363] dark:group-hover:text-cyan-400 transition-colors">' + escapeHtml(d.id) + '</span>' +
+              '<span class="px-2 py-0.5 rounded-full text-xs font-semibold surface-subtle text-zinc-700 dark:text-slate-300">' + count + ' 篇</span>' +
+            '</div>' +
+            '<p class="text-xs text-zinc-600 dark:text-slate-300 leading-relaxed">' + escapeHtml(d.desc) + '</p>' +
+          '</div>' +
+          '<div class="mt-4 pt-2.5 border-t border-zinc-100 dark:border-slate-800 flex items-center justify-between text-xs font-medium text-[#135363] dark:text-cyan-400">' +
+            '<span>进入该问题域</span>' +
+            '<span>→</span>' +
+          '</div>' +
+        '</button>';
+      }).join('');
+    }
+
+    // ==================== RENDER TOPICS ====================
+    function setTopicCategory(cat) {
+      state.topicCategory = cat;
+      renderTopicFilters();
+      renderTopicsGrid();
+    }
+
+    function setTopicPhase(phase) {
+      state.topicPhase = phase;
+      ['all', 'phase2', 'phase1'].forEach(function(p) {
+        const btn = document.getElementById('phase-btn-' + p);
+        if (!btn) return;
+        if (p === phase) {
+          btn.classList.add('nav-pill-active');
+          btn.classList.remove('surface-subtle');
+        } else {
+          btn.classList.remove('nav-pill-active');
+          btn.classList.add('surface-subtle');
+        }
+      });
+      renderTopicsGrid();
+    }
+
+    function renderTopicFilters() {
+      const bar = document.getElementById('topic-category-pills');
+      if (!bar) return;
+      const cats = ['全部'].concat(DOMAINS.map(function(d) { return d.id; }));
+      bar.innerHTML = cats.map(function(c) {
+        const count = c === '全部' ? TOPICS.length : TOPICS.filter(function(t) { return t.category === c; }).length;
+        const active = state.topicCategory === c;
+        return '<button type="button" onclick="setTopicCategory(\'' + c + '\')" class="px-3 py-1.5 rounded-lg text-xs font-medium transition-all ' +
+          (active ? 'nav-pill-active' : 'surface-subtle text-zinc-700 dark:text-slate-300 hover:border-[#135363]') + '">' +
+          escapeHtml(c) + ' <span class="opacity-75">(' + count + ')</span></button>';
+      }).join('');
+    }
+
+    function renderTopicsGrid() {
+      const grid = document.getElementById('topics-grid');
+      if (!grid) return;
+      const filtered = TOPICS.filter(function(t) {
+        const matchCat = state.topicCategory === '全部' || t.category === state.topicCategory;
+        const matchPhase = state.topicPhase === 'all' || t.phase === state.topicPhase;
+        return matchCat && matchPhase;
+      });
+
+      if (!filtered.length) {
+        grid.innerHTML = '<div class="col-span-full surface-card rounded-2xl p-10 text-center text-sm text-zinc-500">当前筛选组合下暂无话题，请切换分类或阶段查看。</div>';
+        return;
+      }
+
+      grid.innerHTML = filtered.map(function(t) {
+        const isSaved = state.savedIds.has(t.id);
+        const phaseBadge = t.phase === 'phase2'
+          ? '<span class="px-2 py-0.5 rounded text-[11px] font-medium bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">秋季新澜</span>'
+          : '<span class="px-2 py-0.5 rounded text-[11px] font-medium surface-subtle text-zinc-600 dark:text-slate-300">经典深化</span>';
+        const firstQuote = t.quotes[0];
+        return '<article class="surface-card rounded-2xl p-5 flex flex-col justify-between gap-4">' +
+          '<div class="space-y-3">' +
+            '<div class="flex items-center justify-between gap-2">' +
+              '<div class="flex items-center gap-1.5 flex-wrap">' +
+                '<span class="px-2.5 py-0.5 rounded-md text-xs font-semibold bg-[#EFF7F9] text-[#135363] dark:bg-cyan-950/60 dark:text-cyan-300">' + escapeHtml(t.category) + '</span>' +
+                phaseBadge +
+              '</div>' +
+              '<button type="button" onclick="toggleSaveItem(\'' + t.id + '\')" class="p-1.5 rounded-lg surface-subtle ' + (isSaved ? 'text-amber-600 dark:text-amber-400' : 'text-zinc-400 hover:text-zinc-700 dark:hover:text-slate-200') + '" title="收藏该话题">' +
+                '<i data-lucide="bookmark" class="w-3.5 h-3.5 ' + (isSaved ? 'fill-current' : '') + '"></i>' +
+              '</button>' +
+            '</div>' +
+            '<button type="button" onclick="openTopicDrawer(\'' + t.id + '\')" class="text-left block group space-y-2">' +
+              '<h3 class="font-bold text-base sm:text-lg text-zinc-900 dark:text-white leading-snug group-hover:text-[#135363] dark:group-hover:text-cyan-400 transition-colors">' + escapeHtml(t.title) + '</h3>' +
+              '<p class="text-xs sm:text-sm text-zinc-600 dark:text-slate-300 leading-relaxed">' + escapeHtml(t.summary) + '</p>' +
+            '</button>' +
+            '<div class="quote-bar pl-3 py-2 pr-2.5 rounded-r-lg text-xs text-zinc-600 dark:text-slate-300 line-clamp-2">' +
+              '<span class="font-semibold text-zinc-800 dark:text-slate-100">' + escapeHtml(firstQuote.speaker) + '：</span>“' + escapeHtml(firstQuote.text) + '”' +
+            '</div>' +
+          '</div>' +
+          '<div class="pt-3 border-t border-zinc-100 dark:border-slate-800 flex items-center justify-between text-xs">' +
+            '<span class="text-zinc-400">' + escapeHtml(t.dateRange) + ' · ' + t.quotes.length + ' 段原话</span>' +
+            '<button type="button" onclick="openTopicDrawer(\'' + t.id + '\')" class="font-semibold text-[#135363] dark:text-cyan-400 hover:underline">展开深读 →</button>' +
+          '</div>' +
+        '</article>';
+      }).join('');
+      refreshIcons();
+    }
+
+    // ==================== RENDER DEBATES & OPEN QUESTIONS ====================
+    function setDebateFilter(f) {
+      state.debateFilter = f;
+      ['all', 'converged', 'open'].forEach(function(k) {
+        const btn = document.getElementById('deb-filter-' + k);
+        if (!btn) return;
+        if (k === f) {
+          btn.classList.add('nav-pill-active');
+          btn.classList.remove('surface-subtle');
+        } else {
+          btn.classList.remove('nav-pill-active');
+          btn.classList.add('surface-subtle');
+        }
+      });
+      renderDebates();
+    }
+
+    function renderDebates() {
+      const list = document.getElementById('debates-list');
+      if (!list) return;
+      const items = DEBATES.filter(function(d) {
+        return state.debateFilter === 'all' || d.status === state.debateFilter;
+      });
+      list.innerHTML = items.map(function(d) {
+        const isSaved = state.savedIds.has(d.id);
+        const statusBadge = d.status === 'converged'
+          ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300'
+          : 'bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300';
+        return '<article class="surface-card rounded-2xl p-5 sm:p-6 space-y-4">' +
+          '<div class="flex items-center justify-between gap-2">' +
+            '<div class="flex items-center gap-2 text-xs">' +
+              '<span class="font-mono text-zinc-500 dark:text-slate-400">' + escapeHtml(d.date) + '</span>' +
+              '<span class="px-2 py-0.5 rounded font-medium ' + statusBadge + '">' + escapeHtml(d.statusLabel) + '</span>' +
+            '</div>' +
+            '<button type="button" onclick="toggleSaveItem(\'' + d.id + '\')" class="p-1.5 rounded-lg surface-subtle ' + (isSaved ? 'text-amber-600 dark:text-amber-400' : 'text-zinc-400 hover:text-zinc-700') + '" title="收藏该场交锋">' +
+              '<i data-lucide="bookmark" class="w-3.5 h-3.5 ' + (isSaved ? 'fill-current' : '') + '"></i>' +
+            '</button>' +
+          '</div>' +
+          '<div class="space-y-1.5">' +
+            '<h3 class="font-bold text-base sm:text-lg text-zinc-900 dark:text-white">' + escapeHtml(d.title) + '</h3>' +
+            '<p class="text-xs sm:text-sm text-zinc-500 dark:text-slate-400">核心争点：' + escapeHtml(d.focus) + '</p>' +
+          '</div>' +
+          '<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">' +
+            '<div class="p-3.5 rounded-xl bg-[#EFF7F9]/80 dark:bg-cyan-950/30 border border-[#135363]/15 dark:border-cyan-800/40 space-y-1.5">' +
+              '<div class="flex items-center justify-between text-xs">' +
+                '<span class="font-bold text-[#135363] dark:text-cyan-300">' + escapeHtml(d.sideA.label) + '</span>' +
+                '<span class="text-zinc-500 dark:text-slate-400">' + escapeHtml(d.sideA.speaker) + '</span>' +
+              '</div>' +
+              '<p class="text-xs text-zinc-700 dark:text-slate-300 leading-relaxed">' + escapeHtml(d.sideA.point) + '</p>' +
+            '</div>' +
+            '<div class="p-3.5 rounded-xl bg-amber-50/80 dark:bg-amber-950/25 border border-amber-600/20 dark:border-amber-800/40 space-y-1.5">' +
+              '<div class="flex items-center justify-between text-xs">' +
+                '<span class="font-bold text-amber-800 dark:text-amber-300">' + escapeHtml(d.sideB.label) + '</span>' +
+                '<span class="text-zinc-500 dark:text-slate-400">' + escapeHtml(d.sideB.speaker) + '</span>' +
+              '</div>' +
+              '<p class="text-xs text-zinc-700 dark:text-slate-300 leading-relaxed">' + escapeHtml(d.sideB.point) + '</p>' +
+            '</div>' +
+          '</div>' +
+        '</article>';
+      }).join('');
+
+      const qGrid = document.getElementById('open-questions-grid');
+      if (qGrid) {
+        qGrid.innerHTML = OPEN_QUESTIONS.map(function(item, idx) {
+          return '<div class="p-4 rounded-xl surface-subtle flex items-start gap-3">' +
+            '<span class="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#135363] text-white shrink-0">Q' + (idx + 1) + '</span>' +
+            '<div class="space-y-1">' +
+              '<p class="text-sm font-medium text-zinc-900 dark:text-slate-100 leading-relaxed">' + escapeHtml(item.q) + '</p>' +
+              '<span class="inline-block text-[11px] text-zinc-500 dark:text-slate-400">#' + escapeHtml(item.tag) + '</span>' +
+            '</div>' +
+          '</div>';
+        }).join('');
+      }
+      refreshIcons();
+    }
+
+    // ==================== RENDER PEOPLE ====================
+    function setPeopleFilter(group) {
+      state.peopleFilter = group;
+      ['all', 'agent', 'product', 'data', 'hardware'].forEach(function(g) {
+        const btn = document.getElementById('ppl-filter-' + g);
+        if (!btn) return;
+        if (g === group) {
+          btn.classList.add('nav-pill-active');
+          btn.classList.remove('surface-subtle');
+        } else {
+          btn.classList.remove('nav-pill-active');
+          btn.classList.add('surface-subtle');
+        }
+      });
+      renderPeople();
+    }
+
+    function renderPeople() {
+      const grid = document.getElementById('people-grid');
+      if (!grid) return;
+      const filtered = PEOPLE.filter(function(p) {
+        return state.peopleFilter === 'all' || p.group === state.peopleFilter;
+      });
+      grid.innerHTML = filtered.map(function(p) {
+        const initial = p.name.charAt(0);
+        return '<button type="button" onclick="openPersonDrawer(\'' + p.id + '\')" class="surface-card rounded-2xl p-5 text-left flex flex-col justify-between gap-3 group">' +
+          '<div class="space-y-3">' +
+            '<div class="flex items-start justify-between gap-2">' +
+              '<div class="flex items-center gap-2.5 min-w-0">' +
+                '<div class="w-9 h-9 rounded-xl bg-[#135363]/12 dark:bg-cyan-500/15 text-[#135363] dark:text-cyan-300 font-bold text-sm flex items-center justify-center shrink-0">' + escapeHtml(initial) + '</div>' +
+                '<div class="min-w-0">' +
+                  '<h4 class="font-bold text-sm text-zinc-900 dark:text-white truncate group-hover:text-[#135363] dark:group-hover:text-cyan-400">' + escapeHtml(p.name) + '</h4>' +
+                  '<div class="text-[11px] text-zinc-400">全期发言 ' + p.msgs + ' 条</div>' +
+                '</div>' +
+              '</div>' +
+            '</div>' +
+            '<div class="flex flex-wrap gap-1.5">' +
+              p.tags.map(function(tg) {
+                return '<span class="px-2 py-0.5 rounded text-[11px] surface-subtle text-zinc-700 dark:text-slate-300">' + escapeHtml(tg) + '</span>';
+              }).join('') +
+            '</div>' +
+            '<p class="text-xs text-zinc-600 dark:text-slate-300 leading-relaxed line-clamp-3">' + escapeHtml(p.bio) + '</p>' +
+          '</div>' +
+          '<div class="pt-2.5 border-t border-zinc-100 dark:border-slate-800 flex items-center justify-between text-xs font-medium text-[#135363] dark:text-cyan-400">' +
+            '<span>看代表原声 (' + p.quotes.length + ')</span>' +
+            '<span>→</span>' +
+          '</div>' +
+        '</button>';
+      }).join('');
+    }
+
+    // ==================== RENDER PRACTICE, RADAR, TIMELINE, GLOSSARY ====================
+    function setPracticeTask(taskName) {
+      state.practiceTask = taskName;
+      renderPracticeSection();
+    }
+
+    function setTimelinePhase(ph) {
+      state.timelinePhase = ph;
+      ['all', '07-08', '09', '10', '11'].forEach(function(k) {
+        const btn = document.getElementById('tl-' + k);
+        if (!btn) return;
+        if (k === ph) {
+          btn.classList.add('nav-pill-active');
+          btn.classList.remove('surface-subtle');
+        } else {
+          btn.classList.remove('nav-pill-active');
+          btn.classList.add('surface-subtle');
+        }
+      });
+      renderTimeline();
+    }
+
+    function renderPracticeSection() {
+      // Models Radar
+      const radarGrid = document.getElementById('models-radar-grid');
+      if (radarGrid) {
+        radarGrid.innerHTML = MODELS_RADAR.map(function(m) {
+          return '<div class="surface-card rounded-2xl p-5 space-y-3.5 flex flex-col justify-between">' +
+            '<div class="space-y-3">' +
+              '<div class="flex items-start justify-between gap-2">' +
+                '<h3 class="font-bold text-base text-zinc-900 dark:text-white">' + escapeHtml(m.name) + '</h3>' +
+                '<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300 shrink-0">' + escapeHtml(m.badge) + '</span>' +
+              '</div>' +
+              '<div class="text-[11px] text-zinc-500 dark:text-slate-400">' + escapeHtml(m.mentions) + '</div>' +
+              '<div class="grid grid-cols-2 gap-2 text-xs">' +
+                '<div><div class="flex justify-between mb-1"><span>说人话度</span><span class="font-semibold">' + m.scores.human + '</span></div><div class="h-1.5 rounded-full bg-zinc-200 dark:bg-slate-700"><div class="h-1.5 rounded-full bg-[#135363] dark:bg-cyan-400" style="width:' + m.scores.human + '%"></div></div></div>' +
+                '<div><div class="flex justify-between mb-1"><span>前端审美</span><span class="font-semibold">' + m.scores.ui + '</span></div><div class="h-1.5 rounded-full bg-zinc-200 dark:bg-slate-700"><div class="h-1.5 rounded-full bg-[#135363] dark:bg-cyan-400" style="width:' + m.scores.ui + '%"></div></div></div>' +
+                '<div><div class="flex justify-between mb-1"><span>编码硬实力</span><span class="font-semibold">' + m.scores.code + '</span></div><div class="h-1.5 rounded-full bg-zinc-200 dark:bg-slate-700"><div class="h-1.5 rounded-full bg-amber-500" style="width:' + m.scores.code + '%"></div></div></div>' +
+                '<div><div class="flex justify-between mb-1"><span>省心存活度</span><span class="font-semibold">' + m.scores.survive + '</span></div><div class="h-1.5 rounded-full bg-zinc-200 dark:bg-slate-700"><div class="h-1.5 rounded-full bg-emerald-500" style="width:' + m.scores.survive + '%"></div></div></div>' +
+              '</div>' +
+              '<div class="space-y-1.5 text-xs leading-relaxed">' +
+                '<p class="text-zinc-700 dark:text-slate-200"><strong class="text-emerald-700 dark:text-emerald-400">长板：</strong>' + escapeHtml(m.pros) + '</p>' +
+                '<p class="text-zinc-600 dark:text-slate-300"><strong class="text-rose-700 dark:text-rose-400">槽点：</strong>' + escapeHtml(m.cons) + '</p>' +
+              '</div>' +
+            '</div>' +
+            '<div class="quote-bar pl-3 py-2 pr-2 rounded-r-lg text-[11px] text-zinc-600 dark:text-slate-300 italic">' + escapeHtml(m.quote) + '</div>' +
+          '</div>';
+        }).join('');
+      }
+
+      // Practice Filter Bar & Cards
+      const tasks = ['全部', '模糊业务破局', '表达与文档', '自动化验证', '跨 Agent 协同', '富媒体与数据'];
+      const fBar = document.getElementById('practice-filter-bar');
+      if (fBar) {
+        fBar.innerHTML = tasks.map(function(tk) {
+          const active = state.practiceTask === tk;
+          return '<button type="button" onclick="setPracticeTask(\'' + tk + '\')" class="px-3 py-1 rounded-lg text-xs font-medium ' +
+            (active ? 'nav-pill-active' : 'surface-subtle text-zinc-700 dark:text-slate-300') + '">' + escapeHtml(tk) + '</button>';
+        }).join('');
+      }
+
+      const pGrid = document.getElementById('practice-cards-grid');
+      if (pGrid) {
+        const list = PRACTICES.filter(function(p) {
+          return state.practiceTask === '全部' || p.task === state.practiceTask;
+        });
+        pGrid.innerHTML = list.map(function(p) {
+          const isSaved = state.savedIds.has(p.id);
+          const extLink = p.link
+            ? '<a href="' + p.link + '" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-[#135363] dark:text-cyan-400 hover:underline">查看开源仓库 ↗</a>'
+            : '<span class="text-[11px] text-zinc-400">群内实战工作流</span>';
+          return '<div class="p-4 rounded-xl surface-subtle flex flex-col justify-between gap-3">' +
+            '<div class="space-y-2">' +
+              '<div class="flex items-center justify-between">' +
+                '<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-white dark:bg-slate-800 text-[#135363] dark:text-cyan-300">' + escapeHtml(p.task) + '</span>' +
+                '<button type="button" onclick="toggleSaveItem(\'' + p.id + '\')" class="text-zinc-400 hover:text-amber-600 ' + (isSaved ? 'text-amber-600 dark:text-amber-400' : '') + '" title="收藏实践卡">' +
+                  '<i data-lucide="bookmark" class="w-3.5 h-3.5 ' + (isSaved ? 'fill-current' : '') + '"></i>' +
+                '</button>' +
+              '</div>' +
+              '<h4 class="font-bold text-sm text-zinc-900 dark:text-white">' + escapeHtml(p.title) + '</h4>' +
+              '<p class="text-xs text-zinc-600 dark:text-slate-300 leading-relaxed">' + escapeHtml(p.summary) + '</p>' +
+              '<div class="p-2.5 rounded-lg bg-white/80 dark:bg-slate-900/60 text-[11px] text-zinc-700 dark:text-slate-300 font-mono leading-relaxed">' + escapeHtml(p.steps) + '</div>' +
+            '</div>' +
+            '<div class="flex items-center justify-between pt-1">' + extLink + '</div>' +
+          '</div>';
+        }).join('');
+      }
+
+      renderTimeline();
+
+      // Shared Resources
+      const resEl = document.getElementById('shared-resources-list');
+      if (resEl) {
+        resEl.innerHTML = SHARED_RESOURCES.map(function(r) {
+          return '<a href="' + r.url + '" target="_blank" rel="noopener noreferrer" class="block p-3.5 rounded-xl surface-subtle hover:border-[#135363] transition-colors group">' +
+            '<div class="flex items-center justify-between gap-2">' +
+              '<span class="font-semibold text-sm text-zinc-900 dark:text-white group-hover:text-[#135363] dark:group-hover:text-cyan-400">' + escapeHtml(r.title) + ' ↗</span>' +
+              '<span class="px-2 py-0.5 rounded text-[10px] bg-white dark:bg-slate-800 text-zinc-500 shrink-0">' + escapeHtml(r.type) + '</span>' +
+            '</div>' +
+            '<p class="text-xs text-zinc-600 dark:text-slate-300 mt-1">' + escapeHtml(r.desc) + '</p>' +
+          '</a>';
+        }).join('');
+      }
+
+      // Glossary
+      const glEl = document.getElementById('glossary-grid');
+      if (glEl) {
+        glEl.innerHTML = GLOSSARY.map(function(g) {
+          return '<div class="p-3.5 rounded-xl surface-subtle space-y-1">' +
+            '<div class="font-bold text-xs sm:text-sm text-[#135363] dark:text-cyan-300">' + escapeHtml(g.term) + '</div>' +
+            '<p class="text-xs text-zinc-600 dark:text-slate-300 leading-relaxed">' + escapeHtml(g.def) + '</p>' +
+          '</div>';
+        }).join('');
+      }
+      refreshIcons();
+    }
+
+    function renderTimeline() {
+      const container = document.getElementById('timeline-container');
+      if (!container) return;
+      const events = TIMELINE.filter(function(ev) {
+        return state.timelinePhase === 'all' || ev.phase === state.timelinePhase;
+      });
+      container.innerHTML = events.map(function(ev) {
+        return '<div class="relative">' +
+          '<div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-[#135363] dark:bg-cyan-400 ring-4 ring-[#FAF8F5] dark:ring-[#131B24]"></div>' +
+          '<div class="p-4 rounded-xl surface-subtle space-y-1">' +
+            '<div class="flex flex-wrap items-center gap-2 text-xs">' +
+              '<span class="font-mono font-semibold text-[#135363] dark:text-cyan-400">' + escapeHtml(ev.date) + '</span>' +
+              '<span class="px-2 py-0.5 rounded bg-white dark:bg-slate-800 text-zinc-600 dark:text-slate-300 text-[11px]">' + escapeHtml(ev.tag) + '</span>' +
+            '</div>' +
+            '<h4 class="font-bold text-sm sm:text-base text-zinc-900 dark:text-white">' + escapeHtml(ev.title) + '</h4>' +
+            '<p class="text-xs sm:text-sm text-zinc-600 dark:text-slate-300 leading-relaxed">' + escapeHtml(ev.desc) + '</p>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+    }
+
+    // ==================== SLIDE-OVER DETAIL DRAWER ====================
+    function openTopicDrawer(topicId) {
+      const idx = TOPICS.findIndex(function(t) { return t.id === topicId; });
+      if (idx === -1) return;
+      const t = TOPICS[idx];
+      state.drawer = { open: true, type: 'topic', id: topicId };
+
+      document.getElementById('drawer-header-meta').innerHTML =
+        '<span>' + escapeHtml(t.category) + '</span><span>·</span><span class="font-mono">' + escapeHtml(t.dateRange) + '</span>';
+
+      updateDrawerSaveButton();
+
+      const body = document.getElementById('drawer-body');
+      body.innerHTML =
+        '<div class="space-y-6">' +
+          '<div class="space-y-2">' +
+            '<span class="inline-block px-2.5 py-0.5 rounded text-xs font-medium ' + (t.phase === 'phase2' ? 'bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300' : 'surface-subtle text-zinc-600 dark:text-slate-300') + '">' +
+              (t.phase === 'phase2' ? '2026 秋季新澜（09.16—11.16 重点新增）' : '经典议题全周期深化') +
+            '</span>' +
+            '<h2 class="font-editorial text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white leading-snug">' + escapeHtml(t.title) + '</h2>' +
+            '<p class="text-sm sm:text-base text-zinc-600 dark:text-slate-300 leading-relaxed">' + escapeHtml(t.summary) + '</p>' +
+          '</div>' +
+
+          '<div class="p-4 sm:p-5 rounded-2xl bg-[#EFF7F9] dark:bg-cyan-950/35 border border-[#135363]/20 dark:border-cyan-800/40 space-y-2">' +
+            '<div class="text-xs font-bold uppercase tracking-wider text-[#135363] dark:text-cyan-300">群内阶段判断与共识</div>' +
+            '<p class="text-sm text-zinc-800 dark:text-slate-100 leading-relaxed">' + escapeHtml(t.consensus) + '</p>' +
+          '</div>' +
+
+          '<div class="p-4 rounded-xl surface-subtle text-xs sm:text-sm text-zinc-600 dark:text-slate-300 leading-relaxed">' +
+            '<strong class="text-zinc-900 dark:text-white">讨论背景：</strong>' + escapeHtml(t.contextNote) +
+          '</div>' +
+
+          '<div class="space-y-3">' +
+            '<h3 class="font-bold text-sm uppercase tracking-wider text-zinc-500 dark:text-slate-400">群聊原声回放（' + t.quotes.length + ' 段实录）</h3>' +
+            t.quotes.map(function(q) {
+              return '<div class="surface-card rounded-xl p-4 space-y-2">' +
+                '<div class="flex items-center justify-between text-xs">' +
+                  '<button type="button" onclick="openPersonByNickname(\'' + q.speaker + '\')" class="font-bold text-[#135363] dark:text-cyan-400 hover:underline">' + escapeHtml(q.speaker) + '</button>' +
+                  '<span class="font-mono text-zinc-400">' + escapeHtml(q.time) + '</span>' +
+                '</div>' +
+                '<p class="text-sm text-zinc-800 dark:text-slate-200 leading-relaxed">“' + escapeHtml(q.text) + '”</p>' +
+              '</div>';
+            }).join('') +
+          '</div>' +
+
+          '<div class="p-4 rounded-xl border border-dashed border-amber-500/50 bg-amber-50/50 dark:bg-amber-950/20 space-y-1">' +
+            '<div class="text-xs font-bold text-amber-800 dark:text-amber-300">继续追问</div>' +
+            '<p class="text-sm text-zinc-800 dark:text-slate-200">' + escapeHtml(t.nextQuestion) + '</p>' +
+          '</div>' +
+        '</div>';
+
+      const prevT = TOPICS[(idx - 1 + TOPICS.length) % TOPICS.length];
+      const nextT = TOPICS[(idx + 1) % TOPICS.length];
+      document.getElementById('drawer-footer').innerHTML =
+        '<button type="button" onclick="openTopicDrawer(\'' + prevT.id + '\')" class="text-zinc-600 dark:text-slate-300 hover:text-[#135363] truncate max-w-[45%]">← 上一篇：' + escapeHtml(prevT.title) + '</button>' +
+        '<button type="button" onclick="openTopicDrawer(\'' + nextT.id + '\')" class="text-zinc-600 dark:text-slate-300 hover:text-[#135363] truncate max-w-[45%] text-right">下一篇：' + escapeHtml(nextT.title) + ' →</button>';
+
+      showDrawerDOM();
+    }
+
+    function openPersonByNickname(nick) {
+      const found = PEOPLE.find(function(p) { return p.name === nick; });
+      if (found) {
+        openPersonDrawer(found.id);
+      }
+    }
+
+    function openPersonDrawer(personId) {
+      const idx = PEOPLE.findIndex(function(p) { return p.id === personId; });
+      if (idx === -1) return;
+      const p = PEOPLE[idx];
+      state.drawer = { open: true, type: 'person', id: personId };
+
+      document.getElementById('drawer-header-meta').innerHTML =
+        '<span>群友原声档案</span><span>·</span><span>全期发言 ' + p.msgs + ' 条</span>';
+
+      updateDrawerSaveButton();
+
+      const relTopics = TOPICS.filter(function(t) { return p.relatedTopics.indexOf(t.id) !== -1; });
+      const body = document.getElementById('drawer-body');
+      body.innerHTML =
+        '<div class="space-y-6">' +
+          '<div class="flex items-center gap-4">' +
+            '<div class="w-14 h-14 rounded-2xl bg-[#135363] text-white font-editorial font-bold text-2xl flex items-center justify-center shrink-0">' + escapeHtml(p.name.charAt(0)) + '</div>' +
+            '<div>' +
+              '<h2 class="font-editorial text-2xl font-bold text-zinc-900 dark:text-white">' + escapeHtml(p.name) + '</h2>' +
+              '<div class="flex flex-wrap gap-1.5 mt-1.5">' +
+                p.tags.map(function(tg) {
+                  return '<span class="px-2.5 py-0.5 rounded-full text-xs surface-subtle text-zinc-700 dark:text-slate-300">' + escapeHtml(tg) + '</span>';
+                }).join('') +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+
+          '<div class="p-4 rounded-xl surface-subtle text-sm text-zinc-700 dark:text-slate-200 leading-relaxed">' +
+            escapeHtml(p.bio) +
+          '</div>' +
+
+          '<div class="space-y-3">' +
+            '<h3 class="font-bold text-sm uppercase tracking-wider text-zinc-500 dark:text-slate-400">收录的代表性原话</h3>' +
+            p.quotes.map(function(q) {
+              return '<div class="quote-bar pl-4 pr-4 py-3 rounded-r-xl space-y-1">' +
+                '<div class="font-mono text-xs text-zinc-500 dark:text-slate-400">' + escapeHtml(q.time) + '</div>' +
+                '<p class="text-sm text-zinc-900 dark:text-slate-100 leading-relaxed">“' + escapeHtml(q.text) + '”</p>' +
+              '</div>';
+            }).join('') +
+          '</div>' +
+
+          '<div class="space-y-2.5">' +
+            '<h3 class="font-bold text-sm uppercase tracking-wider text-zinc-500 dark:text-slate-400">参与的核心话题</h3>' +
+            '<div class="space-y-2">' +
+              relTopics.map(function(rt) {
+                return '<button type="button" onclick="openTopicDrawer(\'' + rt.id + '\')" class="w-full text-left p-3.5 rounded-xl surface-card flex items-center justify-between gap-3 group">' +
+                  '<div>' +
+                    '<span class="text-[11px] text-[#135363] dark:text-cyan-400 font-semibold">' + escapeHtml(rt.category) + '</span>' +
+                    '<div class="font-bold text-sm text-zinc-900 dark:text-white group-hover:text-[#135363] dark:group-hover:text-cyan-400">' + escapeHtml(rt.title) + '</div>' +
+                  '</div>' +
+                  '<span class="text-xs text-zinc-400 shrink-0">阅读 →</span>' +
+                '</button>';
+              }).join('') +
+            '</div>' +
+          '</div>' +
+        '</div>';
+
+      const prevP = PEOPLE[(idx - 1 + PEOPLE.length) % PEOPLE.length];
+      const nextP = PEOPLE[(idx + 1) % PEOPLE.length];
+      document.getElementById('drawer-footer').innerHTML =
+        '<button type="button" onclick="openPersonDrawer(\'' + prevP.id + '\')" class="text-zinc-600 dark:text-slate-300 hover:text-[#135363] truncate max-w-[45%]">← 上一位：' + escapeHtml(prevP.name) + '</button>' +
+        '<button type="button" onclick="openPersonDrawer(\'' + nextP.id + '\')" class="text-zinc-600 dark:text-slate-300 hover:text-[#135363] truncate max-w-[45%] text-right">下一位：' + escapeHtml(nextP.name) + ' →</button>';
+
+      showDrawerDOM();
+    }
+
+    function showDrawerDOM() {
+      const bd = document.getElementById('detail-drawer-backdrop');
+      const dr = document.getElementById('detail-drawer');
+      bd.classList.remove('hidden');
+      dr.classList.remove('translate-x-full');
+      document.getElementById('drawer-body').scrollTop = 0;
+      refreshIcons();
+    }
+
+    function closeDrawer() {
+      state.drawer.open = false;
+      document.getElementById('detail-drawer-backdrop').classList.add('hidden');
+      document.getElementById('detail-drawer').classList.add('translate-x-full');
+    }
+
+    function updateDrawerSaveButton() {
+      const lbl = document.getElementById('drawer-save-label');
+      if (!lbl || !state.drawer.id) return;
+      lbl.textContent = state.savedIds.has(state.drawer.id) ? '已收藏' : '收藏';
+    }
+
+    function toggleDrawerSave() {
+      if (!state.drawer.id) return;
+      toggleSaveItem(state.drawer.id);
+      updateDrawerSaveButton();
+    }
+
+    function copyDrawerSummary() {
+      if (!state.drawer.id) return;
+      if (state.drawer.type === 'topic') {
+        const t = TOPICS.find(function(x) { return x.id === state.drawer.id; });
+        if (!t) return;
+        const lines = [
+          '【观澜 · AI Sparks】' + t.title,
+          '分类：' + t.category + '（' + t.dateRange + '）',
+          '核心判断：' + t.consensus,
+          '代表原话：'
+        ].concat(t.quotes.map(function(q) { return '- ' + q.speaker + ' (' + q.time + ')：“' + q.text + '”'; }));
+        copyTextToClipboard(lines.join('\n'), '已复制该话题精华摘录');
+      } else if (state.drawer.type === 'person') {
+        const p = PEOPLE.find(function(x) { return x.id === state.drawer.id; });
+        if (!p) return;
+        const text = '【观澜人物】' + p.name + '（' + p.tags.join(' · ') + '）\n' + p.bio + '\n' +
+          p.quotes.map(function(q) { return '- (' + q.time + ') “' + q.text + '”'; }).join('\n');
+        copyTextToClipboard(text, '已复制群友档案摘录');
+      }
+    }
+
+    // ==================== BOOKMARKS / SAVED DRAWER ====================
+    function toggleSaveItem(itemId) {
+      if (state.savedIds.has(itemId)) {
+        state.savedIds.delete(itemId);
+        showToast('已从收藏夹移除');
+      } else {
+        state.savedIds.add(itemId);
+        showToast('已加入观澜收藏夹');
+      }
+      persistSavedIds();
+      updateSavedBadge();
+      renderTopicsGrid();
+      renderDebates();
+      renderPracticeSection();
+      renderSavedDrawerBody();
+    }
+
+    function updateSavedBadge() {
+      const badge = document.getElementById('saved-count-badge');
+      if (badge) badge.textContent = String(state.savedIds.size);
+    }
+
+    function openSavedDrawer() {
+      renderSavedDrawerBody();
+      document.getElementById('saved-drawer-backdrop').classList.remove('hidden');
+      document.getElementById('saved-drawer').classList.remove('translate-x-full');
+      refreshIcons();
+    }
+
+    function closeSavedDrawer() {
+      document.getElementById('saved-drawer-backdrop').classList.add('hidden');
+      document.getElementById('saved-drawer').classList.add('translate-x-full');
+    }
+
+    function resolveSavedItem(id) {
+      const t = TOPICS.find(function(x) { return x.id === id; });
+      if (t) return { id: id, kind: '话题', title: t.title, sub: t.category + ' · ' + t.summary, action: "closeSavedDrawer();openTopicDrawer('" + id + "')" };
+      const d = DEBATES.find(function(x) { return x.id === id; });
+      if (d) return { id: id, kind: '交锋', title: d.title, sub: d.statusLabel + ' · ' + d.focus, action: "closeSavedDrawer();switchView('debates')" };
+      const pr = PRACTICES.find(function(x) { return x.id === id; });
+      if (pr) return { id: id, kind: '实践卡', title: pr.title, sub: pr.task + ' · ' + pr.summary, action: "closeSavedDrawer();switchView('practice')" };
+      const p = PEOPLE.find(function(x) { return x.id === id; });
+      if (p) return { id: id, kind: '人物', title: p.name, sub: p.bio, action: "closeSavedDrawer();openPersonDrawer('" + id + "')" };
+      return null;
+    }
+
+    function renderSavedDrawerBody() {
+      const container = document.getElementById('saved-drawer-body');
+      if (!container) return;
+      const items = Array.from(state.savedIds).map(resolveSavedItem).filter(Boolean);
+      if (!items.length) {
+        container.innerHTML =
+          '<div class="text-center py-14 space-y-2 text-zinc-500 dark:text-slate-400">' +
+            '<p class="text-sm font-medium">收藏夹还是空的</p>' +
+            '<p class="text-xs">在思想地图、交锋或实践卡上点击书签图标，即可随时汇总导出个人补课笔记。</p>' +
+          '</div>';
+        return;
+      }
+      container.innerHTML = items.map(function(it) {
+        return '<div class="surface-card rounded-xl p-3.5 space-y-1.5">' +
+          '<div class="flex items-center justify-between text-xs">' +
+            '<span class="px-2 py-0.5 rounded surface-subtle font-semibold text-[#135363] dark:text-cyan-300">' + escapeHtml(it.kind) + '</span>' +
+            '<button type="button" onclick="toggleSaveItem(\'' + it.id + '\')" class="text-zinc-400 hover:text-rose-600 text-xs">移除</button>' +
+          '</div>' +
+          '<button type="button" onclick="' + it.action + '" class="text-left block w-full">' +
+            '<div class="font-bold text-sm text-zinc-900 dark:text-white hover:text-[#135363]">' + escapeHtml(it.title) + '</div>' +
+            '<p class="text-xs text-zinc-500 dark:text-slate-400 line-clamp-2 mt-0.5">' + escapeHtml(it.sub) + '</p>' +
+          '</button>' +
+        '</div>';
+      }).join('');
+    }
+
+    function exportSavedMarkdown() {
+      const items = Array.from(state.savedIds).map(resolveSavedItem).filter(Boolean);
+      if (!items.length) {
+        showToast('请先收藏至少一条内容再导出');
+        return;
+      }
+      const md = '# 观澜 · AI Sparks 个人研读摘录\n\n' +
+        items.map(function(it, i) {
+          return (i + 1) + '. **[' + it.kind + '] ' + it.title + '**\n   > ' + it.sub;
+        }).join('\n\n');
+      copyTextToClipboard(md, '已将 ' + items.length + ' 条收藏导出为 Markdown 并复制');
+    }
+
+    // ==================== GLOBAL SEARCH MODAL ====================
+    function openSearchModal() {
+      const modal = document.getElementById('search-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      const input = document.getElementById('global-search-input');
+      renderSearchResults();
+      setTimeout(function() { input.focus(); }, 30);
+    }
+
+    function closeSearchModal() {
+      const modal = document.getElementById('search-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function clearSearchInput() {
+      const input = document.getElementById('global-search-input');
+      input.value = '';
+      renderSearchResults();
+      input.focus();
+    }
+
+    function quickSearch(kw) {
+      const input = document.getElementById('global-search-input');
+      input.value = kw;
+      renderSearchResults();
+    }
+
+    function highlightText(text, kw) {
+      const safe = escapeHtml(text);
+      if (!kw) return safe;
+      const escapedKw = kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      return safe.replace(new RegExp('(' + escapedKw + ')', 'gi'), '<mark class="hl">$1</mark>');
+    }
+
+    function renderSearchResults() {
+      const input = document.getElementById('global-search-input');
+      const box = document.getElementById('search-results-container');
+      if (!input || !box) return;
+      const q = input.value.trim();
+      const qLower = q.toLowerCase();
+
+      if (!q) {
+        box.innerHTML = '<div class="py-8 text-center text-xs text-zinc-500 dark:text-slate-400">输入任意模型名、方法论或槽点关键词，跨 24 篇话题、14 场分歧、28 位群友原话与黑话词典即时检索。</div>';
+        return;
+      }
+
+      const hits = [];
+
+      TOPICS.forEach(function(t) {
+        const hay = (t.title + ' ' + t.summary + ' ' + t.consensus + ' ' + t.quotes.map(function(x) { return x.speaker + ' ' + x.text; }).join(' ')).toLowerCase();
+        if (hay.indexOf(qLower) !== -1) {
+          const matchedQuote = t.quotes.find(function(x) { return (x.speaker + ' ' + x.text).toLowerCase().indexOf(qLower) !== -1; });
+          hits.push({
+            badge: '思想地图 · ' + t.category,
+            title: t.title,
+            snippet: matchedQuote ? (matchedQuote.speaker + '：“' + matchedQuote.text + '”') : t.summary,
+            onClick: "closeSearchModal();openTopicDrawer('" + t.id + "')"
+          });
+        }
+      });
+
+      DEBATES.forEach(function(d) {
+        const hay = (d.title + ' ' + d.focus + ' ' + d.sideA.point + ' ' + d.sideB.point).toLowerCase();
+        if (hay.indexOf(qLower) !== -1) {
+          hits.push({
+            badge: '交锋 · ' + d.statusLabel,
+            title: d.title,
+            snippet: d.sideA.label + ' vs ' + d.sideB.label + ' — ' + d.focus,
+            onClick: "closeSearchModal();switchView('debates')"
+          });
+        }
+      });
+
+      PEOPLE.forEach(function(p) {
+        const hay = (p.name + ' ' + p.tags.join(' ') + ' ' + p.bio + ' ' + p.quotes.map(function(x) { return x.text; }).join(' ')).toLowerCase();
+        if (hay.indexOf(qLower) !== -1) {
+          hits.push({
+            badge: '群友档案',
+            title: p.name + '（全期发言 ' + p.msgs + ' 条）',
+            snippet: p.bio,
+            onClick: "closeSearchModal();openPersonDrawer('" + p.id + "')"
+          });
+        }
+      });
+
+      GLOSSARY.forEach(function(g) {
+        if ((g.term + ' ' + g.def).toLowerCase().indexOf(qLower) !== -1) {
+          hits.push({
+            badge: '观澜词典',
+            title: g.term,
+            snippet: g.def,
+            onClick: "closeSearchModal();switchView('practice')"
+          });
+        }
+      });
+
+      if (!hits.length) {
+        box.innerHTML = '<div class="py-10 text-center text-sm text-zinc-500">未找到包含“' + escapeHtml(q) + '”的记录，试试“Claude”“后验”“荷包蛋”或“FDE”。</div>';
+        return;
+      }
+
+      box.innerHTML = hits.slice(0, 18).map(function(h) {
+        return '<button type="button" onclick="' + h.onClick + '" class="w-full text-left p-3.5 rounded-xl surface-subtle hover:border-[#135363] block space-y-1 transition-colors">' +
+          '<span class="inline-block text-[11px] font-semibold text-[#135363] dark:text-cyan-400">' + escapeHtml(h.badge) + '</span>' +
+          '<div class="font-bold text-sm text-zinc-900 dark:text-white">' + highlightText(h.title, q) + '</div>' +
+          '<p class="text-xs text-zinc-600 dark:text-slate-300 line-clamp-2">' + highlightText(h.snippet, q) + '</p>' +
+        '</button>';
+      }).join('');
+    }
+
+    function openPoster() {
+      document.getElementById('poster-full').src = document.getElementById('theme-poster').src;
+      document.getElementById('poster-dialog').showModal();
+    }
+
+    // ==================== ABOUT MODAL ====================
+    function openAboutModal() {
+      const m = document.getElementById('about-modal');
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+    }
+
+    function closeAboutModal() {
+      const m = document.getElementById('about-modal');
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+    }
+
+    function refreshIcons() {
+      if (typeof lucide !== 'undefined' && lucide.createIcons) {
+        lucide.createIcons();
+      }
+    }
+
+    // Keyboard shortcuts (⌘K / Ctrl+K for search, ESC to close overlays)
+    document.addEventListener('keydown', function(e) {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        openSearchModal();
+      } else if (e.key === 'Escape') {
+        closeSearchModal();
+        closeAboutModal();
+        closeSavedDrawer();
+        closeDrawer();
+      }
+    });
+
+    function restoreRoute() {
+      const route = decodeURIComponent(location.hash.slice(1));
+      if (/^(topic|person|source)\/[a-z]\d+$/.test(route)) {
+        const [kind, id] = route.split('/');
+        location.replace(new URL({ topic: 'topics/', person: 'people/', source: 'sources/' }[kind] + id + '/', location.href).href);
+      } else if (['overview', 'topics', 'debates', 'people', 'practice'].includes(route)) {
+        switchView(route);
+      } else if (route === 'read') { switchView('topics'); }
+    }
+    window.addEventListener('hashchange', restoreRoute);
+
+    // Boot Application
+    window.addEventListener('DOMContentLoaded', function() {
+      loadPersistedState();
+      updateSavedBadge();
+      renderDomainCards();
+      renderTopicFilters();
+      renderTopicsGrid();
+      renderDebates();
+      renderPeople();
+      renderPracticeSection();
+      renderAllCharts();
+      refreshIcons();
+      restoreRoute();
+    });
+  </script>
+</body>
+</html>

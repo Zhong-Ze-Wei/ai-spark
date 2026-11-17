@@ -1,0 +1,14 @@
+{
+  "name": "guanlan-ai-sparks",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-home.mjs",
+    "preview": "python3 -m http.server 8768 --bind 127.0.0.1"
+  },
+  "devDependencies": {
+    "chart.js": "4.4.1",
+    "lucide": "0.460.0",
+    "postcss": "8.4.49",
+    "tailwindcss": "3.4.17"
+  }
+}

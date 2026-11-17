@@ -144,6 +144,11 @@ def tools(route):
 
 
 def page(name, body, nav='资料', description='', narrow=True):
+    # The current homepage is built from src/home.html with npm run build.
+    # Retain it when rebuilding the earlier edition's independent pages.
+    if not CURRENT and (ROOT / 'src/home.html').exists():
+        GENERATED.append('index.html')
+        return
     depth = '../' * CURRENT.count('/')
     navs = [('', '精选补课'), ('topics/', '话题追踪'), ('people/', '人物发言'), ('resources/', '资料')]
     links = ''.join(f'<a href="{u(path)}"{chr(32)+"aria-current=page" if label == nav else ""}>{label}</a>' for path, label in navs)
